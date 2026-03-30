@@ -10,7 +10,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendi
 
 ## Contexte du Projet
 
-Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+Contexte 1ère année cycle ingénieur
+
+L'Enjeu : Passer de la découverte (machines de dessin) à une véritable démarche d'ingénierie rigoureuse et structurée.
+
+L'Objectif : Concevoir et construire en 75 heures une machine autonome capable de résoudre un puzzle, en partant de zéro.
+
+Les Domaines : Un projet interdisciplinaire mêlant mécanique (CAO/OnShape), électronique (Arduino/CNC), fabrication numérique (MakerSpace) et vision par ordinateur.
+
+La Méthode : Travail en équipe de 7, autonomie totale, avec une documentation professionnelle sur GitHub et des étapes de validation (POC).
 
 ## Objectifs du Projet
 
