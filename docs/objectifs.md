@@ -14,7 +14,13 @@ Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, eu
 
 ## Objectifs du Projet
 
-Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede.
+Valider le "Proof of Concept" (POC)
+
+Finaliser la CAO
+
+Présentation Technique (25h)
+
+Initialiser le GitHub
 
 # Existant
 
