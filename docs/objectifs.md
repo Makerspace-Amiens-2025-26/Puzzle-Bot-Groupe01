@@ -6,7 +6,9 @@ title: Objectifs du projet
 
 # Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+Le projet Puzzle Bot nous invite à concevoir et construire, en totale autonomie, une machine capable de résoudre un puzzle d'ici la fin de l'année scolaire 2026.
+
+Mêlant conception 3D sur OnShape, programmation Arduino et fabrication au MakerSpace, ce défi de 75 heures vous fait passer d'une exploration créative à une véritable démarche d'ingénierie.
 
 ## Contexte du Projet
 
@@ -30,10 +32,20 @@ Présentation Technique (25h)
 
 Initialiser le GitHub
 
-# Existant
-
-Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio.
-
 # Cahier des Charges
 
-Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, ultricies et, tellus.
+Mission : Concevoir et fabriquer une machine autonome capable de trier, manipuler et assembler un puzzle sans plan préétabli.
+
+Délai : 75 heures au total (Phase actuelle : Fin du POC à 25h).
+
+Contrôle : Carte Arduino + CNC Shield (pilotage de moteurs pas à pas et servos).
+
+Mécanique : Conception intégrale sur OnShape ; fabrication via impression 3D au MakerSpace.
+
+Intelligence : Intégration d'un système de vision par ordinateur pour identifier les pièces.
+
+Précision : Nécessité d'alignement et de calibration pour un assemblage fonctionnel.
+
+Documentation : Dépôt GitHub actif (justification des choix, rôles par binôme).
+
+CAO : Modèle 3D complet et assemblé sur OnShape.
