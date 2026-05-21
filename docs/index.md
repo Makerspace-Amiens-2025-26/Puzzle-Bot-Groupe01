@@ -20,7 +20,11 @@ Bienvenue dans la documentation du projet XY. Ce site a pour but de fournir tout
 
 ## À propos du Projet
 
-Décrivez ici en quelques lignes l'objectif et l'aperçu général de votre projet. Quel est son but ? À qui est-il destiné ? Quels problèmes cherche-t-il à résoudre ?
+Notre projet consiste à concevoir et programmer un robot capable de résoudre automatiquement un puzzle de manière autonome. Réalisé pendant notre première année de cycle ingénieur, ce projet nous permet de mettre en pratique des notions de mécanique, d’électronique, d’informatique et d’automatisation.
+
+Le robot est destiné principalement à un usage pédagogique et expérimental. Il permet de découvrir le fonctionnement des systèmes embarqués, de la programmation d’algorithmes de résolution et de la coordination entre capteurs, moteurs et traitement des données.
+
+Ce projet cherche à résoudre plusieurs problématiques techniques : analyser l’état d’un puzzle, déterminer une stratégie de résolution puis exécuter les mouvements nécessaires de manière précise et autonome. Hormis le côté technique, il vise également à développer notre capacité à travailler en équipe, à gérer un projet d’ingénierie et à réfléchir pour trouver une solution répondant à un défi concret.
 
 
 ## Poster
