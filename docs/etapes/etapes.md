@@ -7,7 +7,7 @@ has_children: true
 
 # Étapes de Fabrication
 
-Bienvenue dans la section dédiée aux étapes de fabrication du projet XYZ. Ici, vous trouverez des guides détaillés pour chaque étape du processus de fabrication.
+Bienvenue dans la section dédiée aux étapes de fabrication de notre puzzle-bot. Ici, vous trouverez des guides détaillés pour chaque étape du processus de fabrication que voici ci-dessous.
 
 ## Aperçu des Étapes
 
