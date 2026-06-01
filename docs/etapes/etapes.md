@@ -7,16 +7,17 @@ has_children: true
 
 # Étapes de Fabrication
 
-Bienvenue dans la section dédiée aux étapes de fabrication du projet XYZ. Ici, vous trouverez des guides détaillés pour chaque étape du processus de fabrication.
+Bienvenue dans la section dédiée aux étapes de fabrication du puzzle-bot. Vous trouverez des guides détaillés pour chaque étape du processus de fabrication ci-dessous.
 
 ## Aperçu des Étapes
 
 Le processus de fabrication est divisé en plusieurs étapes clés :
 
-1. [Préparation des Matériaux](etape_1)
-2. [Assemblage](etape_2)
-3. [Finition](etape_3)
-4. [Contrôle Qualité](etape_4)
+1. [Conception & Choix Techniques](etape_1)
+1. [Préparation des Matériaux](etape_2)
+2. [Assemblage](etape_3)
+3. [Finition](etape_4)
+4. [Contrôle Qualité](etape_5)
 
 ## Commencer
 
