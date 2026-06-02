@@ -13,10 +13,11 @@ Bienvenue dans la section dédiée aux étapes de fabrication de notre puzzle-bo
 
 Le processus de fabrication est divisé en plusieurs étapes clés :
 
-1. [Préparation des Matériaux](etape_1)
-2. [Assemblage](etape_2)
-3. [Finition](etape_3)
-4. [Contrôle Qualité](etape_4)
+1. [Conception & Choix Techniques](etape_1)
+2. [Préparation des Matériaux](etape_2)
+3. [Assemblage](etape_3)
+4. [Finition](etape_4)
+5. [Contrôle Qualité](etape_5)
 
 ## Commencer
 
