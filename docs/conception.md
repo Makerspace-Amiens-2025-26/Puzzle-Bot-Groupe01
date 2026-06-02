@@ -11,8 +11,11 @@ Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés d
 -Premières pièces 3D:
 
 -Pompe: Nous n'avons pas réçu la pompe dès les premiers jours. Afin de combler ce temps, nous nous sommes renseigner directement sur comment la faire fonctionner. Ainsi, dès l'obtention de cette dernière, nous avons pus la connecter à notre carte arduino et commencer des petits tests. 
-Nous avons découvert une petit pépin. Lorsque la pompe aspirait, tout aller bien, en revanche, elle ne la lachait pas correctement. La pièce se décrochait juste avec le temps et le manque d'aspiration, non pas car nous avions décider de lacher la pièce. Suite à de nombreuses minutes de recherches, nous avons réaliser que la puissance envoyer par la carte n'était pas suiffisante et qu'il fallait un nouveau driver. Pour cela, nous avons utiliser Kicad
-
--Caméra:
+Nous avons découvert une petit pépin. Lorsque la pompe aspirait, tout aller bien, en revanche, elle ne la lachait pas correctement. La pièce se décrochait juste avec le temps et le manque d'aspiration, non pas car nous avions décider de lacher la pièce. Suite à de nombreuses minutes de recherches, nous avons réaliser que la puissance envoyer par la carte n'était pas suiffisante et qu'il fallait un nouveau driver. Pour cela, nous avons utiliser Kicad.
+<iframe height="600" width="100%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=3f834839403a2d3bfa00f478&elementType=PARTSTUDIO" frameborder="0"></iframe>
 
 -Moteur:
+<iframe height="600" width="100%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=5e57f97f026c1f00d2344900&elementType=PARTSTUDIO" frameborder="0"></iframe>
+
+-Les ServoMoteurs:
+<iframe height="600" width="100%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=f79d90442e1b479fbb8716f7&elementType=PARTSTUDIO" frameborder="0"></iframe>
