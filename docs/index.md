@@ -26,7 +26,7 @@ Ce projet cherche à résoudre plusieurs problématiques techniques : analyser l
 
 ## Poster
 
-Ici vous publierez le poster de votre projet.
+Ci-dessous, le poster que nous avons réalisé afin d'expliquer les principaux principes de fonctionnement de notre machine, les objectifs de notre projet, les logiciels utilisés ainsi qu'un QR code permettant d'accéder à ce répertoire github.
 
 ![Poster projet](images/poster.jpg)
 
