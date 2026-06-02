@@ -7,4 +7,4 @@ nav_order: 5
 
 # Contrôle Qualité
 
-logo: "/assets/images/Tapate.jpg"
+logo: "/docs/images/Tapate.jpg"
