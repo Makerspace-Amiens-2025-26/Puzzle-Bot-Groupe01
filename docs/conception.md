@@ -58,7 +58,7 @@ did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=5b8cf4061a
 
 Nous avons eu accès à des morceaux de profilé en aluminium en croix. Ils sont la base de notre machine que ce soit pour la robustesse qu'ils apportent, la légèreté ou encore la stabilité lors des mouvements au creux de ces profilés.
 
-![Profilé](images/profilé.jpg)
+![Profilé](images/profile.jpg)
 
 **-Les ressources liées au maker space :**
 
