@@ -49,5 +49,18 @@ Le CNC Shield est une carte d’extension pour Arduino, qui permet de contrôler
 
 **-Le plateau :**
 
-Le plateau nous a été donné dès le début. Nous avons directement
+Le plateau nous a été donné dès le début. Nous avons directement enlevé les pieds qu'il avait afin d'en créer de nouveaux bien plus hauts. Cela nous a permis d'avoir accès au dessous du plateau afin de centraliser les câbles en dessous notamment mais également pour faire bouger un axe de manière stable sur les profilés déjà intégrés au plateau.
+
+<iframe height="400" width="80%" src="https://modelembedder.net/embed?
+did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=5b8cf4061a48a1c36296fab5&elementType=ASSEMBLY" frameborder="0"></iframe>
+
+**-Les profilé :**
+
+Nous avons eu accès à des morceaux de profilé en aluminium en croix. Ils sont la base de notre machine que ce soit pour la robustesse qu'ils apportent, la légèreté ou encore la stabilité lors des mouvements au creux de ces profilés.
+
+![Profilé](images/profilé.jpg)
+
+**-Les ressources liées au maker space :**
+
+Nous avons affectivement au accès à bon nombre de ressources au maker space. Tout d'abord, les imprimantes 3D grâce auxquelles nous avons pu réaliser toutes nos pièces en commençant avec les coins jusqu'aux caches câbles. Nous avons pu utiliser toutes les machines nous permettant d'usiner les pièces qui le nécessitaient également ainsi que les câbles nous permettant de rallonger les connexions afin de rendre le projet plus propre en envoyant tous les câbles sous le plateau.
 
