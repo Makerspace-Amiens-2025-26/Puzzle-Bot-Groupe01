@@ -7,6 +7,6 @@ nav_order: 5
 
 # Contrôle Qualité
 
-![Patate](../images/Tapate.jpg)
+
 
 RERE
