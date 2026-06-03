@@ -36,6 +36,6 @@ Ici, vous pouvez retrouver une courte [vidéo youtube](https://youtube.com/short
 
 Voici également un QR-code que vous pouvez scanner afin d'y accéder également.
 
-![Poster projet](images/qrcode_video.jpg)
+<img src="../images/qrcode_video.jpg" style="width: 20%;" alt="QR Code">
 
 ---
