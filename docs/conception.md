@@ -11,6 +11,7 @@ Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés d
 
 ## -Pièces mécaniques
 
+
 **-Pompe :** 
 
 Nous n'avons pas reçu la pompe dès les premiers jours. Afin de combler ce temps, nous nous sommes renseignés directement sur les différentes façons de la faire fonctionner. Ainsi, dès l'obtention de cette dernière, nous avons pu la connecter à notre carte arduino et commencer différents tests. 
@@ -42,7 +43,11 @@ Le CNC Shield est une carte d’extension pour Arduino, qui permet de contrôler
 
 <iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=7ac83cab871f620abcc97dbd&elementType=ASSEMBLY" frameborder="0"></iframe>
 
-**-La base :**
 
-<iframe height= "https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=5b8cf4061a48a1c36296fab5&elementType=ASSEMBLY" frameborder="0"></iframe>
+## -Autres matériaux
+
+
+**-Le plateau :**
+
+Le plateau nous a été donné dès le début. Nous avons directement
 
