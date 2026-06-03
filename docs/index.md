@@ -32,9 +32,7 @@ Ci-dessous, le poster que nous avons réalisé afin d'expliquer les principaux p
 
 ## Vidéo
 
-Ici, vous pouvez retrouver une courte vidéo sur youtube d'une minute et trente secondes retraçant les premiers pas de notre projet jusqu'à son résultat aujourd'hui.
-
-Voici le lien de la [vidéo youtube](https://youtube.com/shorts/hwhFVxFwka4?is=Uxh004fbql3rNZwD).
+Ici, vous pouvez retrouver une courte [vidéo youtube](https://youtube.com/shorts/hwhFVxFwka4?is=Uxh004fbql3rNZwD) d'une minute et trente secondes retraçant les premiers pas de notre projet jusqu'à son résultat aujourd'hui.
 
 Voici également un QR-code que vous pouvez scanner afin d'y accéder également.
 
