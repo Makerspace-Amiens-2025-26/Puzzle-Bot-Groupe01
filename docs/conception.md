@@ -18,6 +18,12 @@ Nous avons eu un pépin car lorsque la pompe aspirait, tout allait bien. En reva
 
 <iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=3f834839403a2d3bfa00f478&elementType=PARTSTUDIO" frameborder="0"></iframe>
 
+**-Electro-vanne :** 
+
+Pour manipuler les pièces du puzzle de manière automatisée, le robot utilise un système de préhension par le vide associant la pompe à air vue précédemment et une électrovanne. La pompe fonctionne en continu pour générer une aspiration au niveau du circuit pneumatique alors que l'électrovanne fait office de gâchette contrôlée électroniquement par la carte de commande (CNC).
+
+<iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=0a388f719ae6b50022233bb5&elementType=PARTSTUDIO" frameborder="0"></iframe>
+
 **-Moteur pas-à-pas :** 
 
 Le moteur pas-à-pas est utilisé pour se déplacer plus précisement. Il fonctionne en convertissant les impulsions électriques en mouvements angulaires discrets. Chaque impulsion appliquée au moteur le fait tourner d’un certain angle, appelé “pas”. En contrôlant la séquence d’impulsions, il est possible de faire tourner le moteur dans les deux sens, de manière plus ou moins rapide.
