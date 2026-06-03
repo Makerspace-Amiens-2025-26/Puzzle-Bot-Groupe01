@@ -32,15 +32,10 @@ Ci-dessous, le poster que nous avons réalisé afin d'expliquer les principaux p
 
 ## Vidéo
 
-Ici vous publierez la vidéo de votre projet. 
-- 1min30 au format vertical
-- Présentation du projet 
-- Des explication du fonctionnement du projet
-- Des vues du projet / Prototype / Application etc... 
-- Des plans du fonctionnement (même basique ou des éléments séparés)
-- Une conclusion
-- Si en stockage local : <50mo
+Ici, vous pouvez retrouver une courte vidéo sur youtube d'une minute et trente secondes retraçant les premiers pas de notre projet jusqu'à son résultat aujourd'hui.
 
-<video src="images/intro_amiens.mp4" controls title="Title"  style="width: 100%;"></video>
+Voici le lien de la [vidéo youtube](https://youtube.com/shorts/hwhFVxFwka4?is=Uxh004fbql3rNZwD).
+
+Voici également un QR-code que vous pouvez scanner afin d'y accéder également.
 
 ---
