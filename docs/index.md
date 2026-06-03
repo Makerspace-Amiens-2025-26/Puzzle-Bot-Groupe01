@@ -38,4 +38,6 @@ Voici le lien de la [vidéo youtube](https://youtube.com/shorts/hwhFVxFwka4?is=U
 
 Voici également un QR-code que vous pouvez scanner afin d'y accéder également.
 
+![Poster projet](images/qrcode_video.jpg)
+
 ---
