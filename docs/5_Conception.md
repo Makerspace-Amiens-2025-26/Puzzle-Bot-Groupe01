@@ -67,7 +67,8 @@ On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large ang
 
 **-Le Bouton d'arret d'urgence:**
 Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arrêter immédiatement la machine en cas de problème ou de danger. Placé à un endroit facilement accessible et identifiable grâce à sa couleur rouge, il assure la sécurité des utilisateurs en coupant instantanément le fonctionnement du système. Son intégration constitue un élément essentiel pour garantir une utilisation sûre du robot lors des phases de test et d’exploitation.
-![bouton](images/bouton.jpeg width =300)
+![bouton](images/bouton.jpeg)
+<img src="images/bouton.jpeg" width="150">
 
 **-Les ressources liées au maker space :**
 
