@@ -1,58 +1,58 @@
-/**
+//**
  * @file    parser.h
- * @brief   Serial command parser — decodes text packets and
- *          dispatches motion / I/O commands.
+ * @brief   Parseur de commandes série — décode les paquets texte et
+ *          distribue les commandes de mouvement / E/S.
  *
- * Serial protocol
+ * Protocole série
  * ---------------
- * The Python host sends one or more semicolon-separated commands
- * as a single line, e.g.:
+ * L'hôte Python envoie une ou plusieurs commandes séparées par des
+ * points-virgules sur une seule ligne, par exemple :
  *
  *   h;x4998s2000;y3724s2000;p1;r45;p0;END\n
  *
- * Command syntax
- * --------------
- *   x{pos}s{speed}   Move X to absolute step position
- *   y{pos}s{speed}   Move Y to absolute step position
- *   p1               Pick  (lower, suction ON, raise)
- *   p0               Place (lower, suction OFF, raise)
- *   r{angle}         Rotate piece [0–90°]
- *   h                Homing sequence
- *   d                Delay (CMD_DELAY_MS)
- *   END              Mark end of a packet → firmware replies "OK"
+ * Syntaxe des commandes
+ * ---------------------
+ *   x{pos}s{vitesse}   Déplacer X vers la position absolue en pas
+ *   y{pos}s{vitesse}   Déplacer Y vers la position absolue en pas
+ *   p1                 Saisir  (descendre, aspiration ON, monter)
+ *   p0                 Poser   (descendre, aspiration OFF, monter)
+ *   r{angle}           Faire pivoter la pièce [0–90°]
+ *   h                  Séquence de homing
+ *   d                  Délai (CMD_DELAY_MS)
+ *   END                Marque la fin d'un paquet → le firmware répond "OK"
  *
- * Firmware replies
- * ----------------
- *   ACK{n}           Packet n received and executed (no END seen)
- *   OK               Packet contained END — all instructions done
- *   ERROR: ...       Malformed or unknown command
+ * Réponses du firmware
+ * --------------------
+ *   ACK{n}             Paquet n reçu et exécuté (END non détecté)
+ *   OK                 Le paquet contenait END — toutes les instructions sont terminées
+ *   ERROR: ...         Commande malformée ou inconnue
  *
- * Notes
- * -----
- * - The speed field in x/y commands is parsed and echoed back for
- *   logging but currently has no effect on motion speed (the axis
- *   speeds are set globally in config.h).  This is a known
- *   limitation and can be extended in moveX() / moveY().
+ * Remarques
+ * ---------
+ * - Le champ vitesse dans les commandes x/y est analysé et renvoyé en
+ *   écho pour la journalisation, mais n'a actuellement aucun effet sur
+ *   la vitesse de déplacement (les vitesses des axes sont définies
+ *   globalement dans config.h). C'est une limitation connue qui peut
+ *   être étendue dans moveX() / moveY().
  */
-
 #pragma once
-
 #include <Arduino.h>
 #include "config.h"
 
-/** True once an "END" command has been received in the current packet. */
+/** Vrai dès qu'une commande "END" a été reçue dans le paquet courant. */
 extern bool instructions_done;
 extern String instructions[MAX_INSTRUCTIONS];
 extern int    instructionCount;
+
 /**
- * @brief Split a raw semicolon-delimited string into the global
- *        instructions[] array.
- * @param raw  The full packet string as received from Serial.
+ * @brief Découpe une chaîne brute délimitée par des points-virgules dans
+ *        le tableau global instructions[].
+ * @param raw  La chaîne complète du paquet telle que reçue depuis Serial.
  */
 void parseInstructions(const String& raw);
 
 /**
- * @brief Execute a single command string.
- * @param cmd  One command token, e.g. "x4998s2000" or "p1".
+ * @brief Exécute une seule chaîne de commande.
+ * @param cmd  Un token de commande, par ex. "x4998s2000" ou "p1".
  */
 void parseCommand(const String& cmd);
