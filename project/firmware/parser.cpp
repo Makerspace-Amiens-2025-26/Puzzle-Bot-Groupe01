@@ -1,6 +1,6 @@
 /**
  * @file    parser.cpp
- * @brief   Implementation of the serial command parser.
+ * @brief   Implémentation du parseur de commandes série.
  */
 
 #include "parser.h"
@@ -8,22 +8,22 @@
 #include "pick_place.h"
 #include "rotation.h"
 
-// ── State ─────────────────────────────────────────────────────
+// ── État ───────────────────────────────────────────────────────
 bool   instructions_done               = false;
 String instructions[MAX_INSTRUCTIONS];
 int    instructionCount                = 0;
 
-// ── Private helpers ────────────────────────────────────────────
+// ── Fonctions utilitaires privées ──────────────────────────────
 
 /**
- * @brief Extract the first integer found in `str` starting at index `from`.
+ * @brief Extrait le premier entier trouvé dans `str` à partir de l'index `from`.
  *
- * Scans forward, collecting digit characters, and stops at the first
- * non-digit after at least one digit has been read.
+ * Parcourt la chaîne en collectant les chiffres, et s'arrête au premier
+ * caractère non-numérique après qu'au moins un chiffre ait été lu.
  *
- * @param str   The source string.
- * @param from  Start index within the string.
- * @return      Parsed integer, or 0 if no digits were found.
+ * @param str   La chaîne source.
+ * @param from  Index de départ dans la chaîne.
+ * @return      L'entier analysé, ou 0 si aucun chiffre n'a été trouvé.
  */
 static int extractNumber(const String& str, int from) {
     String numStr = "";
@@ -33,14 +33,14 @@ static int extractNumber(const String& str, int from) {
         if (isDigit(c)) {
             numStr += c;
         } else if (numStr.length() > 0) {
-            break;   // first non-digit after the numeric run
+            break;   // premier caractère non-numérique après la séquence de chiffres
         }
     }
 
     return numStr.toInt();
 }
 
-// ── Public API ─────────────────────────────────────────────────
+// ── API publique ───────────────────────────────────────────────
 
 void parseInstructions(const String& raw) {
     instructionCount = 0;
@@ -60,7 +60,7 @@ void parseInstructions(const String& raw) {
 
 void parseCommand(const String& cmd) {
 
-    // ── END marker ─────────────────────────────────────────────
+    // ── Marqueur de fin ────────────────────────────────────────
     if (cmd == "END") {
         instructions_done = true;
         return;
@@ -70,12 +70,12 @@ void parseCommand(const String& cmd) {
 
     char first = tolower(cmd.charAt(0));
 
-    // ── x{pos}s{speed}  —  move X ──────────────────────────────
+    // ── x{pos}s{vitesse}  —  déplacement X ────────────────────
     if (first == 'x') {
         int s_idx    = cmd.indexOf('s');
         if (s_idx == -1) s_idx = cmd.indexOf('S');
 
-        // X positions are negated because the gantry is inverted
+        // Les positions X sont inversées car le portique est monté à l'envers
         int position = -extractNumber(cmd, 1);
         int speed    = (s_idx != -1) ? extractNumber(cmd, s_idx + 1) : 0;
 
@@ -87,7 +87,7 @@ void parseCommand(const String& cmd) {
         Serial.println(speed);
     }
 
-    // ── y{pos}s{speed}  —  move Y ──────────────────────────────
+    // ── y{pos}s{vitesse}  —  déplacement Y ────────────────────
     else if (first == 'y') {
         int s_idx    = cmd.indexOf('s');
         if (s_idx == -1) s_idx = cmd.indexOf('S');
@@ -103,7 +103,7 @@ void parseCommand(const String& cmd) {
         Serial.println(speed);
     }
 
-    // ── p1 / p0  —  pick or place ───────────────────────────────
+    // ── p1 / p0  —  saisir ou poser ───────────────────────────
     else if (first == 'p') {
         int value = extractNumber(cmd, 1);
 
@@ -115,7 +115,7 @@ void parseCommand(const String& cmd) {
         }
     }
 
-    // ── r{angle}  —  rotate ─────────────────────────────────────
+    // ── r{angle}  —  rotation ─────────────────────────────────
     else if (first == 'r') {
         int angle = extractNumber(cmd, 1);
         rotate(angle);
@@ -124,19 +124,19 @@ void parseCommand(const String& cmd) {
         Serial.println(" degrees");
     }
 
-    // ── h  —  homing ────────────────────────────────────────────
+    // ── h  —  homing ──────────────────────────────────────────
     else if (first == 'h') {
         homing();
         Serial.println("Homing complete");
     }
 
-    // ── d  —  delay ─────────────────────────────────────────────
+    // ── d  —  délai ───────────────────────────────────────────
     else if (first == 'd') {
         delay(CMD_DELAY_MS);
         Serial.println("Delay done");
     }
 
-    // ── Unknown ─────────────────────────────────────────────────
+    // ── Commande inconnue ──────────────────────────────────────
     else {
         Serial.print("ERROR: unknown command → ");
         Serial.println(cmd);
