@@ -59,22 +59,22 @@ did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=5b8cf4061a
 
 Nous avons eu accès à des morceaux de profilé en aluminium en croix. Ils sont la base de notre machine que ce soit pour la robustesse qu'ils apportent, la légèreté ou encore la stabilité lors des mouvements au creux de ces profilés.
 
-![Profilé](images/profile.jpg)
+![Profilé](../images/profile.jpg)
 
 **-La Camera :**
 On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large angle de vision et une excellente qualité de capture.Nous l'avons fixe sur le robot a l'aide d'une piece que nous aons imprime en 3D. Nous l'avons place a une position ideale pourqu'elle puise capturer l'integralite du plateau. 
 
-![camera](images/camera.webp)
+![camera](../images/camera.webp)
 
 **-Le Bouton d'arret d'urgence:**
 Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arrêter immédiatement la machine en cas de problème ou de danger. Placé à un endroit facilement accessible et identifiable grâce à sa couleur rouge, il assure la sécurité des utilisateurs en coupant instantanément le fonctionnement du système. Son intégration constitue un élément essentiel pour garantir une utilisation sûre du robot lors des phases de test et d’exploitation.
 
-<img src="images/bouton.jpeg" width="300">
+<img src="../images/bouton.jpeg" width="300">
 
 **-Le MOFSET:**
 Nous avons realise une carte electronique sous 12 Volts car l'electrovanne ne fonctionnait que sous cette tension. nous avons utilisé un  logiciel libre pour la conception de schémas électroniques et de circuits imprimés nommee **Kicad**. Nous avons dû le refaire à trois reprises, car il ne supportait pas correctement la tension de 12 V requise pour l’électrovanne. Ces problèmes étaient principalement dus à des erreurs de soudage ainsi qu’à des choix de composants inadaptés lors des premières versions du circuit.
 
-<img src="images/mofset2.jpeg" width="300">       <img src="images/mofset1.jpeg" width="300">
+<img src="../images/mofset2.jpeg" width="300">       <img src="../images/mofset1.jpeg" width="300">
 
 **-Les ressources liées au maker space :**
 
