@@ -1,27 +1,26 @@
 /**
  * @file    rotation.h
- * @brief   Piece-rotation servo control.
+ * @brief   Contrôle servo pour la rotation de pièce.
  *
- * The servo has a physical travel of 180° mapped to 0–90° in
- * the command interface (angle is doubled internally so the full
- * mechanical range is accessible via a 0–90 logical range).
+ * Le servo dispose d'une course physique de 180° mappée sur 0–90°
+ * dans l'interface de commande (l'angle est doublé en interne afin
+ * que toute la plage mécanique soit accessible via une plage logique
+ * de 0–90).
  */
-
 #pragma once
-
 #include "config.h"
 
 /**
- * @brief Attach the rotation servo to its pin.
- * Call once from setup().
+ * @brief Attache le servo de rotation à sa broche.
+ * À appeler une fois depuis setup().
  */
 void rotation_setup();
 
 /**
- * @brief Rotate the held piece to the specified angle.
+ * @brief Fait pivoter la pièce saisie vers l'angle spécifié.
  *
- * @param angle  Logical angle in degrees [0, 90].
- *               The value is doubled before being written to the
- *               servo so the full 0–180° hardware travel is used.
+ * @param angle  Angle logique en degrés [0, 90].
+ *               La valeur est doublée avant d'être écrite sur le servo
+ *               afin d'utiliser toute la course matérielle de 0–180°.
  */
 void rotate(int angle);
