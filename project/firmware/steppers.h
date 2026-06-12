@@ -1,64 +1,60 @@
 /**
  * @file    steppers.h
- * @brief   X/Y gantry motion — three AccelStepper axes.
+ * @brief   Déplacement du portique X/Y — trois axes AccelStepper.
  *
- * Hardware topology
- * -----------------
- *   stepper1  →  left X motor
- *   stepper3  →  right X motor  (mirrors stepper1 exactly)
- *   stepper2  →  Y motor
+ * Topologie matérielle
+ * --------------------
+ *   stepper1  →  moteur X gauche
+ *   stepper3  →  moteur X droite  (miroir exact de stepper1)
+ *   stepper2  →  moteur Y
  *
- * All public functions block until motion is complete.
- * Homing must be called once before any move command.
+ * Toutes les fonctions publiques sont bloquantes jusqu'à la fin du mouvement.
+ * Le homing doit être appelé une fois avant toute commande de déplacement.
  */
-
 #pragma once
-
 #include <AccelStepper.h>
 #include "config.h"
 
-// ── External state ────────────────────────────────────────────
-/** True once homing has completed successfully. */
+// ── État externe ──────────────────────────────────────────────
+/** Vrai une fois que le homing s'est terminé avec succès. */
 extern bool homing_done;
-
-/** Current head position in step counts (updated after every move). */
+/** Position actuelle de la tête en nombre de pas (mise à jour après chaque déplacement). */
 extern int current_x;
 extern int current_y;
 
-// ── Lifecycle ─────────────────────────────────────────────────
-
+// ── Cycle de vie ──────────────────────────────────────────────
 /**
- * @brief Initialise pins, driver enable, and default speeds.
- * Call once from setup().
+ * @brief Initialise les broches, l'activation des pilotes et les vitesses par défaut.
+ * À appeler une fois depuis setup().
  */
 void steppers_setup();
 
 /**
- * @brief Run the full homing sequence (X then Y).
+ * @brief Exécute la séquence de homing complète (X puis Y).
  *
- * Drives each axis toward its endstop, backs off, then touches
- * slowly to find the exact trigger point.  Sets position zero
- * and configures cruise speeds / accelerations for normal moves.
+ * Déplace chaque axe vers sa fin de course, recule, puis avance
+ * lentement pour trouver le point de déclenchement exact. Définit
+ * la position zéro et configure les vitesses de croisière et les
+ * accélérations pour les déplacements normaux.
  */
 void homing();
 
-// ── Motion primitives ─────────────────────────────────────────
-
+// ── Primitives de déplacement ─────────────────────────────────
 /**
- * @brief Move X and Y simultaneously to absolute step positions.
- * @param x  Target position in steps (negative = away from home).
- * @param y  Target position in steps.
+ * @brief Déplace X et Y simultanément vers des positions absolues en pas.
+ * @param x  Position cible en pas (négatif = éloignement du point d'origine).
+ * @param y  Position cible en pas.
  */
 void move(int x, int y);
 
 /**
- * @brief Move X axis only to an absolute step position.
- * @param x  Target position in steps.
+ * @brief Déplace uniquement l'axe X vers une position absolue en pas.
+ * @param x  Position cible en pas.
  */
 void moveX(int x);
 
 /**
- * @brief Move Y axis only to an absolute step position.
- * @param y  Target position in steps.
+ * @brief Déplace uniquement l'axe Y vers une position absolue en pas.
+ * @param y  Position cible en pas.
  */
 void moveY(int y);
