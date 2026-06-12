@@ -8,7 +8,7 @@ title: Présentation du groupe
 
 Notre groupe est composé de 7 membres que l'on peut voir ci-dessous lors de la photo de la remise de prix qui a eu lieu lors de la journée des projets (2e place pour notre équipe).
 
-![Poster projet](images/PhotoEquipe.jpg)
+![Photo Equipe](images/PhotoEquipe.jpg)
 
 De gauche à droite nous avons: Damien **MORELLE**, Esteban **DESCAMPS**, Nicolas **GHANDOUR**, Byron **BOUDSOCQ**, Yvan **KAMMENI KAMO** ainsi que Dorian **EUGENE** et Aubin **VANDENTERGHEM** qui étaient absent lors de cette photo. Une équipe mixte volontairement composée d'étudiants ayant fait la prépa intégrée à UniLaSalle Amiens ainsi que d'étudiants venant de cursus parallèles.
 
