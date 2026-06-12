@@ -1,8 +1,7 @@
 /**
  * @file    rotation.cpp
- * @brief   Implementation of piece-rotation servo control.
+ * @brief   Implémentation du contrôle servo pour la rotation de pièce.
  */
-
 #include "rotation.h"
 #include <Servo.h>
 
@@ -13,6 +12,6 @@ void rotation_setup() {
 }
 
 void rotate(int angle) {
-    // Double the logical angle to span the full 0–180° servo range
+    // Multiplier l'angle logique par 2 pour couvrir toute la plage 0–180° du servo
     servo_rotation.write(angle * 2);
 }
