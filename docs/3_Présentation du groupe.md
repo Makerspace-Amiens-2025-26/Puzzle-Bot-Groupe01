@@ -21,8 +21,8 @@ Nous avons dans un premier temps réalisé un tableau regroupant notre niveau da
 | Aubin | 2 | 2 | 1 | 2 | 3 | 2 |
 | Yvan | 3 | 2 | 1 | 2 | 3 | 3 |
 | Dorian | 3 | 3 | 1 | 3 | 4 | 2 |
-| Nicolas | 3 | 1 | 2 | 3 | 2 | 1 |
-| Esteban | 2 | 1 | 1 | 2 | 3 | 2 |
+| Nicolas | 3 | 1 | 2 | 3 | 3 | 1 |
+| Esteban | 2 | 3 | 1 | 2 | 3 | 3 |
 
 C'est à partir de ce tableau que nous nous sommes donc réparti les rôles suivants :
 

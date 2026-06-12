@@ -6,10 +6,11 @@ nav_order: 2
 ---
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 
-# Conception et prototypage
+# Matériaux et prototypage
 
-Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés de nous répartir les tâches. Chacun a choisis les missions où il pensait être le plus productif. Bien que nous étions chacuns sur notre partie par 2 ou par 3, nous sommes un groupe. C'est pourquoi en cas d'imprévus ou d'incompréhension, nous pouvons toujours compter les uns sur les autres.
+Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés de nous répartir les tâches comme expliqué précédemment. Chacun a choisis les missions où il pensait être le plus productif. Bien que nous étions chacuns sur notre partie par 2 ou par 3, nous sommes un groupe. C'est pourquoi en cas d'imprévus ou d'incompréhension, nous pouvons toujours compter les uns sur les autres.
 
+Voici une liste de tout le matériel que nous avons eu ainsi que comment nous avons réfléchis au prototypage.
 
 ## -Pièces mécaniques
 
@@ -17,9 +18,11 @@ Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés d
 **-Pompe :** 
 
 Nous n'avons pas reçu la pompe dès les premiers jours. Afin de combler ce temps, nous nous sommes renseignés directement sur les différentes façons de la faire fonctionner. Ainsi, dès l'obtention de cette dernière, nous avons pu la connecter à notre carte arduino et commencer différents tests. 
+
 Nous avons eu un pépin car lorsque la pompe aspirait, tout allait bien. En revanche, elle ne lachait pas la pièce correctement. La pièce se décrochait juste avec le temps (et la gravité) et le manque d'aspiration, non pas car nous avions décider de lacher la pièce. Suite à de nombreuses minutes de recherches, nous avons réalisé que la puissance envoyée par la carte n'était pas suffisante et qu'il fallait un nouveau driver. Pour cela, nous avons utiliser Kicad.
 
 <iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=3f834839403a2d3bfa00f478&elementType=PARTSTUDIO" frameborder="0"></iframe>
+
 
 **-Electro-vanne :** 
 
@@ -27,58 +30,48 @@ Pour manipuler les pièces du puzzle de manière automatisée, le robot utilise 
 
 <iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=0a388f719ae6b50022233bb5&elementType=PARTSTUDIO" frameborder="0"></iframe>
 
+
 **-Moteur pas-à-pas :** 
 
-Le moteur pas-à-pas est utilisé pour se déplacer plus précisement. Il fonctionne en convertissant les impulsions électriques en mouvements angulaires discrets. Chaque impulsion appliquée au moteur le fait tourner d’un certain angle, appelé “pas”. En contrôlant la séquence d’impulsions, il est possible de faire tourner le moteur dans les deux sens, de manière plus ou moins rapide.
+Le moteur pas-à-pas est utilisé pour se déplacer plus précisement. Il fonctionne en convertissant les impulsions électriques en mouvements angulaires discrets. Chaque impulsion appliquée au moteur le fait tourner d’un certain angle, appelé “pas”. En contrôlant la séquence d’impulsions, il est possible de faire tourner le moteur dans les deux sens, de manière plus ou moins rapide. 
+
+Nous nous sommes vite rendu compte que les moteurs n'étaient pas assez précis et avaient des problèmes de vitesse. Nous avons donc mis en place des cavaliers pour optimiser les déplacements liés aux moteurs. Ces cavaliers permettent d'activer le microstepping, une technique consistant à diviser électroniquement chaque pas mécanique du moteur. Cette configuration est indispensable pour accroître la précision de positionnement du bras lors de la manipulation des pièces, tout en réduisant considérablement les vibrations, les saccades et le bruit de fonctionnement des moteurs. Cela a très bien fonctionné sur nos moteurs et nous a permis de décupler notre précision.
 
 <iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=5e57f97f026c1f00d2344900&elementType=PARTSTUDIO" frameborder="0"></iframe>
 
+
 **-Les ServoMoteurs :**
 
-Utilisé pour piloter un mouvement angulaire limité et pour contrôler les mouvements précis de certaines pièces, comme la direction, les ailerons ou encore les gouvernes. C’est un composant essentiel dans les systèmes qui nécessitent des déplacements angulaires contrôlés. Le servomoteur RC combine un moteur électrique, un réducteur, un potentiomètre et un contrôleur électronique dans un seul boîtier compact.
+Utilisé pour piloter un mouvement angulaire limité et pour contrôler les mouvements précis de certaines pièces, comme la direction, les ailerons ou encore les gouvernes. C’est un composant essentiel dans les systèmes qui nécessitent des déplacements angulaires contrôlés. Nous en utilisons deux dans notre machine. Un pour faire la rotation de la pièce au niveau de la pompe et un second qui va nous permettre de lever la pompe afin de la coller à la pièce puis de la lever.
+
+La limite de rotation d'un servo-moteur a constitué un challenge concernant la manière de changer l'orientation des pièces.
 
 <iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=f79d90442e1b479fbb8716f7&elementType=PARTSTUDIO" frameborder="0"></iframe>
 
+
 **-La CNC Shield :**
 
-Le CNC Shield est une carte d’extension pour Arduino, qui permet de contrôler facilement des machines à commande numérique (CNC), comme des fraiseuses, des machines de gravure, des imprimantes 3D et des traceurs de dessin.
+Le CNC Shield est une carte d’extension pour Arduino, qui permet de contrôler facilement des machines à commande numérique. Les drivers des moteurs vont y être raccordés afin de les synchroniser.
+
+Nous l'avons disposée sous la machine afin que tous les câbles qui lui sont reliés ne se baladent pas librement au dessus de la machine. Cela risquerait d'interférer avec le bon fonctionnement du puzzle-bot.
 
 <iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=7ac83cab871f620abcc97dbd&elementType=ASSEMBLY" frameborder="0"></iframe>
 
 
-## -Autres matériaux
-
-
-**-Le plateau :**
-
-Le plateau nous a été donné dès le début. Nous avons directement enlevé les pieds qu'il avait afin d'en créer de nouveaux bien plus hauts. Cela nous a permis d'avoir accès au dessous du plateau afin de centraliser les câbles en dessous notamment mais également pour faire bouger un axe de manière stable sur les profilés déjà intégrés au plateau.
-
-
-<model-viewer src="../3D/PuzzleBot.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
-    <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
-    </div>
-</model-viewer>
-
-
-**-Les profilé :**
-
-Nous avons eu accès à des morceaux de profilé en aluminium en croix. Ils sont la base de notre machine que ce soit pour la robustesse qu'ils apportent, la légèreté ou encore la stabilité lors des mouvements au creux de ces profilés.
-
-
-![Profilé](../images/profile.jpg)
-
-
 **-La Camera :**
-On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large angle de vision et une excellente qualité de capture.Nous l'avons fixe sur le robot a l'aide d'une piece que nous aons imprime en 3D. Nous l'avons place a une position ideale pourqu'elle puise capturer l'integralite du plateau. 
 
+On nous a transmis une Camera fit0892 qui est une Caméra USB avec un large angle de vision et une excellente qualité de capture. Nous l'avons fixée sur le robot à l'aide d'une pièce que nous avons imprimée en 3D. Nous l'avons ensuite placée dans une position optimale afin de capturer l'entièreté du plateau. Cela nous évite d'avoir à la bouger pour qu'elle puisse capturer l'ensemble de la surface de travail à chaque mouvement. 
+
+Elle n'est pas arrivée dès le début du projet donc cela a constitué un challenge enrichissant puisque nous ne savions ni comment communiquer avec, ni sa résolution, ses dimensions, etc.
 
 ![camera](../images/camera.webp)
 
 
 **-Le Bouton d'arret d'urgence:**
-Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arrêter immédiatement la machine en cas de problème ou de danger. Placé à un endroit facilement accessible et identifiable grâce à sa couleur rouge, il assure la sécurité des utilisateurs en coupant instantanément le fonctionnement du système. Son intégration constitue un élément essentiel pour garantir une utilisation sûre du robot lors des phases de test et d’exploitation.
 
+Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arrêter immédiatement la machine en cas de problème ou de danger. Placé à un endroit facilement accessible (sur le côté de la machine) et aisément identifiable grâce à sa couleur rouge, il assure la sécurité des utilisateurs en coupant instantanément le fonctionnement du système. Son intégration constitue un élément essentiel pour garantir une utilisation sûre du robot lors des phases de test et d’exploitation avec cette possibilité de tout arrêter quand on le souhaite.
+
+Nous avons pu lui fabriquer une pièce enn 3D afin de l'acceuillir et de la scéler avec le côté du plateau.
 
 <model-viewer src="../3D/Emergency Stop Button.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
@@ -88,15 +81,42 @@ Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arr
 
 
 **-Le MOFSET:**
+
 Nous avons realise une carte electronique sous 12 Volts car l'electrovanne ne fonctionnait que sous cette tension. nous avons utilisé un  logiciel libre pour la conception de schémas électroniques et de circuits imprimés nommee **Kicad**. Nous avons dû le refaire à trois reprises, car il ne supportait pas correctement la tension de 12 V requise pour l’électrovanne. Ces problèmes étaient principalement dus à des erreurs de soudage ainsi qu’à des choix de composants inadaptés lors des premières versions du circuit.
 
 
 <img src="../images/mofset2.jpeg" width="300">       <img src="../images/mofset1.jpeg" width="300">
 
 
+## -Autres matériaux
+
+
+**-Le plateau :**
+
+Le plateau nous a été donné dès le début. Nous avons directement enlevé les pieds qu'il avait afin d'en créer de nouveaux bien plus hauts. Cela nous a permis d'avoir accès au dessous du plateau afin de centraliser les câbles en dessous notamment mais également pour faire bouger un axe de manière stable sur les profilés déjà intégrés au plateau.
+
+La taille assez restreinte du plateau était un challenge puisqu'il n'est pas évident de faire une machine sur un plateau de cette dimension qui puisse rester fixée dessus.
+
+<model-viewer src="../3D/PuzzleBot.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
+
+
+**-Les profilés :**
+
+Nous avons eu accès à des morceaux de profilés en aluminium en croix. Ils sont la base de notre machine que ce soit pour la robustesse qu'ils apportent, la légèreté ou encore la stabilité lors des mouvements au creux de ces profilés.
+
+
+Bien que nous ayons eu la possibilité de les découper à note guise, nous avons préféré les garder intact puisque cela ne change pas l'efficacité de la machine et cela permettra de les réutiliser par la suite.
+
+![Profilé](../images/profile.jpg)
+
+
 **-Les ressources liées au maker space :**
 
-Nous avons affectivement au accès à bon nombre de ressources au maker space. Tout d'abord, les imprimantes 3D grâce auxquelles nous avons pu réaliser toutes nos pièces en commençant avec les coins jusqu'aux caches câbles. Nous avons pu utiliser toutes les machines nous permettant d'usiner les pièces qui le nécessitaient également ainsi que les câbles nous permettant de rallonger les connexions afin de rendre le projet plus propre en envoyant tous les câbles sous le plateau.
+Nous avons effectivement au accès à bon nombre de ressources au maker space. Tout d'abord, les imprimantes 3D grâce auxquelles nous avons pu réaliser toutes nos pièces en commençant avec les coins jusqu'aux caches câbles. Nous avons pu utiliser toutes les machines nous permettant d'usiner les pièces qui le nécessitaient également ainsi que les câbles nous permettant de rallonger les connexions afin de rendre le projet plus propre en envoyant tous les câbles sous le plateau.
 
 
 # Préparation des Matériaux
