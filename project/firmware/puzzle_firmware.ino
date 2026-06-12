@@ -1,54 +1,51 @@
 /**
  * @file    puzzle_firmware.ino
- * @brief   Puzzle-Solver Robot — Main Sketch
+ * @brief   Robot Résolveur de Puzzle — Sketch Principal
  *
- * Hardware overview
- * -----------------
- *   • 3× stepper motors (AccelStepper)
- *       - stepper1 / stepper3 : dual X-axis gantry
- *       - stepper2             : Y axis
- *   • 1× bit-banged servo  : Z up/down arm
- *   • 1× standard servo    : piece rotation
- *   • 1× suction pump + valve  : pick-and-place pneumatics
+ * Aperçu du matériel
+ * ------------------
+ *   • 3× moteurs pas à pas (AccelStepper)
+ *       - stepper1 / stepper3 : portique X double axe
+ *       - stepper2             : axe Y
+ *   • 1× servo bit-bangé  : bras Z montée/descente
+ *   • 1× servo standard   : rotation de la pièce
+ *   • 1× pompe à aspiration + valve  : pneumatique de saisie/pose
  *
  * Communication
  * -------------
- *   UART at SERIAL_BAUD baud.
- *   Receives semicolon-delimited command packets from a Python host.
- *   See parser.h for the full protocol description.
+ *   UART à SERIAL_BAUD bauds.
+ *   Reçoit des paquets de commandes délimitées par des points-virgules
+ *   depuis un hôte Python.
+ *   Voir parser.h pour la description complète du protocole.
  *
- * File structure
- * --------------
- *   config.h         — all tunable constants (pins, speeds, timing)
- *   steppers.h/.cpp  — gantry motion
- *   pick_place.h/.cpp— Z servo + pneumatics
- *   rotation.h/.cpp  — rotation servo
- *   parser.h/.cpp    — serial protocol & command dispatch
+ * Structure des fichiers
+ * ----------------------
+ *   config.h         — toutes les constantes configurables (broches, vitesses, timing)
+ *   steppers.h/.cpp  — déplacement du portique
+ *   pick_place.h/.cpp— servo Z + pneumatique
+ *   rotation.h/.cpp  — servo de rotation
+ *   parser.h/.cpp    — protocole série & distribution des commandes
  *
- * @author  Group 1 - (Nicolas Ghandour, Dorian Eugene)
- * @date    Fevrier 2026
+ * @author  Groupe 1 - (Nicolas Ghandour, Dorian Eugene)
+ * @date    Février 2026
  */
-
 #include "config.h"
 #include "steppers.h"
 #include "pick_place.h"
 #include "rotation.h"
 #include "parser.h"
 
-// Packet sequence counter (resets to 0 after an END is received)
+// Compteur de séquence de paquets (remis à 0 après réception d'un END)
 static int packet_number = 0;
 
 // ── setup ──────────────────────────────────────────────────────
 void setup() {
     Serial.begin(SERIAL_BAUD);
     Serial.setTimeout(SERIAL_TIMEOUT_MS);
-
     steppers_setup();
     pick_place_setup();
     rotation_setup();
-
-    servo_up();   // ensure arm is raised at power-on
-
+    servo_up();   // s'assurer que le bras est relevé à la mise sous tension
     Serial.println(F("=============================="));
     Serial.println(F("Puzzle-Solver Firmware ready."));
     Serial.println(F("Command reference:"));
@@ -64,22 +61,17 @@ void setup() {
 }
 
 // ── loop ──────────────────────────────────────────────────────
-/*Waiting for g-code instructions to be sent through serial-monitor*/
+/* En attente de réception des instructions g-code via le moniteur série */
 void loop() {
     if (Serial.available() == 0) return;
-
     String raw = Serial.readString();
     raw.trim();
-
     if (raw.length() == 0) return;
-
-    instructions_done = false;   // reset END flag for this packet
+    instructions_done = false;   // réinitialise le flag END pour ce paquet
     parseInstructions(raw);
-
     Serial.print(F(">>> received "));
     Serial.print(instructionCount);
     Serial.println(F(" instruction(s):"));
-
     for (int i = 0; i < instructionCount; i++) {
         Serial.print(F("  ["));
         Serial.print(i);
@@ -87,7 +79,6 @@ void loop() {
         Serial.println(instructions[i]);
         parseCommand(instructions[i]);
     }
-
     if (instructions_done) {
         Serial.println(F("OK"));
         packet_number = 0;
