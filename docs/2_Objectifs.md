@@ -10,19 +10,6 @@ title: Objectifs du projet
 
 Inspiré par des dispositifs créé par Mark Rober, Stuff Made Here ou d’autres projets open source, ce projet permet aux étudiant·e·s d’aborder de manière créative l’ensemble des thématiques phares de la robotique : La mécanique, l’électronique, la programmation et la vision. Reformule de ce texte
 
-## Presentation de l'equipe
-Le projet Puzzle Bot est mené par une équipe dE 07 étudiants d'UniLaSalle Amiens réunissant des compétences complémentaires dans les différents domaines de la robotique. Chaque membre a contribué au développement du projet en participant aux phases de conception, de fabrication, de programmation, d'intégration électronique et de tests. Cette organisation collaborative permet de répartir les tâches selon les compétences et les centres d'intérêt de chacun tout en favorisant l'apprentissage mutuel et le travail en équipe.
-
-Composition de l'équipe :
-
-- Nicolas GHANDOUR
-- Byron BOUDSOCQ
-- Dorian EUGENE
-- Aubin VANDENTERGHEM
-- Damiens MORELLE
-- Yvan KAMMENI
-- Esteban DESCAMPS
-
 ## Contexte du Projet
 
 Contexte 1ère année cycle ingénieur
