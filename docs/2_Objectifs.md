@@ -1,7 +1,7 @@
 ---
 layout: default
 nav_order: 2
-title: Objectifs du projet
+title: Présentation du projet
 ---
 
 # Introduction

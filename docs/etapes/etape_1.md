@@ -118,29 +118,4 @@ Bien que nous ayons eu la possibilité de les découper à note guise, nous avon
 
 Nous avons effectivement au accès à bon nombre de ressources au maker space. Tout d'abord, les imprimantes 3D grâce auxquelles nous avons pu réaliser toutes nos pièces en commençant avec les coins jusqu'aux caches câbles. Nous avons pu utiliser toutes les machines nous permettant d'usiner les pièces qui le nécessitaient également ainsi que les câbles nous permettant de rallonger les connexions afin de rendre le projet plus propre en envoyant tous les câbles sous le plateau.
 
-Nous avons en permanence prêté attention aux consignes de sécurité afin de ne pas se retrouver victime d'un accident évitable
-
-# Préparation des Matériaux
-
-Cette section décrit la première étape du processus de fabrication : la préparation des matériaux.
-
-## Liste des Matériaux
-
-- Matériau A
-- Matériau B
-- Outils nécessaires
-
-## Procédure de Préparation
-
-1. **Nettoyage** : Nettoyez tous les matériaux pour enlever la poussière et les débris.
-2. **Découpe** : Découpez les matériaux A et B selon les dimensions spécifiées.
-3. **Prétraitement** : Appliquez un traitement de surface si nécessaire.
-
-## Conseils de Sécurité
-
-- Portez toujours l'équipement de protection individuelle.
-- Suivez les instructions de sécurité des outils utilisés.
-
----
-
-Une fois cette étape terminée, passez à l'[Assemblage](/assemblage).
+Nous avons en permanence prêté attention aux consignes de sécurité afin de ne pas se retrouver victime d'un accident évitable.
