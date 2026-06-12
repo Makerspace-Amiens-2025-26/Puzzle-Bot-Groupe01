@@ -62,6 +62,7 @@ Nous avons eu accès à des morceaux de profilé en aluminium en croix. Ils sont
 
 **-La Camera :**
 On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large angle de vision et une excellente qualité de capture.
+
 ![camera](images/camera.webp)
 
 **-Les ressources liées au maker space :**
