@@ -85,7 +85,7 @@ Nous avons pu lui fabriquer une pièce en 3D afin de l'acceuillir et de la scél
 Nous avons realise une carte electronique sous 12 Volts car l'electrovanne ne fonctionnait que sous cette tension. nous avons utilisé un  logiciel libre pour la conception de schémas électroniques et de circuits imprimés nommee **Kicad**. Nous avons dû le refaire à trois reprises, car il ne supportait pas correctement la tension de 12 V requise pour l’électrovanne. Ces problèmes étaient principalement dus à des erreurs de soudage ainsi qu’à des choix de composants inadaptés lors des premières versions du circuit.
 
 
-<img src="../images/mofset2.jpeg" width="300">       <img src="../images/mofset1.jpeg" width="300">
+<img src="../images/mofset1.jpeg" width="300">       <img src="../images/mofset2.jpeg" width="300">
 
 
 ## -Autres matériaux
