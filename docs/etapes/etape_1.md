@@ -6,7 +6,7 @@ nav_order: 2
 ---
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 
-# Matériaux et prototypage
+#### Matériaux et prototypage
 
 Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés de nous répartir les tâches comme expliqué précédemment. Chacun a choisis les missions où il pensait être le plus productif. Bien que nous étions chacuns sur notre partie par 2 ou par 3, nous sommes un groupe. C'est pourquoi en cas d'imprévus ou d'incompréhension, nous pouvons toujours compter les uns sur les autres.
 
@@ -123,11 +123,11 @@ Nous avons effectivement au accès à bon nombre de ressources au maker space. T
 Nous avons en permanence prêté attention aux consignes de sécurité afin de ne pas se retrouver victime d'un accident évitable.
 
 
-### Méthodologie de prototypage
+#### Méthodologie de prototypage
 
 Le développement du Puzzle Bot a suivi une démarche de prototypage rapide et itérative. Nous avons expérimenté et appris de nos assais. L'objectif était de valider chaque sous-système (mécanique, électronique et logiciel) de manière indépendante avant l'assemblage final sur le plateau.
 
-### Prototypage mécanique et Impression 3D
+**Prototypage mécanique et Impression 3D**
 
 L'accès aux imprimantes 3D du Makerspace a été crucial pour concevoir nos pièces sur mesure (supports moteurs, fixation de la caméra, boîtier de l'arrêt d'urgence, des profilés sur les côtés etc).
 
@@ -137,19 +137,20 @@ Tout d'abord, les prototypes à faible résolution servant à vérifier uniqueme
 
 Puis les ajustements au fur et à mesure des essais. Par exemple, le support de la caméra a été modifié à deux reprises pour corriger l'angle d'inclinaison afin que l'objectif englobe parfaitement la totalité de la zone de jeu sans angle mort.
 
-### Prototypage électronique (Du câblage volant au PCB)
+**Prototypage électronique**
 
 L'intégration de la pompe et de l'électrovanne 12V a nécessité une transition prudente pour ne pas risquer d'endommager la carte Arduino. Nous avons créé la carte sur KiCad (vue ci-dessous) puis nous l'avons faite vérifier par les enseignants. Nous l'avons ensuite imprimée puis soudée dans un sens avant de nous rendre compte que le schéma était dans le mauvais sens. Le prototypage nous a permis d'éviter de causer de gros dommages et de corriger notre erreur.
 
-![KiCad PCB](../images/KiCad PCB.jpg)             ![KiCad schéma](images/KiCad schéma.jpg)
+![KiCad PCB](../images/KiCad PCB.PNG)             ![KiCad schéma](images/KiCad schéma.PNG)
 
-* **Le circuit MOSFET dédié :** Une fois le schéma validé, nous sommes passés à la gravure/soudure de notre carte MOSFET sous KiCad. Les échecs successifs sur les premières versions (problèmes de soudure et surchauffe) nous ont appris à dimensionner correctement les pistes pour supporter la tension de 12V requise par l'électrovanne.
+Une fois le schéma validé, nous sommes passés à la gravure puis à la soudure de notre carte MOSFET. Les échecs successifs sur les premières versions (problèmes de soudure et surchauffe) nous ont appris à dimensionner correctement les pistes pour supporter la tension de 12V requise par l'électrovanne.
 
-### 3. Tests de préhension (Aspiration)
+**Tests d'aspiration**
 
-Le prototypage du système de vide a été l'un de nos plus grands défis mécaniques. Lors des premiers essais, la ventouse entrait bien en dépression pour soulever la pièce de puzzle, mais l'aspiration résiduelle dans les tuyaux empêchait le robot de la relâcher instantanément au moment de couper la pompe. 
-C'est l'intégration de l'électrovanne dans le circuit de prototypage qui a résolu le problème en agissant comme une rupture de charge, évacuant l'air instantanément pour garantir un dépôt précis et propre de la pièce sur le plateau.
+Le prototypage du système de vide a été l'un de nos plus grands défis mécaniques. Lors des premiers essais, la ventouse entrait bien en dépression pour soulever la pièce de puzzle, mais nous ne pouvions pas bloquait la pompe autrement qu'en la faisant aspirer en continu ce qui empêchait le robot de la relâcher instantanément au moment de couper la pompe. 
 
-### 4. Intégration et routage final
+C'est l'intégration de la carte couplée à l'éléctrovanne dans le circuit qui a résolu le problème en agissant comme une rupture de charge, évacuant l'air instantanément pour garantir un dépôt précis et propre de la pièce sur le plateau.
 
-La dernière phase a consisté à implanter tous ces prototypes sous le plateau. Ce choix d'architecture (centraliser la CNC Shield, la carte MOSFET et l'alimentation sous la structure) a permis de libérer l'espace supérieur pour les mouvements des axes mécaniques et de protéger la connectique des perturbations liées aux déplacements du robot.
+**Intégration et routage final**
+
+La dernière phase a consisté à implanter tous ces prototypes sous le plateau. Ce choix d'architecture (centraliser la CNC Shield, la carte MOSFET et l'alimentation sous la structure) a permis de libérer l'espace supérieur pour les mouvements des axes mécaniques et de protéger les connexions des perturbations liées aux déplacements du robot.rrr
