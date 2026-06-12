@@ -14,7 +14,7 @@ De gauche à droite nous avons: Damien **MORELLE**, Esteban **DESCAMPS**, Nicola
 
 Nous avons dans un premier temps réalisé un tableau regroupant notre niveau dans diverses compétences afin de se répartir au mieux les tâches par la suite. Le voici :
 
-**| | C++ | Conception | Vision | Electronique | Python | Assemblage |**
+| | **C++** | **Conception** | **Vision** | **Electronique** | **Python** | **Assemblage** |
 | :--- | :---: | :---: | :---: | :---: | :---: | ---: |
 | Byron | 1 | 4 | 1 | 3 | 1 | 3 |
 | Damien | 3 | 2 | 1 | 2 | 3 | 2 |
