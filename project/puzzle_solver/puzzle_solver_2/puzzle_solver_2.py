@@ -2,7 +2,7 @@ import serial
 import time
 
 # ── config ───────────────────────────────────────────────
-PORT        = "COM8"
+PORT        = "COM6"
 BAUDRATE    = 115200
 PACKET_SIZE = 30
 TIMEOUT     = 100
@@ -18,7 +18,7 @@ coord_map = [
 ]
 
 piece_location = [ [0,1], [0,4], [2,4], [2,1] ]
-piece_angles   = [ -100,   100,  100,   100  ]
+piece_angles   = [ 0,0,0,0 ]
 piece_dest     = [ [0,2], [0,3], [1,3], [1,2] ]
 
 
