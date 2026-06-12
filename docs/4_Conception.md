@@ -61,7 +61,7 @@ Nous avons eu accès à des morceaux de profilé en aluminium en croix. Ils sont
 ![Profilé](images/profile.jpg)
 
 **-La Camera :**
-On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large angle de vision et une excellente qualité de capture.
+On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large angle de vision et une excellente qualité de capture.Nous l'avons fixe sur le robot a l'aide d'une piece que nous aons imprime en 3D. Nous l'avons place a une position ideale pourqu'elle puise capturer l'integralite du plateau. 
 
 ![camera](images/camera.webp)
 
