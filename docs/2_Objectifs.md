@@ -15,13 +15,13 @@ Le projet Puzzle Bot est mené par une équipe dE 07 étudiants d'UniLaSalle Ami
 
 Composition de l'équipe :
 
-Nicolas GHANDOUR
-Byron BOUDSOCQ
-Dorian EUGENE
-Aubin VANDENTERGHEM
-Damiens MORELLE
-Yvan KAMMENI
-Esteban DESCAMPS
+- Nicolas GHANDOUR
+- Byron BOUDSOCQ
+- Dorian EUGENE
+- Aubin VANDENTERGHEM
+- Damiens MORELLE
+- Yvan KAMMENI
+- Esteban DESCAMPS
 
 ## Contexte du Projet
 
