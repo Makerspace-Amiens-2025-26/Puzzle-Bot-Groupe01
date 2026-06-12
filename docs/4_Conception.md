@@ -67,7 +67,11 @@ On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large ang
 
 **-Le Bouton d'arret d'urgence:**
 Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arrêter immédiatement la machine en cas de problème ou de danger. Placé à un endroit facilement accessible et identifiable grâce à sa couleur rouge, il assure la sécurité des utilisateurs en coupant instantanément le fonctionnement du système. Son intégration constitue un élément essentiel pour garantir une utilisation sûre du robot lors des phases de test et d’exploitation.
+
 <img src="images/bouton.jpeg" width="300">
+
+**-Le MOFSET:**
+Nous avons realise une carte electronique sous 12 Volts car l'electrovanne ne fonctionnait que sous cette tension. nous avons utilisé un  logiciel libre pour la conception de schémas électroniques et de circuits imprimés nommee **Kicad**. 
 
 **-Les ressources liées au maker space :**
 
