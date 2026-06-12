@@ -12,6 +12,8 @@ Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés d
 
 Voici une liste de tout le matériel que nous avons eu ainsi que comment nous avons réfléchis au prototypage.
 
+### Matériaux
+
 ## -Pièces mécaniques
 
 
@@ -80,12 +82,12 @@ Nous avons pu lui fabriquer une pièce en 3D afin de l'acceuillir et de la scél
 </model-viewer>
 
 
-**-Le MOFSET:**
+**-Le MOSFET:**
 
-Nous avons realise une carte electronique sous 12 Volts car l'electrovanne ne fonctionnait que sous cette tension. nous avons utilisé un  logiciel libre pour la conception de schémas électroniques et de circuits imprimés nommee **Kicad**. Nous avons dû le refaire à trois reprises, car il ne supportait pas correctement la tension de 12 V requise pour l’électrovanne. Ces problèmes étaient principalement dus à des erreurs de soudage ainsi qu’à des choix de composants inadaptés lors des premières versions du circuit.
+Nous avons réalisé une carte électronique sous 12 volts car l'électrovanne ne fonctionnait que sous cette tension. Nous avons conçu ce circuit imprimé sur KiCad. Nous avons dû fabriquer la carte à trois reprises car elle ne supportait pas correctement la tension de 12 V requise pour l’électrovanne. Ces problèmes étaient principalement dus à des erreurs de soudage ainsi qu’à des choix de composants inadaptés lors des premières versions du circuit.
 
 
-<img src="../images/mofset1.jpeg" width="300">       <img src="../images/mofset2.jpeg" width="300">
+<img src="../images/mofset2.jpeg" width="300">
 
 
 ## -Autres matériaux
@@ -119,3 +121,35 @@ Bien que nous ayons eu la possibilité de les découper à note guise, nous avon
 Nous avons effectivement au accès à bon nombre de ressources au maker space. Tout d'abord, les imprimantes 3D grâce auxquelles nous avons pu réaliser toutes nos pièces en commençant avec les coins jusqu'aux caches câbles. Nous avons pu utiliser toutes les machines nous permettant d'usiner les pièces qui le nécessitaient également ainsi que les câbles nous permettant de rallonger les connexions afin de rendre le projet plus propre en envoyant tous les câbles sous le plateau.
 
 Nous avons en permanence prêté attention aux consignes de sécurité afin de ne pas se retrouver victime d'un accident évitable.
+
+
+### Méthodologie de prototypage
+
+Le développement du Puzzle Bot a suivi une démarche de prototypage rapide et itérative. Nous avons expérimenté et appris de nos assais. L'objectif était de valider chaque sous-système (mécanique, électronique et logiciel) de manière indépendante avant l'assemblage final sur le plateau.
+
+### Prototypage mécanique et Impression 3D
+
+L'accès aux imprimantes 3D du Makerspace a été crucial pour concevoir nos pièces sur mesure (supports moteurs, fixation de la caméra, boîtier de l'arrêt d'urgence, des profilés sur les côtés etc).
+
+Plutôt que d'imprimer directement des pièces massives et définitives, nous avons procédé par étapes.
+
+Tout d'abord, les prototypes à faible résolution servant à vérifier uniquement les axes des vis, les tolérances géométriques et l'ajustement sur les profilés alu.
+
+Puis les ajustements au fur et à mesure des essais. Par exemple, le support de la caméra a été modifié à deux reprises pour corriger l'angle d'inclinaison afin que l'objectif englobe parfaitement la totalité de la zone de jeu sans angle mort.
+
+### Prototypage électronique (Du câblage volant au PCB)
+
+L'intégration de la pompe et de l'électrovanne 12V a nécessité une transition prudente pour ne pas risquer d'endommager la carte Arduino. Nous avons créé la carte sur KiCad (vue ci-dessous) puis nous l'avons faite vérifier par les enseignants. Nous l'avons ensuite imprimée puis soudée dans un sens avant de nous rendre compte que le schéma était dans le mauvais sens. Le prototypage nous a permis d'éviter de causer de gros dommages et de corriger notre erreur.
+
+![KiCad PCB](../images/KiCad PCB.jpg)             ![KiCad schéma](images/KiCad schéma.jpg)
+
+* **Le circuit MOSFET dédié :** Une fois le schéma validé, nous sommes passés à la gravure/soudure de notre carte MOSFET sous KiCad. Les échecs successifs sur les premières versions (problèmes de soudure et surchauffe) nous ont appris à dimensionner correctement les pistes pour supporter la tension de 12V requise par l'électrovanne.
+
+### 3. Tests de préhension (Aspiration)
+
+Le prototypage du système de vide a été l'un de nos plus grands défis mécaniques. Lors des premiers essais, la ventouse entrait bien en dépression pour soulever la pièce de puzzle, mais l'aspiration résiduelle dans les tuyaux empêchait le robot de la relâcher instantanément au moment de couper la pompe. 
+C'est l'intégration de l'électrovanne dans le circuit de prototypage qui a résolu le problème en agissant comme une rupture de charge, évacuant l'air instantanément pour garantir un dépôt précis et propre de la pièce sur le plateau.
+
+### 4. Intégration et routage final
+
+La dernière phase a consisté à implanter tous ces prototypes sous le plateau. Ce choix d'architecture (centraliser la CNC Shield, la carte MOSFET et l'alimentation sous la structure) a permis de libérer l'espace supérieur pour les mouvements des axes mécaniques et de protéger la connectique des perturbations liées aux déplacements du robot.
