@@ -60,6 +60,10 @@ Nous avons eu accès à des morceaux de profilé en aluminium en croix. Ils sont
 
 ![Profilé](images/profile.jpg)
 
+**-La Camera :**
+On nous a transmis une Camera fit0892 ,qui est une Caméra USB avec un large angle de vision et une excellente qualité de capture.
+![camera](images/camera.webp)
+
 **-Les ressources liées au maker space :**
 
 Nous avons affectivement au accès à bon nombre de ressources au maker space. Tout d'abord, les imprimantes 3D grâce auxquelles nous avons pu réaliser toutes nos pièces en commençant avec les coins jusqu'aux caches câbles. Nous avons pu utiliser toutes les machines nous permettant d'usiner les pièces qui le nécessitaient également ainsi que les câbles nous permettant de rallonger les connexions afin de rendre le projet plus propre en envoyant tous les câbles sous le plateau.
