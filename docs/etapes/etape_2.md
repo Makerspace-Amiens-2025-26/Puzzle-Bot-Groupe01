@@ -1,31 +1,25 @@
 ---
 layout: default
-title: Préparation des Matériaux
+title: Conception et assemblage
 parent: Etapes de fabrication
-nav_order: 2
+nav_order: 3
 ---
 
-# Préparation des Matériaux
+# Assemblage
 
-Cette section décrit la première étape du processus de fabrication : la préparation des matériaux.
+Après la préparation des matériaux, l'étape suivante est l'assemblage.
 
-## Liste des Matériaux
+## Étapes d'Assemblage
 
-- Matériau A
-- Matériau B
-- Outils nécessaires
+1. **Organisation** : Organisez tous les composants préparés.
+2. **Assemblage Initial** : Commencez par assembler les pièces principales.
+3. **Fixation** : Fixez solidement les pièces ensemble en utilisant les outils appropriés.
 
-## Procédure de Préparation
+## Vérifications à Effectuer
 
-1. **Nettoyage** : Nettoyez tous les matériaux pour enlever la poussière et les débris.
-2. **Découpe** : Découpez les matériaux A et B selon les dimensions spécifiées.
-3. **Prétraitement** : Appliquez un traitement de surface si nécessaire.
+- Assurez-vous que toutes les pièces sont correctement alignées.
+- Vérifiez la stabilité et la solidité de l'assemblage.
 
-## Conseils de Sécurité
+## Problèmes Communs et Solutions
 
-- Portez toujours l'équipement de protection individuelle.
-- Suivez les instructions de sécurité des outils utilisés.
-
----
-
-Une fois cette étape terminée, passez à l'[Assemblage](/assemblage).
+- Si des pièces ne s'emboîtent pas correctement, vérifiez leur alignement et leur dimension

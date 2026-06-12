@@ -1,7 +1,8 @@
 ---
 layout: default
-nav_order: 4
-title: Conception et prototypage
+title: Matériaux et prototypage
+parent: Etapes de fabrication
+nav_order: 2
 ---
 
 # Conception et prototypage
@@ -73,3 +74,28 @@ Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arr
 
 Nous avons affectivement au accès à bon nombre de ressources au maker space. Tout d'abord, les imprimantes 3D grâce auxquelles nous avons pu réaliser toutes nos pièces en commençant avec les coins jusqu'aux caches câbles. Nous avons pu utiliser toutes les machines nous permettant d'usiner les pièces qui le nécessitaient également ainsi que les câbles nous permettant de rallonger les connexions afin de rendre le projet plus propre en envoyant tous les câbles sous le plateau.
 
+
+# Préparation des Matériaux
+
+Cette section décrit la première étape du processus de fabrication : la préparation des matériaux.
+
+## Liste des Matériaux
+
+- Matériau A
+- Matériau B
+- Outils nécessaires
+
+## Procédure de Préparation
+
+1. **Nettoyage** : Nettoyez tous les matériaux pour enlever la poussière et les débris.
+2. **Découpe** : Découpez les matériaux A et B selon les dimensions spécifiées.
+3. **Prétraitement** : Appliquez un traitement de surface si nécessaire.
+
+## Conseils de Sécurité
+
+- Portez toujours l'équipement de protection individuelle.
+- Suivez les instructions de sécurité des outils utilisés.
+
+---
+
+Une fois cette étape terminée, passez à l'[Assemblage](/assemblage).
