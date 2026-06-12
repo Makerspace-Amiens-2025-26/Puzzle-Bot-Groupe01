@@ -4,6 +4,7 @@ title: Matériaux et prototypage
 parent: Etapes de fabrication
 nav_order: 2
 ---
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 
 # Conception et prototypage
 
@@ -53,7 +54,7 @@ Le CNC Shield est une carte d’extension pour Arduino, qui permet de contrôler
 Le plateau nous a été donné dès le début. Nous avons directement enlevé les pieds qu'il avait afin d'en créer de nouveaux bien plus hauts. Cela nous a permis d'avoir accès au dessous du plateau afin de centraliser les câbles en dessous notamment mais également pour faire bouger un axe de manière stable sur les profilés déjà intégrés au plateau.
 
 
-<model-viewer src="3D/PuzzleBot.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/PuzzleBot.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -63,6 +64,7 @@ Le plateau nous a été donné dès le début. Nous avons directement enlevé le
     <div id="ar-prompt">
         <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
     </div>
+</model-viewer>
 
 
 **-Les profilé :**
