@@ -6,9 +6,9 @@ title: Objectifs du projet
 
 # Introduction
 
-Le projet Puzzle Bot nous invite à concevoir et construire, en totale autonomie, une machine capable de résoudre un puzzle.
+“Puzzle Bot” est un projet pratique du MakerSpace (UniLaSalle Amiens) axé sur la conception et la réalisation d’une machine automatisée, imaginée par les étudiants sans plans préexistants.
 
-Mêlant conception 3D sur OnShape, programmation Arduino et fabrication au MakerSpace, ce défi de 75 heures nous fait passer d'une exploration créative à une véritable démarche d'ingénierie.
+Inspiré par des dispositifs créé par Mark Rober, Stuff Made Here ou d’autres projets open source, ce projet permet aux étudiant·e·s d’aborder de manière créative l’ensemble des thématiques phares de la robotique : La mécanique, l’électronique, la programmation et la vision. Reformule de ce texte
 
 ## Contexte du Projet
 
@@ -24,13 +24,21 @@ La Méthode : Travail en équipe de 7, autonomie totale, avec une documentation 
 
 ## Objectifs du Projet
 
-Valider le "Proof of Concept" (POC)
+Le projet Puzzle Bot a pour objectif de permettre aux étudiant·e·s de concevoir et de réaliser une machine robotisée autonome tout en mettant en pratique les compétences acquises au cours de leur formation. À travers cette expérience concrète, les participant·e·s découvrent les différentes étapes de développement d’un système robotique et développent leur capacité à innover et à travailler en équipe.
 
-Finaliser la CAO
+- Concevoir et fabriquer une machine robotisée capable de réaliser une tâche de manière autonome.
 
-Présentation Technique (au bout de 25h)
+- Mettre en application les connaissances en mécanique, électronique, programmation et vision par ordinateur.
 
-Initialiser le GitHub et 
+- Suivre une démarche complète de conception, du cahier des charges jusqu’au prototype fonctionnel.
+
+- Développer des compétences en résolution de problèmes et en analyse technique.
+
+- Encourager la créativité et l’innovation dans la recherche de solutions.
+
+- Favoriser le travail collaboratif et la gestion de projet.
+
+- Acquérir une expérience pratique grâce à la réalisation d’un projet concret et multidisciplinaire.
 
 # Cahier des Charges
 
