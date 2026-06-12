@@ -27,5 +27,7 @@ Nous avons dans un premier temps réalisé un tableau regroupant notre niveau da
 C'est à partir de ce tableau que nous nous sommes donc réparti les rôles suivants :
 
 Nicolas, Dorian et Yvan sont en charge de toute la partie **contrôle des servos** et **programation**.
+
 Byron et Esteban sont en charge de la partie **conception, assemblage et prototypage**.
+
 Damien et Aubin sont en charge de la **manipulation de la pompe**, de la **création de sa carte adaptée** ainsi que de la **communication** entre les deux rôles précédents.
