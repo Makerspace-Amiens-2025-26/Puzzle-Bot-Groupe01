@@ -1,4 +1,4 @@
-//**
+/* 
  * @file    parser.h
  * @brief   Parseur de commandes série — décode les paquets texte et
  *          distribue les commandes de mouvement / E/S.
