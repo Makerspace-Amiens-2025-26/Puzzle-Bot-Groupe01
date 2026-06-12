@@ -1,20 +1,19 @@
 /**
  * @file    pick_place.cpp
- * @brief   Implementation of Z-axis, pump, and valve control.
+ * @brief   Implémentation du contrôle de l'axe Z, de la pompe et de la valve.
  */
-
 #include "pick_place.h"
 #include <Arduino.h>
 
-// ── Private helpers ────────────────────────────────────────────
+// ── Fonctions utilitaires privées ──────────────────────────────
 
 /**
- * @brief Send a servo pulse with the given width, repeated to lock position.
+ * @brief Envoie une impulsion servo de la largeur donnée, répétée pour maintenir la position.
  *
- * Bit-banged 50 Hz PWM (20 ms period).
- * Sending 50 pulses ≈ 1 second of active holding.
+ * PWM 50 Hz généré par bit-banging (période de 20 ms).
+ * Envoyer 50 impulsions ≈ 1 seconde de maintien actif.
  *
- * @param microseconds  Pulse width in µs (typically 500–2500).
+ * @param microseconds  Largeur d'impulsion en µs (typiquement 500–2500).
  */
 static void sendPulse(int microseconds) {
     for (int i = 0; i < 50; i++) {
@@ -25,7 +24,7 @@ static void sendPulse(int microseconds) {
     }
 }
 
-// ── Public API ─────────────────────────────────────────────────
+// ── API publique ───────────────────────────────────────────────
 
 void pick_place_setup() {
     pinMode(SERVO_UP_DOWN_PIN, OUTPUT);
@@ -42,7 +41,7 @@ void servo_down() {
 }
 
 void pompe(int state) {
-    // Valve is active-LOW (closes when pump is active)
+    // La valve est active à l'état bas (se ferme quand la pompe est active)
     digitalWrite(PIN_VALVE, !state);
     digitalWrite(PIN_PUMP,   state);
 }
@@ -50,14 +49,11 @@ void pompe(int state) {
 void pick_place(int state) {
     servo_down();
     delay(Z_DOWN_DWELL_MS);
-
     pompe(state);
-
     if (state) {
-        delay(PICK_SUCTION_MS);   // wait for suction to build
+        delay(PICK_SUCTION_MS);   // attendre que l'aspiration se stabilise
     } else {
-        delay(PLACE_RELEASE_MS);  // wait for piece to release
+        delay(PLACE_RELEASE_MS);  // attendre que la pièce soit relâchée
     }
-
     servo_up();
 }
