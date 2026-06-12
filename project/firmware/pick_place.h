@@ -1,52 +1,51 @@
 /**
  * @file    pick_place.h
- * @brief   Z-axis servo, suction pump, and valve control.
+ * @brief   Contrôle du servo de l'axe Z, de la pompe à aspiration et de la valve.
  *
- * Pick/place cycle
- * ----------------
- *   1. Lower Z-arm  (servo_down)
- *   2. Wait for arm to reach piece
- *   3. Activate / deactivate pump + valve
- *   4. Wait for suction to build (pick) or piece to release (place)
- *   5. Raise Z-arm  (servo_up)
+ * Cycle de saisie/pose
+ * --------------------
+ *   1. Descendre le bras Z  (servo_down)
+ *   2. Attendre que le bras atteigne la pièce
+ *   3. Activer / désactiver la pompe et la valve
+ *   4. Attendre que l'aspiration se stabilise (saisie) ou que la pièce soit relâchée (pose)
+ *   5. Monter le bras Z  (servo_up)
  *
- * The up/down servo is driven by a bit-banged 50 Hz PWM signal so
- * it works on any digital pin without consuming a hardware timer.
+ * Le servo montée/descente est piloté par un signal PWM 50 Hz généré
+ * par bit-banging, ce qui le rend compatible avec n'importe quelle
+ * broche numérique sans utiliser de timer matériel.
  */
-
 #pragma once
-
 #include "config.h"
 
 /**
- * @brief Initialise pump, valve, and servo pins.
- * Call once from setup().
+ * @brief Initialise les broches de la pompe, de la valve et du servo.
+ * À appeler une fois depuis setup().
  */
 void pick_place_setup();
 
 /**
- * @brief Raise the Z-arm (servo → POS_UP pulse width).
+ * @brief Monter le bras Z (servo → largeur d'impulsion POS_UP).
  */
 void servo_up();
 
 /**
- * @brief Lower the Z-arm (servo → POS_DOWN pulse width).
+ * @brief Descendre le bras Z (servo → largeur d'impulsion POS_DOWN).
  */
 void servo_down();
 
 /**
- * @brief Set pump + valve state.
- * @param state  HIGH (1) → pump ON, valve closed (suction active)
- *               LOW  (0) → pump OFF, valve open  (release)
+ * @brief Définit l'état de la pompe et de la valve.
+ * @param state  HIGH (1) → pompe ON, valve fermée (aspiration active)
+ *               LOW  (0) → pompe OFF, valve ouverte (relâchement)
  */
 void pompe(int state);
 
 /**
- * @brief Execute a complete pick or place cycle.
+ * @brief Exécute un cycle complet de saisie ou de pose.
  *
- * Lowers the arm, operates the pneumatics, then raises the arm.
- * Blocks until the full cycle is complete.
+ * Descend le bras, actionne le circuit pneumatique, puis remonte le bras.
+ * Bloquant jusqu'à la fin du cycle complet.
  *
- * @param state  1 = pick (activate suction), 0 = place (release)
+ * @param state  1 = saisir (activer l'aspiration), 0 = poser (relâcher)
  */
 void pick_place(int state);
