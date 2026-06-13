@@ -10,7 +10,7 @@ nav_order: 4
 
 Les dernières heures du projet ont été consacrées au peaufinage général de la machine. Ces ajustements ont permis d’optimiser son fonctionnement, de réduire les petites erreurs restantes et d’améliorer la fiabilité globale du système avant le rendu finale. C'est aussi ici que nous avons amélioré l’aspect esthétique afin d’obtenir un rendu plus propre et plus soigné.
 
-Voici donc les différentes parties de notre machines que nous avons minutieusement peaufiné :
+**Voici** donc les différentes parties de notre machines que nous avons minutieusement peaufiné :
 
 ## 1. Calibration du système et ajustements mécaniques
 
