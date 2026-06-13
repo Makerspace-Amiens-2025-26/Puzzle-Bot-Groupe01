@@ -94,7 +94,7 @@ puzzle_solver_3.py  –  main()
             │
             └─ for each piece i:
                     goto(piece_location[i])        ← detected real-world position
-                    rotation_management(angle[i])  ← manual angle (see Rotation section)
+                    rotation_management(angle[i])  ← manual angle (see Rotation section), pick() included
                     goto(piece_dest[i])
                     place()
                     rotate(0)
