@@ -2,6 +2,18 @@
 #define POS_UP     500   
 #define POS_DOWN   2500   
 
+/* Calibrating the up down servo.
+    The values of POS_DOWN and POS_UP were chosen through experimentation. The process : 
+    - run loop(){servo_up();};
+    - remove the horn and manually place on the desired position
+    - run loop(){servo_down();}; and verify if the position is acceptable :
+         - if (very big rotation): try widening the gap between POS_DOWN and POS_UP by increase the one or decresing the other, 
+         and repeat the process until both positions are acceptable.
+         - else if (small rotation):  try shortening the gap between POS_DOWN and POS_UP by increase the one or decresing the other, 
+         and repeat the process until both positions are acceptable.
+         - else (if good enough) : stop
+*/
+
 // POS_UP : microseconds pulse for UP
 // POS_DOWN : microseconds pulse for DOWN
 // A5 = SCL 
