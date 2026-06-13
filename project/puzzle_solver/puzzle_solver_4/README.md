@@ -28,6 +28,9 @@ Every ArUco marker has four corners returned by the detector in a fixed order: *
 
 Rather than measuring the target piece's angle relative to the image frame (which would be affected by how the camera is physically mounted), the angle is measured **relative to the origin marker (ID 0)**. Its top-edge vector defines the "zero angle" of the board as seen by the camera — so any camera tilt or rotation is automatically cancelled out.
 
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/upload/main/docs/images/"angle_detection.png"?raw=true)
+
+
 ### Algorithm
 
 ```
