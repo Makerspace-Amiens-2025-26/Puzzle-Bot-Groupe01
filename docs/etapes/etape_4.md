@@ -2,11 +2,12 @@
 layout: default
 title: Numérique
 parent: Etapes de fabrication
-nav_order: 3
+nav_order: 4
 ---
 
 **Numérique**
 
+<br><br>
 
 **1\. Configuration du matériel**
 
@@ -24,6 +25,7 @@ Les composants pilotés sont les suivants :
 Toutes les affectations de broches, les vitesses, les accélérations et les constantes de timing sont centralisées dans un seul fichier : config.h. Ce choix architectural est volontaire - modifier le câblage ou recalibrer le robot ne nécessite de toucher qu'un seul endroit dans le code.
 
 
+<br><br><br>
 
 
 
@@ -54,7 +56,7 @@ Ces valeurs sont le fruit de mesures réelles sur le robot et devront être rép
 
 
 
-
+<br><br><br>
 
 
 **3\. Réflexion sur l'architecture logicielle**
@@ -81,7 +83,7 @@ Le firmware est organisé en modules bien séparés :
 Chaque module a une responsabilité unique, ce qui facilite la maintenance et les tests.
 
 
-
+<br><br><br>
 
 
 
@@ -118,7 +120,7 @@ Pour maximiser la précision de détection, les frames passent par un **pipeline
 Un paramètre DEBUG_STAGE permet d'arrêter le pipeline à n'importe quelle étape pour visualiser le résultat intermédiaire, ce qui s'est révélé très utile pendant le développement.
 
 
-
+<br><br><br>
 
 
 
@@ -163,7 +165,7 @@ Les constantes 100 et 196 correspondent à la position du marqueur origine dans 
 
 
 
-
+<br><br><br>
 
 
 
@@ -192,7 +194,7 @@ La correction combine une **partie affine** (translation + rotation + mise à l'
 
 
 
-
+<br><br><br>
 
 
 
@@ -207,7 +209,7 @@ Pour réduire le bruit de détection lié aux variations de luminosité et aux p
 Après calibration TPS, les positions détectées convergent vers des valeurs proches du centième d'unité de grille, soit une précision de l'ordre du millimètre sur le plateau physique.
 
 
-
+<br><br><br>
 
 
 
@@ -238,7 +240,7 @@ La séquence de pose (pick_place(0)) est similaire, avec la valve ouverte à l'�
 
 
 
-
+<br><br><br>
 
 
 
@@ -278,7 +280,7 @@ Cette triple séquence garantit une position zéro reproductible même si le rob
 
 
 
-
+<br><br><br>
 
 
 
@@ -310,7 +312,7 @@ L'angle est mesuré **par rapport au marqueur de référence ID 0**, ce qui annu
 
 
 
-
+<br><br><br>
 
 **11\. Logique générale de résolution**
 
