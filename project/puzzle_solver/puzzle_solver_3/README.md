@@ -19,80 +19,13 @@ Same pick-place-rotate logic as v2, but piece positions are now **detected autom
 
 ---
 
-## How It Works
-
-### Overview
-
-```
-puzzle_solver_3.py
-      │
-      ├─ main()
-      │     │
-      │     ├─ 1. Move gantry to a safe position for camera capture
-      │     │       (sends "h;r0;x13000s200;END" before opening camera)
-      │     │
-      │     └─ 2. generate_instructions()
-      │               │
-      │               ├─ main_find_aruco()          ← camera step
-      │               │       │
-      │               │       ├─ Opens webcam (CAMERA_INDEX)
-      │               │       ├─ For each puzzle piece marker (IDs 3,4,5,6):
-      │               │       │     - Collects NUM_FRAMES_AVERAGE frames
-      │               │       │     - Builds coordinate system from ref markers (0,1,2)
-      │               │       │     - Averages pixel position → real-world coord
-      │               │       │     - Applies TPS position correction
-      │               │       │     - Returns (corrected_x, corrected_y)
-      │               │       └─ Returns list of 4 real-world positions
-      │               │
-      │               └─ for each piece i:
-      │                       goto(piece_location[i])       ← detected position
-      │                       rotation_management(angle[i]) ← manual angle
-      │                       goto(piece_dest[i])
-      │                       place()
-      │                       rotate(0)
-```
-
-### Coordinate system
-
-Three fixed ArUco reference markers (IDs 0, 1, 2) are mounted on the machine frame:
-
-| Marker | Role | Real position |
-|---|---|---|
-| ID 0 | Origin | (0, 0) |
-| ID 1 | X-axis reference | (REAL_UNIT, 0) |
-| ID 2 | Y-axis reference | (0, REAL_UNIT) |
-
-All three must be visible to the camera at all times during detection.  
-Puzzle pieces carry markers **IDs 3, 4, 5, 6**.
-
-### Camera pipeline (5 stages)
-
-Each frame passes through up to 5 processing steps before coordinate extraction:
-
-| Stage | Processing |
-|---|---|
-| 1 | Raw capture only |
-| 2 | + Lens undistortion |
-| 3 | + Crop around reference markers |
-| 4 | + Zoom to output resolution |
-| 5 | + Unsharp-mask sharpening ← **default (production)** |
-
-Set `DEBUG_STAGE` in `find_aruco_position.py` to a lower value to inspect intermediate steps.
-
-### Position correction (Thin Plate Spline)
-
-Raw camera coordinates contain systematic distortion even after lens undistortion.  
-`position_correction.py` applies a **Thin Plate Spline (TPS)** warp fitted on a 4×4 calibration grid (`MEASURED_POINTS` → `TRUE_POINTS`) to remap detected positions to their true grid coordinates.
-
----
-
 ## File Structure
 
 ```
 puzzle_folder/
-├── puzzle_solver_3.py       ← main script
-├── find_aruco_position.py   ← camera detection pipeline
-└── position_correction.py  ← TPS position correction model
+├── puzzle_solver_3.py       ← main script: orchestrates everything
+├── find_aruco_position.py   ← camera pipeline; the objective is main_find_aruco()
+└── position_correction.py  ← TPS correction called inside find_aruco_position.py
 
 firmware/
 ├── puzzle_firmware.ino
@@ -103,6 +36,142 @@ firmware/
 ├── parser.h / .cpp
 └── README.md
 ```
+
+---
+
+## How It Works
+
+### Full pipeline
+
+```
+puzzle_solver_3.py  –  main()
+      │
+      ├─ Phase 1: move gantry out of camera frame
+      │     └─ sends "h;r0;x13000s200;END" via serial
+      │         (gantry must not obstruct camera view during detection)
+      │
+      └─ Phase 2: generate_instructions()
+            │
+            ├─ find_aruco_position.py  –  main_find_aruco()       ← CAMERA STEP
+            │       │
+            │       │   Opens webcam, builds undistortion maps once,
+            │       │   then loops over each piece marker (IDs 3, 4, 5, 6):
+            │       │
+            │       └─ find_aruco(id)  ×4
+            │               │
+            │               │  For each frame (repeated NUM_FRAMES_AVERAGE=70 times):
+            │               │
+            │               ├─ 1. Grab raw frame from camera
+            │               │
+            │               ├─ 2. find_aruco_position.py  –  apply_pipeline()
+            │               │        Stage 1  raw frame
+            │               │        Stage 2  + lens undistortion   (cv2.remap)
+            │               │        Stage 3  + crop around ref markers (IDs 0,1,2)
+            │               │        Stage 4  + zoom to 1280×720
+            │               │        Stage 5  + unsharp-mask sharpen  ← default
+            │               │       (display only; coordinate math always uses full pipeline)
+            │               │
+            │               ├─ 3. Detect all ArUco markers on undistorted frame
+            │               │       └─ requires IDs 0, 1, 2 (reference) + target ID
+            │               │
+            │               ├─ 4. find_aruco_position.py  –  build_coordinate_system_from_frame()
+            │               │        ID 0 → origin (0, 0)
+            │               │        ID 1 → X-axis ref  →  scale_x = REAL_UNIT / pixel_dist
+            │               │        ID 2 → Y-axis ref  →  scale_y = REAL_UNIT / pixel_dist
+            │               │
+            │               ├─ 5. find_aruco_position.py  –  pixel_to_real()
+            │               │        (pixel_x − origin_x) × scale_x  →  real_x
+            │               │        (pixel_y − origin_y) × scale_y  →  real_y  (Y flipped)
+            │               │
+            │               ├─ 6. Accumulate sample  →  average over 70 frames
+            │               │
+            │               └─ 7. position_correction.py  –  correct_position()
+            │                        TPS warp:  raw_avg  →  corrected (x, y)
+            │                        returns final position for this marker
+            │
+            │       main_find_aruco() returns: [ (x0,y0), (x1,y1), (x2,y2), (x3,y3) ]
+            │                                    piece 0    piece 1    piece 2    piece 3
+            │
+            └─ for each piece i:
+                    goto(piece_location[i])        ← detected real-world position
+                    rotation_management(angle[i])  ← manual angle (see Rotation section)
+                    goto(piece_dest[i])
+                    place()
+                    rotate(0)
+```
+
+### Coordinate system
+
+Three ArUco markers are fixed to the machine frame and define the reference coordinate system:
+
+| Marker ID | Role | Real-world position |
+|---|---|---|
+| 0 | Origin | (0, 0) |
+| 1 | X-axis reference | (REAL_UNIT, 0) |
+| 2 | Y-axis reference | (0, REAL_UNIT) |
+
+`REAL_UNIT = 4` (the physical distance between reference markers, in the same unit as your grid).  
+All three must be **visible at all times** during detection. If any disappears, the frame is skipped.
+
+Puzzle pieces carry markers **IDs 3, 4, 5, 6** (set in `ARUCO_TO_FIND`).
+
+### `position_correction.py` — why it exists and how it works
+
+Even after lens undistortion, raw camera coordinates carry a small but meaningful systematic error — caused by perspective, camera mounting angle, and residual optical distortion. At the robot's precision requirements, this error is large enough to mis-position the gantry.
+
+**The fix:** a Thin Plate Spline (TPS) warp, fitted once from a calibration grid.
+
+```
+Calibration step (done once, results hardcoded):
+    Place ArUco markers at exact known grid positions (1,1) → (4,4)
+    Detect their camera positions  →  MEASURED_POINTS  (16 points, 4×4 grid)
+    Record their true positions    →  TRUE_POINTS       (integer grid coords)
+    Fit TPS:  MEASURED_POINTS  →  TRUE_POINTS
+
+At runtime (called inside find_aruco for every detected piece):
+    raw_avg  (float, from pixel_to_real + averaging)
+         │
+         └─  correct_position(x, y)
+                   │
+                   └─  TPS.correct(x, y)
+                             │
+                             ├─ affine part:   a0 + a1·x + a2·y
+                             └─ radial part:   Σ wᵢ · U(‖p − pᵢ‖)
+                                               where U(r) = r²·log(r)
+                             │
+                             └─ returns (corrected_x, corrected_y)
+```
+
+The TPS is a smooth interpolant: it passes exactly through all 16 calibration points and bends smoothly between them. It handles non-uniform distortion (errors that vary across the workspace) that a simple affine correction would miss.
+
+To recalibrate: place markers at exact grid positions, run detection to get new `MEASURED_POINTS`, and update the array in `position_correction.py`.
+
+### Camera pipeline debug stages
+
+Set `DEBUG_STAGE` in `find_aruco_position.py` to inspect intermediate steps at runtime:
+
+| Value | What you see in the window |
+|---|---|
+| 1 | Raw frame — use first to verify camera is working |
+| 2 | After lens undistortion |
+| 3 | Undistorted + crop rectangle around reference markers |
+| 4 | Cropped and zoomed to 1280×720 |
+| 5 | Full pipeline + unsharp-mask sharpening ← **default** |
+
+> Changing `DEBUG_STAGE` only affects the **display**. Coordinate math always runs the full pipeline regardless.
+
+### Rotation management
+
+The rotation servo has a hardware limit of **90°**. For angles beyond that, `rotation_management()` breaks the rotation into multiple pick-place-rotate steps automatically:
+
+| Angle | Strategy |
+|---|---|
+| `0` | Pick only |
+| `0 < angle ≤ 90` | Pick → rotate(angle) |
+| `90 < angle ≤ 180` | Pick → rotate(90) → place → rotate(0) → pick → rotate(angle−90) |
+| `−90 ≤ angle < 0` | rotate(−angle) → pick → rotate(0) |
+| `−180 ≤ angle < −90` | rotate(90) → pick → rotate(0) → place → rotate(−angle−90) → pick → rotate(0) |
+| `±180` | Two 90° half-turns |
 
 ---
 
@@ -122,44 +191,39 @@ pip install pyserial opencv-python numpy
    ```
    Firmware ready. Send commands: ...
    ```
-4. Note the COM port (e.g. `COM7` on Windows, `/dev/ttyUSB0` on Linux).
-5. **Close the Serial Monitor** — it must be closed before running Python.
+4. Note the COM port shown in the IDE (e.g. `COM7` on Windows, `/dev/ttyUSB0` on Linux).
+5. **Close the Serial Monitor** before running Python — only one program can use the port at a time.
 
 > Keep the USB cable connected while Python is running. It carries both power and serial data.
 
-### 3 — Configure the script
+### 3 — Configure
 
-Open `puzzle_solver_3.py` and set the serial port:
+Open `puzzle_solver_3.py`:
 
 ```python
 PORT = "COM7"   # ← your Arduino COM port
 ```
 
-Open `find_aruco_position.py` and check the camera index:
+Open `find_aruco_position.py`:
 
 ```python
-CAMERA_INDEX = 1   # ← 0 = built-in webcam, 1 = first external camera, etc.
+CAMERA_INDEX  = 1    # ← 0 = built-in webcam, 1 = first external camera
+DEBUG_STAGE   = 5    # ← lower to 1–4 to inspect pipeline steps
+ARUCO_TO_FIND = [3, 4, 5, 6]   # ← marker IDs attached to the puzzle pieces
 ```
 
 ### 4 — Set piece angles and destinations
 
-Still configured manually at the top of `puzzle_solver_3.py`:
+Still configured manually in `puzzle_solver_3.py`:
 
 ```python
-# Rotation angle of each piece in degrees (camera detection not yet implemented)
-# Positive = clockwise, negative = counter-clockwise, max hardware range = 90°
-# rotation_management() handles multi-step rotations automatically for |angle| > 90°
+# Angle of each piece in degrees — index matches ARUCO_TO_FIND order
+# Positive = clockwise, negative = counter-clockwise
+# rotation_management() handles |angle| > 90° automatically
 piece_angles = [ 0,  0,  0,  0 ]
 
-# Destination grid cell for each piece  (col, row), 0-indexed
+# Destination grid cell for each piece (col, row), 0-indexed
 piece_dest   = [ [1,1], [1,2], [1,3], [1,4] ]
-```
-
-`piece_angles[i]` and `piece_dest[i]` correspond to the piece carrying **ArUco marker ID** `ARUCO_TO_FIND[i]`.  
-The default marker IDs to find are set in `find_aruco_position.py`:
-
-```python
-ARUCO_TO_FIND = [3, 4, 5, 6]
 ```
 
 ---
@@ -170,44 +234,28 @@ ARUCO_TO_FIND = [3, 4, 5, 6]
 python puzzle_solver_3.py
 ```
 
-### What you will see
-
-**Step 1 — gantry moves to camera position:**
+**Phase 1 — gantry clears the camera frame:**
 ```
-[i] Full string:
-h;r0;x13000s200;END
-
 [→] Sending packet 0: 'h;r0;'
 [←] Arduino: ACK0
 ...
 [✓] All instructions completed.
 ```
 
-**Step 2 — camera opens, one window per marker:**
-
-A live preview window appears for each piece marker in turn (IDs 3 → 4 → 5 → 6).  
-The window title shows the current pipeline stage and sample count:
-
-```
-find_aruco  ID=3  |  stage 5: UNDISTORT+CROP+ZOOM+SHARPEN  |  Q=quit
-```
-
-Progress is printed in the terminal:
+**Phase 2 — detection, one window per marker (IDs 3 → 4 → 5 → 6):**
 ```
 [find_aruco] Searching for marker ID=3 ...
   sample   1/70  →  pixel (412, 305)   real (1.0667, 0.9699)
-  sample   2/70  →  ...
   ...
 {"3 ==> 1.0023, 1.0011"}
 ```
 
-Once all 4 markers are found, a summary table is printed:
+Summary table after all markers are found:
 ```
 ============================================================
  RESULTS
 ============================================================
   Marker ID      Real X      Real Y  Status
-  ------------  ----------  ----------  ------------
   ID 3            1.0023      1.0011  OK
   ID 4            2.0041      3.0087  OK
   ID 5            4.0012      2.9934  OK
@@ -215,40 +263,15 @@ Once all 4 markers are found, a summary table is printed:
 ============================================================
 ```
 
-**Step 3 — gantry executes the solve:**
+**Phase 3 — gantry executes the solve:**
 ```
-[i] Full string:
-h;r0;x100s200;y196s200;p1;...;h;END;
-
-[→] Sending packet 0: ...
+[→] Sending packet 0: 'h;r0;'
 [←] Arduino: ACK0
 ...
 [✓] All instructions completed.
 ```
 
-### Interrupting during detection
-
 Press **Q** in the camera window to abort detection for the current marker.
-
----
-
-## Calibration
-
-### Camera intrinsics
-
-The lens calibration matrix and distortion coefficients are hardcoded in `find_aruco_position.py`:
-
-```python
-CAMERA_MATRIX = np.array([...])
-DIST_COEFFS   = np.array([...])
-```
-
-To recalibrate for a different camera, run a standard OpenCV chessboard calibration and replace these values.
-
-### Position correction (TPS)
-
-`position_correction.py` contains `MEASURED_POINTS` and `TRUE_POINTS` — a 4×4 grid of camera-measured vs. true positions used to fit the TPS warp.  
-To recalibrate: place known ArUco markers at exact grid positions, measure their detected coordinates, and update the arrays.
 
 ---
 
@@ -268,5 +291,5 @@ Full command reference is in `firmware/README.md`.
 ## Known Limitations / TODO
 
 - [ ] Angle detection by camera not yet implemented — `piece_angles[]` is manual.
-- [ ] If a marker is not visible when detection starts, the script blocks indefinitely (no timeout in `find_aruco()`).
-- [ ] `goto()` in v3 computes step counts from real-world coordinates directly (using `STEPS_PER_MM_X/Y`), bypassing the `coord_map` table used in v2.
+- [ ] If a marker is not visible when detection starts, `find_aruco()` blocks indefinitely (no timeout).
+- [ ] `goto()` in v3 computes step counts from real-world floats directly (`STEPS_PER_MM_X/Y × MM_PER_UNIT`), bypassing the `coord_map` lookup table used in v2.
