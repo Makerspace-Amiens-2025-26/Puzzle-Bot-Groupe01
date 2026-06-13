@@ -91,22 +91,23 @@ The 5x5 grid is defined in `config.h` as `coordMap[col][row]`:
 
 below is the image of our coordinate system where : 
 
+| Element | coordinates (x,y)  | arucoID (dict_6x6_250)   |
 |---|---|---|
-| origin | (0,0) | arucoID 0 (dict_6x6_250)| 
-| x-axis | (4,0) | arucoID 1 (dict_6x6_250)|
-| y-axis | (0,4) | arucoID 2 (dict_6x6_250)|
+| origin | (0,0) | 0 | 
+| x-axis | (4,0) | 1 |
+| y-axis | (0,4) | 2 |
 
 
 ![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/Coordinate%20system.png?raw=true)
 
 
-- **Millimeter per unit**  (distance from (0,0) to (0,1), center to center) is 60 mm`
+- **Millimeter per unit**  (distance from (0,0) to (0,1), center to center) is 60 mm
 
 After having setup the stepper motors for the x,y displacement, through experimentations, we found that the center of the arucoID 0 is 
 reached at 100 steps in x direction and 196 steps in y direction. 
 
 - **Origin:** ArUco marker #0 → `(100 steps, 196 steps)`
-- 
+  
 Then, through experiments, we found that the distance covered by 10000 steps is 245 mm along the x-axis and 
 the distance covered by 4000 steps is 204 mm along the y-axis. Thus we obtained our parameters :
 
