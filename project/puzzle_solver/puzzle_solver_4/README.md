@@ -21,7 +21,7 @@ Extends v3 by also detecting piece **angles** from the camera — no more manual
 
 ### Concept
 
-Every ArUco marker has four corners returned by the detector in a fixed order: **TL, TR, BR, BL**. These four points naturally define two perpendicular axes:
+Every ArUco marker has four corners returned by the detector in a fixed order: **TL, TR, BR, BL** (T:Top; B:Bottom; L:Left; R:Right). These four points naturally define two perpendicular axes:
 
 - **Horizontal axis:** TL → TR (top edge)
 - **Vertical axis:** TL → BL (left edge)
