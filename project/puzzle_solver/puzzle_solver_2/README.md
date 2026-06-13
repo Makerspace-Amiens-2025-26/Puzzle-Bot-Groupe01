@@ -99,7 +99,7 @@ Then set the puzzle state:
 # Current grid positions of each piece  (col, row)
 piece_location = [ [0,1], [0,4], [2,4], [2,1] ]
 
-# Current angle of each piece in degrees (can be negative or > 90)
+# Current angle of each piece in degrees (from -179 to 180 degrees)
 piece_angles   = [ -100,   100,  100,   100  ]
 
 # Destination grid position for each piece  (col, row)
