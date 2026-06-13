@@ -19,7 +19,7 @@ puzzle_solver.py
       │       │
       │       ├─ for each puzzle piece:
       │       │       goto(current position)
-      │       │       rotation_management(angle)   ← handles multi-step rotations
+      │       │       rotation_management(angle)   ← handles multi-step rotations, pick() stis inside
       │       │       goto(destination)
       │       │       place()
       │       │       rotate(0)                    ← reset rotation servo
@@ -53,7 +53,7 @@ For angles beyond ±90° the piece is picked, rotated 90°, placed, then picked 
 | `90 < angle ≤ 180` | Pick → rotate(90) → place → rotate(0) → pick → rotate(angle−90) |
 | `−90 ≤ angle < 0` | rotate(−angle) → pick → rotate(0) |
 | `−180 ≤ angle < −90` | rotate(90) → pick → rotate(0) → place → rotate(−angle−90) → pick → rotate(0) |
-| `±180` | Two 90° half-turns |
+| `±180` | rotate(90) → pick → rotate(0) → place → rotate(90) → pick → rotate(0)|
 
 ---
 
@@ -90,7 +90,10 @@ TIMEOUT     = 100         # seconds to wait for Arduino response
 SPEED       = 200         # motion speed sent in x/y commands (steps/s)
 ```
 
+Regarding the angles, if we do rotate(45), he will do it in the [(o,y), (o,x)], so we adopted it as the positive direction. Notice that you should enter the angles in the opposite direction of how you place them : if you set the angle of a piece to 30 degrees, you should manually rotate it -30 degrees before the execution of the code.   
+
 Then set the puzzle state:
+
 
 ```python
 # Current grid positions of each piece  (col, row)
