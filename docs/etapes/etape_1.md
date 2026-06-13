@@ -75,7 +75,7 @@ Notre robot est équipé d’un bouton d’arrêt d’urgence permettant d’arr
 
 Nous avons pu lui fabriquer une pièce en 3D afin de l'acceuillir et de la scéler avec le côté du plateau.
 
-<model-viewer src="../3D/Emergency Stop Button.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/Emergency Stop Button.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -99,7 +99,7 @@ Le plateau nous a été donné dès le début. Nous avons directement enlevé le
 
 La taille assez restreinte du plateau était un challenge puisqu'il n'est pas évident de faire une machine sur un plateau de cette dimension qui puisse rester fixée dessus.
 
-<model-viewer src="../3D/PuzzleBot.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/PuzzleBot.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
