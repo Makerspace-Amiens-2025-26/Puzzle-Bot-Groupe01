@@ -2,7 +2,7 @@
 #define POS_UP     500   
 #define POS_DOWN   2500   
 
-/* Calibrating the up down servo.
+/* Calibrating the up-down servo.
     The values of POS_DOWN and POS_UP were chosen through experimentation. The process : 
     - run loop(){servo_up();};
     - remove the horn and manually place on the desired position
