@@ -85,7 +85,7 @@ h;x4998s2000;y3724s2000;p1;r45;p0;END
 
 ---
 
-## Coordinate Map
+## Calibration and Coordinate Map
 
 The 5x5 grid is defined in `config.h` as `coordMap[col][row]`:
 
