@@ -158,7 +158,7 @@ Set `DEBUG_STAGE` in `find_aruco_position.py` to inspect intermediate steps at r
 | 4 | Cropped and zoomed to 1280×720 |
 | 5 | Full pipeline + unsharp-mask sharpening ← **default** |
 
-> Changing `DEBUG_STAGE` only affects the **display**. Coordinate math always runs the full pipeline regardless.
+> Changing `DEBUG_STAGE` only affects the **display**. Coordinate math always runs the full pipeline regardless. The code was written thus to make it easier to debug.
 
 ### Rotation management
 
@@ -211,6 +211,7 @@ CAMERA_INDEX  = 1    # ← 0 = built-in webcam, 1 = first external camera
 DEBUG_STAGE   = 5    # ← lower to 1–4 to inspect pipeline steps
 ARUCO_TO_FIND = [3, 4, 5, 6]   # ← marker IDs attached to the puzzle pieces
 ```
+
 
 ### 4 — Set piece angles and destinations
 
