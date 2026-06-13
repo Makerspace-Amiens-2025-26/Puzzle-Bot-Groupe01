@@ -1,3 +1,10 @@
+---
+layout: default
+title: Calibration et amélioration de la précision d'un système de détection de position par caméra
+parent: Etapes de fabrication
+nav_order: 7
+---
+
 # Calibration et amélioration de la précision d'un système de détection de position par caméra
 
 ## Introduction
