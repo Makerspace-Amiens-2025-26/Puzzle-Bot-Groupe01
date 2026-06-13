@@ -87,5 +87,6 @@ Enfin, des essais de déplacement manuel ont été réalisés pour vérifier :
 - Le bon comportement des pièces imprimées en 3D sous les contraintes mécaniques.
 
 ## Problèmes Communs et Solutions
+Au cours de l'assemblage, plusieurs difficultés sont apparues, notamment lors de l'impression 3D des pièces. Certains défauts, comme des sous-extrusions, des déformations ou des couches mal superposées, ont rendu certaines pièces inutilisables.
 
-- Si des pièces ne s'emboîtent pas correctement, vérifiez leur alignement et leur dimension
+Pour résoudre cela, nous avons ajusté les paramètres d'impression ou la forme d'impression. De plus, après avoir identifié les pièces problématiques, nous avons modifié certains designs, par exemple en ajoutant des renforts ou en ajustant les tolérances, pour garantir un assemblage plus précis. Grâce à ces corrections, nous avons pu obtenir des pièces conformes, permettant un assemblage stable et fonctionnel de la machine.
