@@ -5,29 +5,25 @@ parent: Etapes de fabrication
 nav_order: 3
 ---
 
-# Assemblage
+# Assemblage du Puzzle Bot
 
-Après la préparation des matériaux, l'étape suivante est l'assemblage.
-
-## Étapes d'Assemblage
-
-1. **Organisation de l'assemblage**
+## 1. **Organisation de l'assemblage**
    
 Avant de commencer l'assemblage, nous avons réalisé une analyse globale de la machine afin de comprendre les relations entre les différents sous-ensembles mécaniques. Cette étape nous a permis d'identifier les pièces à imprimer en 3D, les profilés à assembler ainsi que les composants nécessaires au système de déplacement.
 
 Les pièces de couleur rouge dans le modèle final correspondent aux pièces fabriquées par impression 3D. Ces pièces ont été conçues pour assurer la liaison entre les profilés en aluminium, les moteurs et les différents éléments mobiles de la machine.
 
 **Répartition des tâches**
-L'assemblage du châssis principal a été réalisé par Byron et moi-même. Nous avons procédé de manière progressive en divisant la machine en plusieurs sous-ensembles :
--Structure de base (châssis principal)
--Supports du plateau
--Système de guidage de l'axe Y
--Système de guidage de l'axe X
--Portique vertical
--Support de l'outil de travail
--Supports moteurs et système de courroies
+L'assemblage du châssis principal a été réalisé par Byron. Nous avons procédé de manière progressive en divisant la machine en plusieurs sous-ensembles :
+- Structure de base (châssis principal)
+- Supports du plateau
+- Système de guidage de l'axe Y
+- Système de guidage de l'axe X
+- Portique vertical
+- Support de l'outil de travail
+- Supports moteurs et système de courroies
 
-2. **Assemblage Initial et fixation**
+## 2. **Assemblage Initial et fixation**
    
 **Etape 1 : Construction du châssis principal**
 
@@ -47,9 +43,9 @@ Une attention particulière a été portée à leur parallélisme afin d'éviter
 
 **Étape 4 : Installation des moteurs et du système de courroies**
 Des supports spécifiques imprimés en 3D ont ensuite été fixés pour accueillir :
--Les moteurs pas à pas.
--Les poulies.
--Les tendeurs de courroies.
+- Les moteurs pas à pas.
+- Les poulies.
+- Les tendeurs de courroies.
 Ces éléments permettent la transmission du mouvement sur les axes X et Y.
 Le positionnement des supports a été ajusté afin de garantir une tension correcte des courroies et un mouvement fluide de l'ensemble mobile.
 
@@ -62,29 +58,33 @@ Le chariot central a été fixé sur les guidages afin de permettre le déplacem
 Les différents supports imprimés en 3D ont été assemblés et ajustés jusqu'à obtenir un mouvement régulier sans jeu excessif.
 
 
-## Vérifications à Effectuer
+## 3. Vérifications à Effectuer
 Une fois l'assemblage terminé, plusieurs contrôles ont été réalisés afin de garantir le bon fonctionnement de la machine.
+
 **Alignement des composants**
+
 Les vérifications suivantes ont été effectuées :
--Contrôle de l'équerrage du châssis.
--Vérification du parallélisme des guidages.
--Alignement des moteurs avec les poulies.
--Vérification du positionnement du portique.
+- Contrôle de l'équerrage du châssis.
+- Vérification du parallélisme des guidages.
+- Alignement des moteurs avec les poulies.
+- Vérification du positionnement du portique.
 Ces contrôles permettent de limiter les contraintes mécaniques et d'améliorer la précision des déplacements
 
 **Stabilité de la structure**
+
 Nous avons également vérifié :
--La rigidité du châssis.
--Le serrage des fixations.
--L'absence de mouvement parasite entre les différentes pièces assemblées.
--La stabilité du plateau et du portique.
+- La rigidité du châssis.
+- Le serrage des fixations.
+- L'absence de mouvement parasite entre les différentes pièces assemblées.
+- La stabilité du plateau et du portique.
 
 **Test des déplacements**
+
 Enfin, des essais de déplacement manuel ont été réalisés pour vérifier :
-La fluidité des mouvements sur les axes X et Y.
-L'absence de points de blocage.
-La bonne tension des courroies.
-Le bon comportement des pièces imprimées en 3D sous les contraintes mécaniques.
+- La fluidité des mouvements sur les axes X et Y.
+- L'absence de points de blocage.
+- La bonne tension des courroies.
+- Le bon comportement des pièces imprimées en 3D sous les contraintes mécaniques.
 
 ## Problèmes Communs et Solutions
 
