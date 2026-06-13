@@ -150,10 +150,10 @@ Les différentes approches ont été évaluées à partir de l'erreur moyenne ca
 | ------------------------ | -------------- |
 | Avant traitement d'image | 0.3194         |
 | Après traitement d'image | 0.1564         |
-| Cubic Warp - Essai 1     | 0.3456         |
-| Cubic Warp - Essai 2     | 0.3706         |
+| Cubic Warp               | 0.3456         |
+| TPS                      | 0.3706         |
 
-On constate que les deux configurations testées du modèle Cubic Warp n'ont pas permis d'améliorer les performances dans notre contexte d'application.
+On constate que les configurations testées du modèle Cubic Warp et du TPS n'ont pas permis d'améliorer les performances dans notre contexte d'application.
 
 Le traitement d'image reste actuellement la méthode offrant les meilleurs résultats expérimentaux.
 
