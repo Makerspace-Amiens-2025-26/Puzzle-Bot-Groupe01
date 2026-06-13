@@ -21,6 +21,13 @@ Bienvenue dans la documentation du projet PUZZLE BOT. Ce site a pour but de four
     </div>
 </model-viewer>
 
+
+<model-viewer src="3D/PBF.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
+
 ## À propos du Projet
 
 Notre projet consiste à concevoir et programmer un robot capable de résoudre automatiquement un puzzle de manière autonome. Réalisé pendant notre première année de cycle ingénieur, ce projet nous permet de mettre en pratique des notions de mécanique, d’électronique, d’informatique et d’automatisation.
