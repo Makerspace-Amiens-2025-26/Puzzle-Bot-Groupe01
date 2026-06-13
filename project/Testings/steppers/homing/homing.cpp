@@ -1,4 +1,15 @@
+/*
+  This Arduino program implements a precise homing sequence for a CNC Shield V3 controlling three stepper motors (X, Y, and A).
+  Each axis moves toward its corresponding endstop switch at high speed until the switch is triggered, marking the initial contact point.
+  After this first hit, the motor backs away slightly and then approaches the switch again at a much slower speed. 
+  This double‑approach technique—fast approach, retract, slow approach—allows the system to compensate for switch hysteresis and mechanical play, 
+  ensuring a highly accurate and repeatable determination of the machine’s physical origin. 
+  Once the slow approach re-triggers the switch, the axis position is reset to zero, establishing a reliable (0,0) reference for subsequent movements. 
+  The X axis homes using two synchronized motors (stepper1 and stepper3), while the Y axis homes independently using stepper2.
+*/
+
 #include <AccelStepper.h>
+
 const int endstopPinY = 10;
 const int endstopPinX = 9;
 
