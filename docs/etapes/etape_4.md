@@ -1,5 +1,12 @@
+---
+layout: default
+title: Numérique
+parent: Etapes de fabrication
+nav_order: 3
+---
 
 **Numérique**
+
 
 **1\. Configuration du matériel**
 
@@ -15,6 +22,11 @@ Les composants pilotés sont les suivants :
 - **2 fins de course** (broches 9 et 10, en INPUT_PULLUP)
 
 Toutes les affectations de broches, les vitesses, les accélérations et les constantes de timing sont centralisées dans un seul fichier : config.h. Ce choix architectural est volontaire - modifier le câblage ou recalibrer le robot ne nécessite de toucher qu'un seul endroit dans le code.
+
+
+
+
+
 
 **2\. Ajout des capteurs**
 
@@ -40,6 +52,11 @@ Suite aux expérimentations, les paramètres suivants ont été déterminés :
 
 Ces valeurs sont le fruit de mesures réelles sur le robot et devront être répétées si la structure mécanique est modifiée.
 
+
+
+
+
+
 **3\. Réflexion sur l'architecture logicielle**
 
 **Pourquoi ne pas utiliser GRBL ?**
@@ -62,6 +79,12 @@ Le firmware est organisé en modules bien séparés :
 | puzzle_firmware.ino | Point d'entrée setup() / loop()           |
 
 Chaque module a une responsabilité unique, ce qui facilite la maintenance et les tests.
+
+
+
+
+
+
 
 **4\. Développement de la vision**
 
@@ -93,6 +116,12 @@ Pour maximiser la précision de détection, les frames passent par un **pipeline
 - **Netteté** (unsharp mask) - accentuation des contrastes pour améliorer la détection des marqueurs
 
 Un paramètre DEBUG_STAGE permet d'arrêter le pipeline à n'importe quelle étape pour visualiser le résultat intermédiaire, ce qui s'est révélé très utile pendant le développement.
+
+
+
+
+
+
 
 **5\. Choix du mode de coordonnées**
 
@@ -131,6 +160,13 @@ y_steps = 196 + y_réel × STEPS_PER_MM_Y × 60
 
 Les constantes 100 et 196 correspondent à la position du marqueur origine dans l'espace des pas moteur.
 
+
+
+
+
+
+
+
 **6\. Homographie du plateau**
 
 **Le problème : erreur systématique résiduelle**
@@ -153,6 +189,13 @@ La correction est assurée par une **transformation Thin Plate Spline (TPS)**, i
 
 La correction combine une **partie affine** (translation + rotation + mise à l'échelle globale) et une **partie radiale** (corrections locales non-linéaires), ce qui permet de gérer des distorsions non-uniformes qu'une simple transformation affine ne pourrait pas corriger.
 
+
+
+
+
+
+
+
 **7\. Précision**
 
 **Moyennage temporel**
@@ -162,6 +205,12 @@ Pour réduire le bruit de détection lié aux variations de luminosité et aux p
 **Résultats obtenus**
 
 Après calibration TPS, les positions détectées convergent vers des valeurs proches du centième d'unité de grille, soit une précision de l'ordre du millimètre sur le plateau physique.
+
+
+
+
+
+
 
 **8\. Pompe et électrovanne**
 
@@ -185,6 +234,13 @@ La séquence complète d'un cycle de saisie (pick_place(1)) :
 - Remonter le bras
 
 La séquence de pose (pick_place(0)) est similaire, avec la valve ouverte à l'étape 3 et un temps d'attente de 1 seconde pour que la pièce se détache.
+
+
+
+
+
+
+
 
 **9\. Protocole de communication série**
 
@@ -219,6 +275,13 @@ Le homing suit une procédure en 3 temps pour chaque axe :
 
 Cette triple séquence garantit une position zéro reproductible même si le robot est arrêté en cours de course.
 
+
+
+
+
+
+
+
 **10\. Intégration de la rotation**
 
 **Contrainte matérielle**
@@ -242,6 +305,12 @@ La fonction rotation_management(angle) côté Python gère automatiquement les a
 Dans la version finale du solveur, l'angle de chaque pièce est mesuré directement par la caméra. Chaque marqueur ArUco possède quatre coins dans un ordre fixe (TL, TR, BR, BL). Le vecteur TL→TR définit l'axe horizontal du marqueur.
 
 L'angle est mesuré **par rapport au marqueur de référence ID 0**, ce qui annule automatiquement l'inclinaison physique de la caméra. Les deux axes (horizontal et vertical) du marqueur sont calculés, ramenés dans \[−90°, 90°\], et celui ayant la valeur absolue la plus faible est retenu. Le signe est ensuite inversé lors du passage au solveur (piece_angles = \[-angle for ...\]) pour respecter la convention de rotation du servo.
+
+
+
+
+
+
 
 **11\. Logique générale de résolution**
 
