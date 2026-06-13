@@ -60,7 +60,7 @@ Contrôle de la fixation de la caméra sur le bras
 
 Ces contrôles permettent de limiter les contraintes mécaniques et d’améliorer la précision des déplacements. Ils sont essentiels, notamment après les ajustements réalisés sur la calibration du système et la position de la caméra.
 
-Stabilité de la structure
+**Stabilité de la structure**
 
 Nous avons également vérifié :
 
@@ -72,7 +72,7 @@ La bonne tension des courroies après retouches
 
 Ces tests permettent de s’assurer que les modifications effectuées lors de la phase de finition (retension des courroies, ajustements mécaniques) ont bien amélioré la stabilité générale de la machine.
 
-Test des déplacements et du système
+**Test des déplacements et du système**
 
 Enfin, des essais de fonctionnement ont été réalisés pour vérifier :
 
@@ -85,6 +85,6 @@ Le comportement des pièces imprimées en 3D sous contrainte
 
 Ces tests ont également permis de confirmer les améliorations apportées à la carte électronique, qui a été révisée à plusieurs reprises pour corriger différents dysfonctionnements et améliorer la stabilité globale du système.
 
-Validation générale
+## Validation générale
 
 Les essais réalisés montrent que la machine fonctionne de manière globalement stable et cohérente. Après les différentes corrections apportées en finition (mécanique, électronique et esthétique), le système est devenu plus fiable, plus précis et mieux optimisé pour réaliser sa tâche de manière autonome.
