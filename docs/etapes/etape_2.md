@@ -64,7 +64,7 @@ Cette structure supporte le système de déplacement de l'axe X et l'outil de tr
 Le chariot central a été fixé sur les guidages afin de permettre le déplacement de l'outil sur les différents axes.
 Les différents supports imprimés en 3D ont été assemblés et ajustés jusqu'à obtenir un mouvement régulier sans jeu excessif.
 
-##**Problèmes Communs et Solutions**
+## **Problèmes Communs et Solutions**
 Au cours de l'assemblage, plusieurs difficultés sont apparues, notamment lors de l'impression 3D des pièces. Certains défauts, comme des sous-extrusions, des déformations ou des couches mal superposées, ont rendu certaines pièces inutilisables.
 
 Pour résoudre cela, nous avons ajusté les paramètres d'impression ou la forme d'impression. De plus, après avoir identifié les pièces problématiques, nous avons modifié certains designs, par exemple en ajoutant des renforts ou en ajustant les tolérances, pour garantir un assemblage plus précis. Grâce à ces corrections, nous avons pu obtenir des pièces conformes, permettant un assemblage stable et fonctionnel de la machine.
