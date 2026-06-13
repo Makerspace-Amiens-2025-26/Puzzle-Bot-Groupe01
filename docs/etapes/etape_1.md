@@ -6,15 +6,15 @@ nav_order: 1
 ---
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 
-## Matériaux et prototypage
+# Matériaux et prototypage
 
 Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés de nous répartir les tâches comme expliqué précédemment. Chacun a choisis les missions où il pensait être le plus productif. Bien que nous étions chacuns sur notre partie par 2 ou par 3, nous sommes un groupe. C'est pourquoi en cas d'imprévus ou d'incompréhension, nous pouvons toujours compter les uns sur les autres.
 
 Voici une liste de tout le matériel que nous avons eu ainsi que comment nous avons réfléchis au prototypage.
 
-### Matériaux
+## Matériaux
 
-## -Pièces mécaniques
+### -Pièces mécaniques
 
 
 **-Pompe :** 
@@ -90,7 +90,7 @@ Nous avons réalisé une carte électronique sous 12 volts car l'électrovanne n
 <img src="../images/mofset2.jpeg" width="300">
 
 
-## -Autres matériaux
+### -Autres matériaux
 
 
 **-Le plateau :**
