@@ -25,16 +25,20 @@ L'intelligence du robot s'exécute sur un ordinateur via un script Python orches
 
 #### Pipeline de traitement d'image
 Une caméra grand angle capture le plateau. L'image brute subit une série de traitement numérique avant analyse pour maximiser sa netteté:
-**Correction de distorsion :** Redressement de l'image via des coefficients optiques calculés au préalable avec une mire d'échiquier.
-**Homographie et correction géométrique (TPS) :** Même après correction optique, la perspective et l'angle de la caméra introduisent des erreurs spatiales. Nous appliquons un algorithme mathématique **Thin Plate Spline (TPS)** basé sur une grille de calibration de 16 points réels. Cette correction réduit l'erreur moyenne de détection de plus de 50 % (passant de $0.3194$ à $0.1564$ unité), garantissant une précision millimétrique sur le plateau
 
-#### B. Détection des pièces et angles (ArUco)
+**Correction de distorsion :** Redressement de l'image via des coefficients optiques calculés au préalable avec une mire d'échiquier.
+
+**Homographie et correction géométrique (TPS) :** Même après correction optique, la perspective et l'angle de la caméra introduisent des erreurs spatiales. Nous appliquons un algorithme mathématique 
+
+**Thin Plate Spline (TPS)** basé sur une grille de calibration de 16 points réels. Cette correction réduit l'erreur moyenne de détection de plus de 50 %, garantissant une précision millimétrique sur le plateau
+
+#### Détection des pièces et angles
 Le script utilise la bibliothèque `OpenCV ArUco` pour localiser instantanément les 4 pièces disposées sur la zone de détection. Les coordonnées en pixels sont converties en pas moteurs réels grâce à des repères d'origine fixes installés sur le châssis.
 L'angle de chaque pièce est calculé en comparant le vecteur d'orientation de son marqueur à l'axe de référence du robot.
 
-### 3. Cycle d'exécution et protocole d'échange (Handshake)
-La communication entre Python et l'Arduino est sécurisée par un mécanisme de *handshake* (poignée de main) pour éviter toute surcharge de la mémoire tampon de l'Arduino
-Python analyse le plateau par la caméra et génère une suite d'instructions (G-code personnalisé).
+### Cycle d'exécution et protocole d'échange
+La communication entre Python et l'Arduino est sécurisée par un mécanisme de *handshake* pour éviter toute surcharge de la mémoire tampon de l'Arduino. Python analyse le plateau par la caméra et génère une suite d'instructions (G-code personnalisé).
+
 Cette chaîne est découpée en micro-paquets (ex: `h;x4998s200;y3724s200;p1;END`).
 Python transmet un paquet et se met en attente.
 L'Arduino reçoit les ordres, les exécute fidèlement (déplacement, activation de l'électrovanne, etc.) puis retourne le signal `ACK` ou `OK` une fois la tâche physiquement accomplie.
@@ -44,16 +48,16 @@ L'Arduino reçoit les ordres, les exécute fidèlement (déplacement, activation
 # Electronique
 
 
-## 🔌 Architecture Électronique & Câblage
+## Architecture Électronique & Câblage
 
-L'architecture électronique du Puzzle Bot est conçue autour d'une carte microcontrôleur **Arduino UNO** sur laquelle vient s'emboîter une carte d'extension **CNC Shield V3**. Cette configuration permet de centraliser la distribution de la puissance (12V) et les signaux de commande de l'ensemble des actionneurs et capteurs.
+L'architecture électronique du Puzzle Bot est conçue autour d'une carte microcontrôleur Arduino UNO sur laquelle vient s'emboîter une carte d'extension CNC Shield V3. Cette configuration permet de centraliser la distribution de la puissance (12V) et les signaux de commande de l'ensemble des actionneurs et capteurs.
 
 Voici le schéma synoptique de notre installation électronique (mettant en évidence les liaisons entre l'Arduino, le CNC Shield, les moteurs et les capteurs) :
 
 ![Schéma de câblage](../images/SchémaDorian.png)
 
 
-### 1. Tableau des connexions (Brochage)
+### Tableau des connexions
 
 Pour garantir la maintenabilité du robot, l'intégralité du câblage physique a été répertoriée selon l'affectation suivante :
 
@@ -68,10 +72,10 @@ Pour garantir la maintenabilité du robot, l'intégralité du câblage physique 
 | **Pompe à vide** | D4 | Z.STEP | Commande Tout-ou-Rien (via MOSFET) |
 | **Électrovanne** | D7 | Z.DIR | Commande Tout-ou-Rien (via MOSFET) |
 
-### 2. Gestion de la puissance et carte MOSFET (KiCad)
+### Gestion de la puissance et carte MOSFET
 Les sorties de l'Arduino UNO délivrent un courant maximal insuffisant et une tension limitée à 5V. Or, l'électrovanne et la pompe pneumatique requièrent une alimentation stable en **12 Volts**. 
 
 Pour résoudre ce problème, nous avons développé une carte électronique d'interface de puissance sous le logiciel **KiCad**. Cette carte intègre des transistors **MOSFET** faisant office de relais électroniques rapides. Lorsqu'un signal 5V est émis par les broches D4 ou D7 de l'Arduino, le MOSFET commute et libère la puissance de la ligne 12V pour actionner la pompe ou ouvrir la valve pneumatique.
 
-### 3. Optimisation et routage
+### Optimisation et routage
 Afin de fiabiliser le fonctionnement du robot et de libérer l'espace supérieur pour les déplacements du portique, l'ensemble des cartes électroniques (Arduino, CNC Shield, circuit MOSFET) a été implanté directement **sous le plateau** de la machine. Les câbles moteurs et capteurs ont été rallongés et guidés au travers du châssis pour éviter tout risque d'arrachement ou d'interférence avec la tête mobile.
