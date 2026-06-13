@@ -19,3 +19,4 @@ Le processus de fabrication est divisé en plusieurs étapes clés :
 4. [Programmation](etape_4)
 5. [Finition](etape_4)
 6. [Contrôle Qualité](etape_6)
+7. [Calibration et amélioration de la précision d’un système de détection de position par caméra](etape_7)
