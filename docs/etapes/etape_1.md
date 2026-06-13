@@ -153,4 +153,4 @@ C'est l'intégration de la carte couplée à l'éléctrovanne dans le circuit qu
 
 **Intégration et routage final**
 
-La dernière phase a consisté à implanter tous ces prototypes sous le plateau. Ce choix d'architecture (centraliser la CNC Shield, la carte MOSFET et l'alimentation sous la structure) a permis de libérer l'espace supérieur pour les mouvements des axes mécaniques et de protéger les connexions des perturbations liées aux déplacements du robot.rrr
+La dernière phase a consisté à implanter tous ces prototypes sous le plateau. Ce choix d'architecture (centraliser la CNC Shield, la carte MOSFET et l'alimentation sous la structure) a permis de libérer l'espace supérieur pour les mouvements des axes mécaniques et de protéger les connexions des perturbations liées aux déplacements du robot.
