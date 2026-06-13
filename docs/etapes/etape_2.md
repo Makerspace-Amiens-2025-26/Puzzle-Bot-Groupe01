@@ -7,6 +7,13 @@ nav_order: 3
 
 # Assemblage du Puzzle Bot
 
+Après la préparation des matériaux, l'étape suivante est l'assemblage.
+
+## Étapes d'Assemblage
+
+1. **Organisation  de l'assemblage** : Organisez tous les composants préparés.
+2. **Assemblage Initial et fixation** : Commencez par assembler les pièces principales et fixez solidement les pièces ensemble en utilisant les outils appropriés.
+
 ## 1. **Organisation de l'assemblage**
    
 Avant de commencer l'assemblage, nous avons réalisé une analyse globale de la machine afin de comprendre les relations entre les différents sous-ensembles mécaniques. Cette étape nous a permis d'identifier les pièces à imprimer en 3D, les profilés à assembler ainsi que les composants nécessaires au système de déplacement.
@@ -57,36 +64,7 @@ Cette structure supporte le système de déplacement de l'axe X et l'outil de tr
 Le chariot central a été fixé sur les guidages afin de permettre le déplacement de l'outil sur les différents axes.
 Les différents supports imprimés en 3D ont été assemblés et ajustés jusqu'à obtenir un mouvement régulier sans jeu excessif.
 
-
-## 3. Vérifications à Effectuer
-Une fois l'assemblage terminé, plusieurs contrôles ont été réalisés afin de garantir le bon fonctionnement de la machine.
-
-**Alignement des composants**
-
-Les vérifications suivantes ont été effectuées :
-- Contrôle de l'équerrage du châssis.
-- Vérification du parallélisme des guidages.
-- Alignement des moteurs avec les poulies.
-- Vérification du positionnement du portique.
-Ces contrôles permettent de limiter les contraintes mécaniques et d'améliorer la précision des déplacements
-
-**Stabilité de la structure**
-
-Nous avons également vérifié :
-- La rigidité du châssis.
-- Le serrage des fixations.
-- L'absence de mouvement parasite entre les différentes pièces assemblées.
-- La stabilité du plateau et du portique.
-
-**Test des déplacements**
-
-Enfin, des essais de déplacement manuel ont été réalisés pour vérifier :
-- La fluidité des mouvements sur les axes X et Y.
-- L'absence de points de blocage.
-- La bonne tension des courroies.
-- Le bon comportement des pièces imprimées en 3D sous les contraintes mécaniques.
-
-## Problèmes Communs et Solutions
+##**Problèmes Communs et Solutions**
 Au cours de l'assemblage, plusieurs difficultés sont apparues, notamment lors de l'impression 3D des pièces. Certains défauts, comme des sous-extrusions, des déformations ou des couches mal superposées, ont rendu certaines pièces inutilisables.
 
 Pour résoudre cela, nous avons ajusté les paramètres d'impression ou la forme d'impression. De plus, après avoir identifié les pièces problématiques, nous avons modifié certains designs, par exemple en ajoutant des renforts ou en ajustant les tolérances, pour garantir un assemblage plus précis. Grâce à ces corrections, nous avons pu obtenir des pièces conformes, permettant un assemblage stable et fonctionnel de la machine.
