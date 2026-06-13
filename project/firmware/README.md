@@ -85,12 +85,75 @@ h;x4998s2000;y3724s2000;p1;r45;p0;END
 
 ---
 
-## Coordinate Map
+## Calibration and Coordinate Map
 
 The 5x5 grid is defined in `config.h` as `coordMap[col][row]`:
 
+below is the image of our coordinate system where : 
+
+| Element | coordinates (x,y)  | arucoID (dict_6x6_250)   |
+|---|---|---|
+| origin | (0,0) | 0 | 
+| x-axis | (4,0) | 1 |
+| y-axis | (0,4) | 2 |
+
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/Coordinate%20system.png?raw=true)
+
+
+- **Millimeter per unit**  (distance from (0,0) to (0,1), center to center) is 60 mm
+
+After having setup the stepper motors for the x,y displacement, through experimentations, we found that the center of the arucoID 0 is 
+reached at 100 steps in x direction and 196 steps in y direction. 
+
 - **Origin:** ArUco marker #0 → `(100 steps, 196 steps)`
-- **Grid pitch:** 60 mm → ΔX ≈ 2449 steps, ΔY ≈ 1176 steps
+  
+Then, through experiments, we found that the distance covered by 10000 steps is 245 mm along the x-axis and 
+the distance covered by 4000 steps is 204 mm along the y-axis. Thus we obtained our parameters :
+
+```cpp
+/** Steps per millimetre on the X axis (dual-motor gantry). */
+#define STEPS_PER_MM_X   (10000.0f / 245.0f)
+/** Steps per millimetre on the Y axis. */
+#define STEPS_PER_MM_Y   (4000.0f  / 204.0f)
+```
+It is critical to repeat these experimenents to find origin location, STEPS_PER_MM_X, STEPS_PER_MM_Y if you consider replicating our machine
+since it will depend on mechanical structure of the machine. 
+
+There, when we will later integrate the camera to detection position in terms of our coordinate system, we will be very easily able to determine the number of steps in the x and y directions given the coordinates using the formulas : 
+
+```py
+    x_steps = 100 + x_cameraMeasured*STEPS_PER_MM_X*MM_PER_UNIT
+    y_steps = 196 + y_cameraMeasured*STEPS_PER_MM_Y*MM_PER_UNIT
+```
+
+To make it easier to test at the early stages with no camera integration (see puzzle_solver_2), we calculated all stepps needed for the coordinates all from (0,0) till (4,4). 
+
+```cpp
+// ============================================================
+//  COORDINATE MAP
+//
+//  Maps logical grid positions (col 0-4, row 0-4) to raw
+//  stepper step counts that position the head over each cell.
+//
+//  Origin:  ArUco marker #0  →  x=100 steps, y=196 steps
+//  Grid pitch: 60 mm         →  ΔX ≈ 2449 steps, ΔY ≈ 1176 steps
+//
+//  Layout:  coordMap[col][row] = {xSteps, ySteps}
+// ============================================================
+
+#define GRID_COLS  5
+#define GRID_ROWS  5
+
+static const int coordMap[GRID_COLS][GRID_ROWS][2] = {
+    //  row 0          row 1          row 2          row 3          row 4
+    { {100,  196}, {100,  1372}, {100,  2548}, {100,  3724}, {100,  4900} }, // col 0
+    { {2549, 196}, {2549, 1372}, {2549, 2548}, {2549, 3724}, {2549, 4900} }, // col 1
+    { {4998, 196}, {4998, 1372}, {4998, 2548}, {4998, 3724}, {4998, 4900} }, // col 2
+    { {7447, 196}, {7447, 1372}, {7447, 2548}, {7447, 3724}, {7447, 4900} }, // col 3
+    { {9896, 196}, {9896, 1372}, {9896, 2548}, {9896, 3724}, {9896, 4900} }, // col 4
+};
+```
 
 To look up the raw step counts for logical position (col=2, row=3):
 
@@ -98,6 +161,8 @@ To look up the raw step counts for logical position (col=2, row=3):
 int xSteps = coordMap[2][3][0];   // → 4998
 int ySteps = coordMap[2][3][1];   // → 3724
 ```
+
+
 
 ---
 

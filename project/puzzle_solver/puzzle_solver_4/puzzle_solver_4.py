@@ -1,13 +1,19 @@
 import serial
 import time
+from find_aruco_position import main_find_aruco
+
+# we used  main_find_aruco(): ; no angle detection
 
 # ── config ───────────────────────────────────────────────
-PORT        = "COM6"
+PORT        = "COM7"
 BAUDRATE    = 115200
 PACKET_SIZE = 30
 TIMEOUT     = 100
 SPEED = 200
 
+STEPS_PER_MM_X  = (10000.0 / 245.0)
+STEPS_PER_MM_Y =  (4000.0  / 204.0)
+MM_PER_UNIT = 60
 # ── coordinate map ───────────────────────────────────────
 coord_map = [
     [ [100, 196],  [100, 1372],  [100, 2548],  [100, 3724],  [100, 4900]  ],
@@ -17,9 +23,9 @@ coord_map = [
     [ [9896, 196], [9896, 1372], [9896, 2548], [9896, 3724], [9896, 4900] ]
 ]
 
-piece_location = [ [0,1], [0,4], [2,4], [2,1] ]
-piece_angles   = [ 0,0,0,0 ]
-piece_dest     = [ [0,2], [0,3], [1,3], [1,2] ]
+# piece_location = [ [0,1], [0,4], [2,4], [2,1] ]
+# piece_angles   = [ 0,   0,  0,   0  ]
+piece_dest     = [ [1,1], [1,2], [1,3], [1,4] ]
 
 
 
@@ -28,7 +34,8 @@ g_code_string = ""
 
 def goto(pos):
     global g_code_string
-    oldX, oldY = coord_map[pos[0]][pos[1]]
+    oldX = int(100 + pos[0]*STEPS_PER_MM_X*MM_PER_UNIT)  
+    oldY = int(196 + pos[1]*STEPS_PER_MM_Y*MM_PER_UNIT)
     g_code_string += f"x{oldX}s{SPEED};"
     g_code_string += f"y{oldY}s{SPEED};"
 
@@ -103,19 +110,6 @@ def rotation_management(angle):
     else:  # angle == 0
         pick()
 
-# ── solving the puzzle ──────────────────────────────────────
-def generate_instructions():
-    global g_code_string
-    g_code_string = "h;r0;"
-
-    for i in range(4):
-        goto(piece_location[i])
-        rotation_management(piece_angles[i])
-        goto(piece_dest[i])
-        place()
-        rotate(0)
-
-    g_code_string += "h;END;"
 
 # ── communication with the Arduino UNO though serial monitor──
 def split_into_packets(full_string, max_size):
@@ -160,10 +154,52 @@ def send_instructions(ser, packets):
                     return True
 
     return False
+# ── solving the puzzle ──────────────────────────────────────
+def generate_instructions():
+    global g_code_string
+    g_code_string = "h;r0;"
+
+    coords = main_find_aruco()
+    piece_location = [[x, y] for x, y, _ in coords]
+    piece_angles = [-angle for _, _, angle in coords]
+
+    print("piece_location: ") 
+    print(piece_location)
+
+    print("piece_angles: ") 
+    print(piece_angles)
+
+    for i in range(4):
+        goto(piece_location[i])
+        rotation_management(piece_angles[i])
+        goto(piece_dest[i])
+        place()
+        rotate(0)
+
+    g_code_string += "h;END;"
+    return g_code_string
 
 # ── main ─────────────────────────────────────────────────
 def main():
-    generate_instructions()
+
+
+    g_code_string = "h;r0;x13000s200;END"
+    print(f"[i] Full string:\n{g_code_string}\n")
+
+    packets = split_into_packets(g_code_string, PACKET_SIZE)
+    print(f"[i] Split into {len(packets)} packets:")
+    for i, p in enumerate(packets):
+        print(f"    [{i}] {repr(p)}")
+
+    with serial.Serial(PORT, BAUDRATE, timeout=TIMEOUT) as ser:
+        time.sleep(2)
+        ser.reset_input_buffer()
+        print("[i] Connected. Sending instructions...\n")
+        send_instructions(ser, packets)
+
+
+
+    g_code_string = generate_instructions()
     print(f"[i] Full string:\n{g_code_string}\n")
 
     packets = split_into_packets(g_code_string, PACKET_SIZE)
