@@ -4,6 +4,13 @@ title: Conception et assemblage
 parent: Etapes de fabrication
 nav_order: 3
 ---
+# Conception du Puzzle bot
+
+La conception 3D a été réalisée principalement sur Onshape. Nous avons utilisé des modèles existants pour certains composants clés, notamment le plateau, les servomoteurs, ainsi que la barre métallique (profilé en aluminium). Le plateau a été modélisé avec les dimensions précises pour accueillir les courroies et les moteurs. Les servomoteurs ont été placés en respectant les contraintes de couple et d'espace, et la barre métallique a été dimensionnée pour assurer la rigidité de l'ensemble. Ensuite, nous avons intégré tous ces éléments dans un assemblage complet pour vérifier les ajustements, les tolérances et la compatibilité entre les pièces. Cette base nous a permis de garantir un bon alignement mécanique avant de passer aux impressions et à l’assemblage final.
+
+Nous avons également conçu des pièces de finition spécifiques pour améliorer la sécurité et l'organisation des câbles. Par exemple, nous avons créé des étriers qui viennent toucher les capteurs de fin de course pour arrêter précisément les mouvements. Nous avons aussi conçu des goulottes qui protègent les fils, avec des passages spécifiques permettant de guider les câbles de manière homogène le long de la structure. Cela garantit non seulement un fonctionnement fluide, mais aussi une protection durable des composants électroniques.
+
+Nous avons également conçu une petite boîte en 3D dédiée à la protection de la carte électronique. Cette boîte, placée sous le plateau, permet de sécuriser l’électronique contre les chocs et les poussières. Elle a été conçue sur mesure pour s’intégrer parfaitement sous le plateau, optimisant l’espace tout en garantissant un accès facile pour les câbles. Ainsi, l'ensemble de la machine reste bien organisé et protégé.
 
 # Assemblage du Puzzle Bot
 
