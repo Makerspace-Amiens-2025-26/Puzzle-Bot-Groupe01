@@ -4,6 +4,7 @@ nav_order: 1
 title: Accueil
 permalink: /
 ---
+
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 
 # Bienvenue sur notre documentation
@@ -14,7 +15,7 @@ Bienvenue dans la documentation du projet PUZZLE BOT. Ce site a pour but de four
 [Notre projet sur Onshape](https://cad.onshape.com/documents/dc4e4dc410142a1f5ec17e75/w/6949f91d3f7293487ebace9c/e/d7efde2f999041b5a5ef0852?renderMode=0&uiState=6a2bbd04fd1eba1487f7a358){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Notre repo GitHub](https://github.com/Makerspace-Amiens/template-project/tree/main/docs){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-<model-viewer src="../3D/PBF.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="3D/PBF.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>

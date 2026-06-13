@@ -2,7 +2,7 @@
 layout: default
 title: Conception et assemblage
 parent: Etapes de fabrication
-nav_order: 3
+nav_order: 2
 ---
 # Conception du Puzzle bot
 

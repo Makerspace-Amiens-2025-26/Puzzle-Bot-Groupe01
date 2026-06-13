@@ -2,11 +2,11 @@
 layout: default
 title: Matériaux et prototypage
 parent: Etapes de fabrication
-nav_order: 2
+nav_order: 1
 ---
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 
-#### Matériaux et prototypage
+## Matériaux et prototypage
 
 Afin d'obtenir un robot optimisé et des plus performant, nous avons décidés de nous répartir les tâches comme expliqué précédemment. Chacun a choisis les missions où il pensait être le plus productif. Bien que nous étions chacuns sur notre partie par 2 ou par 3, nous sommes un groupe. C'est pourquoi en cas d'imprévus ou d'incompréhension, nous pouvons toujours compter les uns sur les autres.
 
