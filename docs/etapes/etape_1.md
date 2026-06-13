@@ -141,13 +141,13 @@ Puis les ajustements au fur et à mesure des essais. Par exemple, le support de 
 
 L'intégration de la pompe et de l'électrovanne 12V a nécessité une transition prudente pour ne pas risquer d'endommager la carte Arduino. Nous avons créé la carte sur KiCad (vue ci-dessous) puis nous l'avons faite vérifier par les enseignants. Nous l'avons ensuite imprimée puis soudée dans un sens avant de nous rendre compte que le schéma était dans le mauvais sens. Le prototypage nous a permis d'éviter de causer de gros dommages et de corriger notre erreur.
 
-![KiCad PCB](../images/KiCad PCB.PNG)             ![KiCad schéma](images/KiCad schéma.PNG)
+![KiCad PCB](../images/KiCad PCB.PNG)
 
 Une fois le schéma validé, nous sommes passés à la gravure puis à la soudure de notre carte MOSFET. Les échecs successifs sur les premières versions (problèmes de soudure et surchauffe) nous ont appris à dimensionner correctement les pistes pour supporter la tension de 12V requise par l'électrovanne.
 
 **Tests d'aspiration**
 
-Le prototypage du système de vide a été l'un de nos plus grands défis mécaniques. Lors des premiers essais, la ventouse entrait bien en dépression pour soulever la pièce de puzzle, mais nous ne pouvions pas bloquait la pompe autrement qu'en la faisant aspirer en continu ce qui empêchait le robot de la relâcher instantanément au moment de couper la pompe. 
+Le prototypage du système de vide a été l'un de nos plus grands défis mécaniques. Lors des premiers essais, la ventouse entrait bien en dépression pour soulever la pièce de puzzle, mais nous ne pouvions pas bloquer la pompe autrement qu'en la faisant aspirer en continu ce qui empêchait le robot de la relâcher instantanément au moment de couper la pompe. 
 
 C'est l'intégration de la carte couplée à l'éléctrovanne dans le circuit qui a résolu le problème en agissant comme une rupture de charge, évacuant l'air instantanément pour garantir un dépôt précis et propre de la pièce sur le plateau.
 
