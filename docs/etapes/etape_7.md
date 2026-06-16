@@ -96,7 +96,8 @@ Pour chacune de ces positions, une mesure a été réalisée avant puis après l
 
 Pour chaque point de calibration, l'erreur est calculée à partir de la distance de Manhattan :
 
-Erreur = \sqrt{(Xmesuré - Xréel)^2 + (Ymesuré - Yréel)^2}
+Erreur = $\sqrt{(X_{\text{mesuré}} - X_{\text{réel}})^2 + (Y_{\text{mesuré}} - Y_{\text{réel}})^2}$
+
 
 Cette métrique permet de prendre en compte simultanément les erreurs horizontales et verticales.
 
