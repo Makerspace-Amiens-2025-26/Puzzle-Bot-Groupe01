@@ -2,9 +2,6 @@
 
 > Un robot capable de résoudre automatiquement des puzzles physiques en manipulant les pièces à l'aide d'un système d'aspiration.
 
-![Status](https://img.shields.io/badge/Status-En%20développement-orange)
-![Project](https://img.shields.io/badge/Projet-Makerspace%20Amiens-blue)
-![Robotics](https://img.shields.io/badge/Domaine-Robotique-green)
 
 ---
 
@@ -22,8 +19,6 @@ Le projet combine plusieurs disciplines :
 - Mécanique
 - Électronique
 - Informatique
-- Automatisation
-
 ---
 
 ## 📂 Structure du projet
@@ -65,11 +60,10 @@ Des améliorations sont encore en cours de développement afin d'augmenter la ta
 
 ## 🔮 Perspectives d'évolution
 
-- Support de puzzles plus complexes.
+- Support de puzzles de plus grande taille.
 - Amélioration de la précision de placement.
 - Optimisation des trajectoires de déplacement.
 - Réduction du temps de résolution.
-- Intégration d'un système avancé de vision par ordinateur.
 - Interface utilisateur pour le contrôle et le suivi des résolutions.
 
 ---
