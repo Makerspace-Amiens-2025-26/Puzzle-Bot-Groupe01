@@ -26,32 +26,6 @@ Le projet combine plusieurs disciplines :
 
 ---
 
-
-## 🦾 Architecture du robot
-
-### Partie mécanique
-
-- Structure robotisée conçue pour le déplacement des pièces.
-- Système de guidage permettant des mouvements précis.
-- Ventouse assurant la préhension des pièces.
-- Pompe à vide générant l'aspiration.
-
-### Partie électronique
-
-- Contrôle des actionneurs et du système d'aspiration.
-- Communication entre les différents modules du robot.
-
-### Partie logicielle
-
-Le logiciel assure :
-
-- La gestion des déplacements.
-- La logique de résolution.
-- Le contrôle des composants électroniques.
-- La coordination des différentes étapes du processus.
-
----
-
 ## 📂 Structure du projet
 
 ```text
@@ -68,11 +42,11 @@ Puzzle-Bot/
 ## 🛠️ Technologies utilisées
 
 - Python
-- C++
-- C
+- Arduino / C++
 - Systèmes embarqués
 - Robotique
 - Contrôle moteur
+- Camera tracking / vision
 
 ---
 
