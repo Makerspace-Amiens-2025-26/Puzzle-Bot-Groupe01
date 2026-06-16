@@ -26,33 +26,6 @@ Le projet combine plusieurs disciplines :
 
 ---
 
-## ⚙️ Fonctionnement général
-
-Le processus de résolution se déroule en plusieurs étapes :
-
-```text
-Analyse du puzzle
-        │
-        ▼
-Identification des pièces
-        │
-        ▼
-Calcul de la position cible
-        │
-        ▼
-Préhension par ventouse
-        │
-        ▼
-Déplacement robotisé
-        │
-        ▼
-Placement de la pièce
-        │
-        ▼
-Puzzle complété
-```
-
----
 
 ## 🦾 Architecture du robot
 
