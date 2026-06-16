@@ -54,7 +54,7 @@ Puzzle-Bot/
 
 Le robot est actuellement capable de :
 
-- Manipuler des pièces de petite taille.
+- Manipuler des pièces de puzzle de tailles moyennes.
 - Saisir les pièces grâce à un système de ventouse.
 - Déplacer les pièces vers une position définie.
 - Résoudre des puzzles simples.
