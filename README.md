@@ -42,6 +42,7 @@ Puzzle-Bot/
 - Robotique
 - Contrôle moteur
 - Camera tracking / vision
+- Kicad
 
 ---
 
