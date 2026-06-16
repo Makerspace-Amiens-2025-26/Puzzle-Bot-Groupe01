@@ -159,21 +159,4 @@ Projet réalisé par :
 Dans le cadre du **Makerspace Amiens 2025-2026**.
 
 ---
-
-## 📸 Démonstrations
-
-Vous pouvez ajouter ici :
-
-- Des photos du robot
-- Des vidéos de démonstration
-- Des schémas mécaniques
-- Des captures d'écran du logiciel
-
-Exemple :
-
-```markdown
-![Robot](docs/images/robot.jpg)
-```
-
----
 N'hésitez pas à nous contacter pour toutes questions concernant le projet !
