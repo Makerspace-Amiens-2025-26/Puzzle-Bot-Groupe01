@@ -94,7 +94,6 @@ Projet réalisé par :
 - Damien
 - Aubin
 
-Dans le cadre du **Makerspace Amiens 2025-2026**.
 
 ---
 N'hésitez pas à nous contacter pour toutes questions concernant le projet !
