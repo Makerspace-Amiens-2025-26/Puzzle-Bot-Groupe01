@@ -26,15 +26,6 @@ Le projet combine plusieurs disciplines :
 
 ---
 
-## 🎯 Objectifs du projet
-
-- Automatiser la résolution de puzzles physiques.
-- Développer un système de manipulation précis et fiable.
-- Concevoir une architecture matérielle et logicielle modulaire.
-- Expérimenter l'intégration de la robotique dans des tâches de résolution de problèmes.
-
----
-
 ## ⚙️ Fonctionnement général
 
 Le processus de résolution se déroule en plusieurs étapes :
