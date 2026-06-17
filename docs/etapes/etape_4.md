@@ -165,7 +165,7 @@ La vision par ordinateur est assurée par une **webcam USB** *https://www.digike
 Avant toute détection, la caméra doit être calibrée pour corriger la distorsion optique de l'objectif. Ce processus utilise une **mire d'échiquier** imprimée et le script Testings/camera/camera_calib.py.
 
 mire d'échiquier : 
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/chessboard.png)
+![Alt text](../images/chessboard.png)
 
 La calibration produit deux paramètres essentiels :
 
@@ -213,7 +213,7 @@ Trois marqueurs ArUco sont fixés de manière permanente sur le bâti du robot e
 | ID 2         | Axe Y    | (0, 4)              |
 
 
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/Coordinate%20system.png?raw=true)
+![Alt text](../images/Coordinate%20system.png?raw=true)
 
 La distance entre les marqueurs de référence correspond à **une unité réelle = 4 unités de grille**, avec un **pas de grille de 60 mm**.
 
@@ -286,12 +286,12 @@ h;x4998s200;y3724s200;p1;r45;p0;END
 
 Le firmware répond ACK{n} après chaque paquet exécuté, et OK lorsqu'il reçoit END. Ce mécanisme de **handshake** garantit que Python n'envoie le paquet suivant qu'une fois le précédent entièrement exécuté.
 <br>
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/communication_v2_1.png)
+![Alt text](../images/communication_v2_1.png)
 
 <br>
 
 
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/communication_v2_2.png)
+![Alt text](../images/communication_v2_2.png)
 
 **Jeu de commandes**
 
