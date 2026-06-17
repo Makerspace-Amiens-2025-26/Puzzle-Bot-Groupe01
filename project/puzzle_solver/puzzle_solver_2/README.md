@@ -97,16 +97,29 @@ Then set the puzzle state:
 
 ```python
 # Current grid positions of each piece  (col, row)
-piece_location = [ [0,1], [0,4], [2,4], [2,1] ]
+piece_location = [ [1,1], [4,1], [2,3], [4,3] ]
 
 # Current angle of each piece in degrees (from -179 to 180 degrees)
-piece_angles   = [ -100,   100,  100,   100  ]
+piece_angles   = [ 0,   90,  -90,   45  ]
 
 # Destination grid position for each piece  (col, row)
-piece_dest     = [ [0,2], [0,3], [1,3], [1,2] ]
+piece_dest     = [ [2,1], [3,1], [2,2], [3,2] ]
 ```
 
 `piece_location[i]`, `piece_angles[i]`, and `piece_dest[i]` all refer to the **same piece**.
+
+Before Solving : 
+<br>
+
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/puzzle_unsolved_2_py.png)
+
+<br><br>
+After Solving : 
+<br>
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/puzzle_solved_2_py.png)
+
 
 ---
 
@@ -147,8 +160,11 @@ h;r0;x100s200;y196s200;...;h;END;
 [←] Arduino: OK
 [✓] All instructions completed.
 ```
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/puzzle_solver_2_py.png)
 
 ---
+
+
 
 ## Serial Protocol (summary)
 
