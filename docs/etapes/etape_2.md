@@ -76,7 +76,7 @@ Cependant, les premiers essais ont mis en évidence un léger manque de rigidit�
 
 L'utilisation de deux supports permet de mieux répartir les efforts sur la structure, de réduire les déformations des profilés et d'assurer un maintien plus rigide de la caméra. Cette évolution a contribué à améliorer la fiabilité du système de vision et la qualité des données utilisées pour la résolution du puzzle.
 
-<img src="../images/supportbarre.PNG" width="300">
+<img src="../images/supportcamera.PNG" width="300">
 
 
 # Assemblage du Puzzle Bot
