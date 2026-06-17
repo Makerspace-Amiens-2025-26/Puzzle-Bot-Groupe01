@@ -76,7 +76,17 @@ Cependant, les premiers essais ont mis en évidence un léger manque de rigidit�
 
 L'utilisation de deux supports permet de mieux répartir les efforts sur la structure, de réduire les déformations des profilés et d'assurer un maintien plus rigide de la caméra. Cette évolution a contribué à améliorer la fiabilité du système de vision et la qualité des données utilisées pour la résolution du puzzle.
 
-<img src="../images/supportcamera.PNG" width="300">
+<img src="../images/supportcamera.PNG" width="300">   <img src="../images/surpportbarre.PNG" width="340">
+
+## Support moteur Axe de deplacement
+Cette pièce a été conçue pour assurer la fixation des moteurs pas à pas responsables du déplacement du robot le long de son axe principal. Elle sert d’interface entre le moteur et la structure en profilés aluminium, tout en garantissant un positionnement précis et un alignement correct avec le système d’entraînement.
+
+Le support intègre directement les perçages nécessaires à la fixation du moteur ainsi que les renforts mécaniques permettant de supporter les efforts générés lors des accélérations et des changements de direction. Sa géométrie a été optimisée afin de limiter les déformations tout en conservant une pièce compacte et facilement imprimable en 3D.
+
+Contrairement à une configuration avec un seul moteur, nous avons choisi d’installer un support moteur de chaque côté du robot. Cette solution permet de répartir les efforts de manière symétrique sur la structure et d'assurer un entraînement plus homogène de l’axe de déplacement.
+
+L’utilisation de deux supports moteurs améliore également la stabilité mécanique de l’ensemble, réduit les contraintes appliquées aux profilés et limite les risques de désalignement. Cette conception contribue ainsi à obtenir des mouvements plus fluides, une meilleure précision de positionnement et une plus grande fiabilité du robot lors de son fonctionnement.
+
 
 
 # Assemblage du Puzzle Bot
