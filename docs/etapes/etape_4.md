@@ -93,6 +93,7 @@ La fonction rotation_management(angle) côté Python gère automatiquement les a
 
 <br>
 
+<br>
 
 
 **4\. Pompe et électrovanne**
@@ -118,7 +119,9 @@ La séquence complète d'un cycle de saisie (pick_place(1)) :
 
 La séquence de pose (pick_place(0)) est similaire, avec la valve ouverte à l'étape 3 et un temps d'attente de 1 seconde pour que la pièce se détache.
 
+<br>
 
+<br>
 **5\. Réflexion sur l'architecture logicielle**
 
 **Pourquoi ne pas utiliser GRBL ?**
@@ -143,7 +146,9 @@ Le firmware est organisé en modules bien séparés :
 Chaque module a une responsabilité unique, ce qui facilite la maintenance et les tests.
 
 
-<br><br><br>
+<br>
+
+<br>
 
 
 
@@ -194,8 +199,9 @@ Pour réduire le bruit de détection lié aux variations de luminosité et aux p
 Un paramètre DEBUG_STAGE permet d'arrêter le pipeline à n'importe quelle étape pour visualiser le résultat intermédiaire, ce qui s'est révélé très utile pendant le développement.
 
 
-<br><br><br>
+<br>
 
+<br>
 
 
 
