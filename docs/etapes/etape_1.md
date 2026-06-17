@@ -139,7 +139,7 @@ Bien que nous ayons eu la possibilité de les découper à note guise, nous avon
 **-L'Imprimante 3D :**
 L'ensemble des pièces mécaniques spécifiques du PuzzleBot a été fabriqué par impression 3D. Cette technologie nous a permis de concevoir et de produire rapidement des pièces sur mesure adaptées aux besoins du projet, tout en facilitant les phases de prototypage et d'amélioration. Grâce à cette méthode de fabrication, nous avons pu tester plusieurs versions de certaines pièces avant de valider leur conception finale et leur intégration sur le robot.
 
-<img src="../images/image(1).jpeg" width="300">
+<img src="../images/Image (1).jpeg" width="400">
 
 
 **Prototypage mécanique et Impression 3D**
