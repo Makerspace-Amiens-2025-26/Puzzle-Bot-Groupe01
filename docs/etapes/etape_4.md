@@ -28,11 +28,7 @@ Toutes les affectations de broches, les vitesses, les accélérations et les con
 <br><br><br>
 
 
-
-
-**2\. Ajout des capteurs**
-
-**Tests unitaires des composants**
+**2\.Tests unitaires des composants**
 
 Avant d'intégrer les composants ensemble, chaque élément a été testé indépendamment via des scripts dédiés, disponibles dans le dossier Testings/. Cette approche de tests unitaires a permis de valider le câblage, d'affiner les paramètres mécaniques et d'identifier les problèmes avant l'intégration.
 
@@ -43,6 +39,8 @@ Les tests réalisés :
 - **Testings/servos/servo_up_down/** - calibration des positions haute et basse du bras Z
 - **Testings/servos/servo_rotation/** - vérification de la plage de rotation de la pièce
 - **Testings/pump/** - test du circuit pneumatique (pompe + électrovanne)
+
+reference : https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/tree/main/project/Testings 
 
 **Calibration mécanique**
 
@@ -92,16 +90,25 @@ Chaque module a une responsabilité unique, ce qui facilite la maintenance et le
 
 **Introduction**
 
-La vision par ordinateur est assurée par une **webcam USB** positionnée au-dessus du plateau. Le traitement d'image repose sur la bibliothèque **OpenCV** et utilise les marqueurs **ArUco** (dictionnaire DICT_6X6_250) pour localiser les pièces du puzzle.
+La vision par ordinateur est assurée par une **webcam USB** *https://www.digikey.fr/fr/products/detail/dfrobot/FIT0892/18069226* positionnée au-dessus du plateau. Le traitement d'image repose sur la bibliothèque **OpenCV** et utilise les marqueurs **ArUco** (dictionnaire DICT_6X6_250) pour localiser les pièces du puzzle. *reference Aruco: https://youtu.be/bS00Vs09Upw?si=dmPM06baYDc_qxNE*
+
+
+
 
 **Calibration de la caméra**
 
 Avant toute détection, la caméra doit être calibrée pour corriger la distorsion optique de l'objectif. Ce processus utilise une **mire d'échiquier** imprimée et le script Testings/camera/camera_calib.py.
 
+mire d'échiquier : 
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/chessboard.png)
+
 La calibration produit deux paramètres essentiels :
 
 - **La matrice intrinsèque** (CAMERA_MATRIX) - décrit la focale et le centre optique
 - **Les coefficients de distorsion** (DIST_COEFFS) - décrivent la déformation radiale et tangentielle de l'objectif
+  
+*Distorsion radiale : due à la forme des lentilles, elle fait varier le grossissement selon la distance au centre de l’image, ce qui peut faire paraître les objets près des bords plus grands ou plus petits et courber les lignes droites (effet barillet ou coussinet).
+Distorsion tangentielle : due à un mauvais alignement des lentilles par rapport au capteur, elle décale localement les points de l’image, ce qui déforme les formes et fait apparaître les lignes droites comme légèrement tordues ou asymétriques.*
 
 Ces valeurs sont ensuite intégrées directement dans find_aruco_position.py et utilisées à chaque frame pour "redresser" l'image avant toute détection.
 
