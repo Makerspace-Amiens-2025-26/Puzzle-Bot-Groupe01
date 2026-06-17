@@ -23,14 +23,22 @@ Nous n'avons pas reçu la pompe dès les premiers jours. Afin de combler ce temp
 
 Nous avons eu un pépin car lorsque la pompe aspirait, tout allait bien. En revanche, elle ne lachait pas la pièce correctement. La pièce se décrochait juste avec le temps (et la gravité) et le manque d'aspiration, non pas car nous avions décider de lacher la pièce. Suite à de nombreuses minutes de recherches, nous avons réalisé que la puissance envoyée par la carte n'était pas suffisante et qu'il fallait un nouveau driver. Pour cela, nous avons utiliser Kicad.
 
-<iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=3f834839403a2d3bfa00f478&elementType=PARTSTUDIO" frameborder="0"></iframe>
+<model-viewer src="Pompe.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
 
 
 **-Electro-vanne :** 
 
 Pour manipuler les pièces du puzzle de manière automatisée, le robot utilise un système de préhension par le vide associant la pompe à air vue précédemment et une électrovanne. La pompe fonctionne en continu pour générer une aspiration au niveau du circuit pneumatique alors que l'électrovanne fait office de gâchette contrôlée électroniquement par la carte de commande (CNC).
 
-<iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=0a388f719ae6b50022233bb5&elementType=PARTSTUDIO" frameborder="0"></iframe>
+<model-viewer src="Electrovanne.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
 
 
 **-Moteur pas-à-pas :** 
@@ -39,7 +47,11 @@ Le moteur pas-à-pas est utilisé pour se déplacer plus précisement. Il foncti
 
 Nous nous sommes vite rendu compte que les moteurs n'étaient pas assez précis et avaient des problèmes de vitesse. Nous avons donc mis en place des cavaliers pour optimiser les déplacements liés aux moteurs. Ces cavaliers permettent d'activer le microstepping, une technique consistant à diviser électroniquement chaque pas mécanique du moteur. Cette configuration est indispensable pour accroître la précision de positionnement du bras lors de la manipulation des pièces, tout en réduisant considérablement les vibrations, les saccades et le bruit de fonctionnement des moteurs. Cela a très bien fonctionné sur nos moteurs et nous a permis de décupler notre précision.
 
-<iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=5e57f97f026c1f00d2344900&elementType=PARTSTUDIO" frameborder="0"></iframe>
+<model-viewer src="Moteurpasapas.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
 
 
 **-Les ServoMoteurs :**
@@ -48,7 +60,11 @@ Utilisé pour piloter un mouvement angulaire limité et pour contrôler les mouv
 
 La limite de rotation d'un servo-moteur a constitué un challenge concernant la manière de changer l'orientation des pièces.
 
-<iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=f79d90442e1b479fbb8716f7&elementType=PARTSTUDIO" frameborder="0"></iframe>
+<model-viewer src="Servomoteur.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
 
 
 **-La CNC Shield :**
@@ -57,7 +73,11 @@ Le CNC Shield est une carte d’extension pour Arduino, qui permet de contrôler
 
 Nous l'avons disposée sous la machine afin que tous les câbles qui lui sont reliés ne se baladent pas librement au dessus de la machine. Cela risquerait d'interférer avec le bon fonctionnement du puzzle-bot.
 
-<iframe height="400" width="80%" src="https://modelembedder.net/embed?did=dc4e4dc410142a1f5ec17e75&wvm=v&wvmid=8dbde0cae67cbb0ab40cced3&eid=7ac83cab871f620abcc97dbd&elementType=ASSEMBLY" frameborder="0"></iframe>
+<model-viewer src="CNCshield.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+</model-viewer>
 
 
 **-La Camera :**
