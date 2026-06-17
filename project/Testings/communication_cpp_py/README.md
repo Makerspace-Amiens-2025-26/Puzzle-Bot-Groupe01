@@ -155,6 +155,16 @@ Commands are greedily packed into the current packet until adding the next one w
 
 ---
 
+
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/communication_v2_1.png)
+
+<br>
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/communication_v2_2.png)
+
+
+
 ## Setup
 
 ### Requirements
