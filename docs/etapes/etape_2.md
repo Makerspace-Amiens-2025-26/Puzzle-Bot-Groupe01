@@ -4,11 +4,6 @@ title: Conception et assemblage
 parent: Etapes de fabrication
 nav_order: 2
 ---
-Conception
-boitier
- on a concu de sorte a ce quelle dissipe la chaleur
-
-Nous devions avec tout ces composants 
 
 deux moteurs axe x donc 2 couroies syncro grace au drivers 
 un moteur axe y donc 1 couroie 
@@ -39,6 +34,8 @@ camera piéce symetrique pour avoir le moins de pieces a imprimer (photo one sha
 
 
 # Conception du Puzzle bot
+Comme dit précedemment, la conception de pièces 3D sur mesure a été crucial,
+En complément des composants standards de la machine, plusieurs pièces spécifiques ont dû être conçues afin d'assurer son bon fonctionnement et son assemblage. Nous avons ainsi modélisé en 3D différents éléments, tels que les supports moteurs, le support de la pompe, la fixation de la caméra, le boîtier de la carte électronique, le boîtier de l'arrêt d'urgence ainsi que d'autres pièces de fixation. Une fois la conception terminée, ces pièces ont été imprimées en 3D puis intégrées à la machine.
 
 La conception 3D a été réalisée principalement sur Onshape. Nous avons utilisé des modèles existants pour certains composants clés, notamment le plateau, les servomoteurs, ainsi que le profilé en aluminium. Le plateau a été modélisé avec les dimensions précises pour accueillir les courroies et les moteurs. Les servomoteurs ont été placés en respectant les contraintes de couple et d'espace, et la barre métallique a été dimensionnée pour assurer la rigidité et la stabilité de l'ensemble. Ensuite, nous avons intégré tous ces éléments dans un assemblage complet pour vérifier les ajustements, les tolérances et la compatibilité entre les pièces. Cette base nous a permis de garantir un bon alignement mécanique avant de passer aux impressions et à l’assemblage final.
 
@@ -52,6 +49,7 @@ L'espace créé sous le plateau permet :
 - le passage des câbles moteurs ;
 - le routage des connecteurs ;
 - l'intégration future de capteurs ;
+- Réduire les vibrations de la machine;
 - l'accès aux éléments électroniques sans démonter la structure.
 
 <img src="../images/Capture2.PNG" width="300">
@@ -64,20 +62,9 @@ La géométrie de la pièce permet un positionnement précis des roues afin de g
 
 Le choix d’une pièce imprimée en 3D a permis d’intégrer plusieurs fonctions dans un seul composant : support des roues, interface de fixation et maintien de l’alignement. Cette conception réduit le nombre de pièces nécessaires, simplifie l’assemblage et facilite les opérations de maintenance ou de remplacement. Grâce à cette glissière, le déplacement sur l’axe X reste stable, précis et reproductible, ce qui est essentiel pour le positionnement des pièces du puzzle.
 
-<img src="../images/Capture3.JPG" width="300">
+<img src="../images/Capture3.JPG" width="300">   <img src="../images/glisierreguidage.PNG" width="300">
 
-## 3. Support de base de la camera
-Cette pièce a été conçue pour assurer la fixation de la structure supportant la caméra au châssis principal du PuzzleBot. Elle réalise la liaison entre les profilés verticaux et horizontaux tout en garantissant un positionnement précis de l'ensemble de la structure de vision.
-
-Lors de la première phase de conception, un seul support de ce type avait été installé sur un côté du robot. Cette solution permettait de maintenir la structure de la caméra tout en limitant le nombre de pièces imprimées.
-
-Cependant, les premiers essais ont mis en évidence un léger manque de rigidité de l'ensemble, pouvant entraîner des vibrations ou de faibles mouvements de la caméra lors des déplacements du robot. Afin d'améliorer la stabilité mécanique et de garantir une meilleure précision des acquisitions d'images, nous avons décidé d'ajouter un second support symétrique sur l'autre côté du robot.
-
-L'utilisation de deux supports permet de mieux répartir les efforts sur la structure, de réduire les déformations des profilés et d'assurer un maintien plus rigide de la caméra. Cette évolution a contribué à améliorer la fiabilité du système de vision et la qualité des données utilisées pour la résolution du puzzle.
-
-<img src="../images/supportcamera.PNG" width="300">   <img src="../images/surpportbarre.PNG" width="340">
-
-## 4. Support moteur Axe de deplacement
+## 3. Support moteur Axe de deplacement
 Cette pièce a été conçue pour assurer la fixation des moteurs pas à pas responsables du déplacement du robot le long de son axe principal. Elle sert d’interface entre le moteur et la structure en profilés aluminium, tout en garantissant un positionnement précis et un alignement correct avec le système d’entraînement.
 
 Le support intègre directement les perçages nécessaires à la fixation du moteur ainsi que les renforts mécaniques permettant de supporter les efforts générés lors des accélérations et des changements de direction. Sa géométrie a été optimisée afin de limiter les déformations tout en conservant une pièce compacte et facilement imprimable en 3D.
@@ -89,7 +76,7 @@ L’utilisation de deux supports moteurs améliore également la stabilité méc
   <img src="../images/support moteur.PNG" width="300">  <img src="../images/supportmoteurhaut.PNG" width="340">
 
 
-## 5. Glissière de translation sur l’axe Y
+## 4. Glissière de translation sur l’axe Y
 
 Cette pièce constitue le chariot mobile se déplaçant sur l’axe Y du PuzzleBot. Elle a été conçue pour regrouper et supporter l’ensemble des éléments nécessaires à la manipulation des pièces du puzzle de manière compacte et ergonomique.
 
@@ -99,7 +86,7 @@ Pour compléter ce mécanisme, nous avons également conçu la pièce jaune qui 
 
 <img src="../images/glisierrehauttourne.PNG" width="300">  <img src="../images/supporthautt.PNG" width="300">
 
-## 6.Cage de la carte electronique
+## 5.Cage de la carte electronique
 
 Nous avons également conçu une petite boîte en 3D dédiée à la protection de la carte électronique. Cette boîte, placée sous le plateau, permet de sécuriser l’électronique contre les chocs et les poussières. Elle a été conçue sur mesure pour s’intégrer parfaitement sous le plateau, optimisant l’espace tout en garantissant un accès facile pour les câbles. Ainsi, l'ensemble de la machine reste bien organisé et protégé.
 
@@ -123,15 +110,15 @@ Les supports supérieurs permettent de fixer la traverse horizontale reliant les
 
 ### c- Cage de la caméra
 
-La cage de la caméra a été spécialement conçue pour accueillir et maintenir la caméra dans une position fixe au-dessus du plateau de jeu. Elle assure un positionnement précis de la caméra tout en permettant un montage et un démontage rapides pour les opérations de maintenance ou d'ajustement.
+La cage de la caméra a été spécialement conçue pour accueillir et maintenir la caméra dans une position fixe au-dessus du plateau de jeu. Elle assure un positionnement précis de la caméra tout en permettant un montage et un démontage rapides pour les opérations de maintenance ou d'ajustement
 
-<img src="../images/milieu camera.PNG" width="300">   
+<img src="../images/camera.PNG" width="300"> <img src="../images/cagecamera.PNG" width="300"> 
 
 ### d- Structure complète
 
 L'association des supports de base, des supports supérieurs et de la cage de la caméra forme une structure robuste et stable. Cette conception garantit une vue globale du plateau tout en assurant la qualité des images nécessaires à la détection et à l'identification des pièces du puzzle.
 
-<img src="../images/camerapieces.PNG" width="300">   
+<img src="../images/cameapieces.PNG" width="600">   
 
 
 
@@ -199,6 +186,11 @@ Cette structure supporte le système de déplacement de l'axe X et le système d
 
 Le chariot central a été fixé sur les guidages afin de permettre le déplacement de l'outil sur les différents axes.
 Les différents supports imprimés en 3D ont été assemblés et ajustés jusqu'à obtenir un mouvement régulier sans jeu excessif.
+
+# Resultat
+Voici la vue globale de notre PuzzleBotapres toutes les finitions
+
+<img src="../images/Image.jpeg" width="500">  
 
 ## **Problèmes communs et solutions**
 
