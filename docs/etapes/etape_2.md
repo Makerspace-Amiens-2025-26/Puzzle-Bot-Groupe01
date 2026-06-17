@@ -12,6 +12,15 @@ Nous avons également conçu des pièces de finition spécifiques pour améliore
 
 Nous avons également conçu une petite boîte en 3D dédiée à la protection de la carte électronique. Cette boîte, placée sous le plateau, permet de sécuriser l’électronique contre les chocs et les poussières. Elle a été conçue sur mesure pour s’intégrer parfaitement sous le plateau, optimisant l’espace tout en garantissant un accès facile pour les câbles. Ainsi, l'ensemble de la machine reste bien organisé et protégé.
 
+## 1. Amelioration du plateau
+La base constitue le châssis principal du robot. Contrairement à une structure posée directement sur la table, nous avons choisi de surélever l'ensemble du plateau de travail.
+L'espace créé sous le plateau permet :
+
+- le passage des câbles moteurs ;
+- le routage des connecteurs ;
+- l'intégration future de capteurs ;
+- l'accès aux éléments électroniques sans démonter la structure.
+
 # Assemblage du Puzzle Bot
 
 ## **Étapes d'Assemblage**
