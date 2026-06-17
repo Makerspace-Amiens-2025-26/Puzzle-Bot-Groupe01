@@ -141,7 +141,7 @@ Puis les ajustements au fur et à mesure des essais. Par exemple, le support de 
 
 L'intégration de la pompe et de l'électrovanne 12V a nécessité une transition prudente pour ne pas risquer d'endommager la carte Arduino. Nous avons créé la carte sur KiCad (vue ci-dessous) puis nous l'avons faite vérifier par les enseignants. Nous l'avons ensuite imprimée puis soudée dans un sens avant de nous rendre compte que le schéma était dans le mauvais sens. Le prototypage nous a permis d'éviter de causer de gros dommages et de corriger notre erreur.
 
-![KiCad PCB](../images/KiCad PCB.PNG)       ![KiCad PCB](../images/KiCad PCB1.PNG)       ![KiCad PCB2](../images/KiCad PCB.PNG)
+![KiCad PCB](../images/KiCad PCB.PNG)      ![KiCad PCB](../images/KiCad PCB1.PNG)      ![KiCad PCB2](../images/KiCad PCB.PNG)
 
 Une fois le schéma validé, nous sommes passés à la gravure puis à la soudure de notre carte MOSFET. Les échecs successifs sur les premières versions (problèmes de soudure et surchauffe) nous ont appris à dimensionner correctement les pistes pour supporter la tension de 12V requise par l'électrovanne.
 
