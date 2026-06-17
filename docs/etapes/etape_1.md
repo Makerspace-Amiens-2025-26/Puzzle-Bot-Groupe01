@@ -23,7 +23,7 @@ Nous n'avons pas reçu la pompe dès les premiers jours. Afin de combler ce temp
 
 Nous avons eu un pépin car lorsque la pompe aspirait, tout allait bien. En revanche, elle ne lachait pas la pièce correctement. La pièce se décrochait juste avec le temps (et la gravité) et le manque d'aspiration, non pas car nous avions décider de lacher la pièce. Suite à de nombreuses minutes de recherches, nous avons réalisé que la puissance envoyée par la carte n'était pas suffisante et qu'il fallait un nouveau driver. Pour cela, nous avons utiliser Kicad.
 
-<model-viewer src="../3D/Pompe.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/Pompe.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -34,7 +34,7 @@ Nous avons eu un pépin car lorsque la pompe aspirait, tout allait bien. En reva
 
 Pour manipuler les pièces du puzzle de manière automatisée, le robot utilise un système de préhension par le vide associant la pompe à air vue précédemment et une électrovanne. La pompe fonctionne en continu pour générer une aspiration au niveau du circuit pneumatique alors que l'électrovanne fait office de gâchette contrôlée électroniquement par la carte de commande (CNC).
 
-<model-viewer src="../3D/Electrovanne.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/Electrovanne.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -47,7 +47,7 @@ Le moteur pas-à-pas est utilisé pour se déplacer plus précisement. Il foncti
 
 Nous nous sommes vite rendu compte que les moteurs n'étaient pas assez précis et avaient des problèmes de vitesse. Nous avons donc mis en place des cavaliers pour optimiser les déplacements liés aux moteurs. Ces cavaliers permettent d'activer le microstepping, une technique consistant à diviser électroniquement chaque pas mécanique du moteur. Cette configuration est indispensable pour accroître la précision de positionnement du bras lors de la manipulation des pièces, tout en réduisant considérablement les vibrations, les saccades et le bruit de fonctionnement des moteurs. Cela a très bien fonctionné sur nos moteurs et nous a permis de décupler notre précision.
 
-<model-viewer src="../3D/Moteurpasapas.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/Moteurpasapas.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -60,7 +60,7 @@ Utilisé pour piloter un mouvement angulaire limité et pour contrôler les mouv
 
 La limite de rotation d'un servo-moteur a constitué un challenge concernant la manière de changer l'orientation des pièces.
 
-<model-viewer src="../3D/Servomoteur.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/Servomoteur.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -73,7 +73,7 @@ Le CNC Shield est une carte d’extension pour Arduino, qui permet de contrôler
 
 Nous l'avons disposée sous la machine afin que tous les câbles qui lui sont reliés ne se baladent pas librement au dessus de la machine. Cela risquerait d'interférer avec le bon fonctionnement du puzzle-bot.
 
-<model-viewer src="../3D/CNCshield.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+<model-viewer src="../3D/CNCshield.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
