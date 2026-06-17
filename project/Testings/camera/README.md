@@ -63,6 +63,8 @@ Uses a printed checkerboard and OpenCV's `calibrateCamera()` to solve for `CAMER
    `https://github.com/opencv/opencv/blob/master/doc/pattern.png`  
    (9×6 inner corners — tape it flat on a rigid surface, no wrinkles)
 
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/chessboard.png)
+
 2. **Mount the camera at its exact production position and height.**  
    Calibration is only valid for the position it was done in — moving the camera means re-running this script.
 
@@ -109,6 +111,9 @@ Also saved to `camera_calibration.npz`.
 ### What it does
 
 Opens a live side-by-side window: **LEFT** = raw distorted feed with a grid overlay, **RIGHT** = undistorted feed with the same grid. The grid makes barrel/pincushion distortion immediately visible — straight grid lines on the right panel mean good calibration.
+
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/undistortion.png)
 
 The bottom-left HUD displays the active `fx, fy, cx, cy, k1, k2, k3, p1, p2` values.
 
