@@ -64,7 +64,7 @@ La géométrie de la pièce permet un positionnement précis des roues afin de g
 
 Le choix d’une pièce imprimée en 3D a permis d’intégrer plusieurs fonctions dans un seul composant : support des roues, interface de fixation et maintien de l’alignement. Cette conception réduit le nombre de pièces nécessaires, simplifie l’assemblage et facilite les opérations de maintenance ou de remplacement. Grâce à cette glissière, le déplacement sur l’axe X reste stable, précis et reproductible, ce qui est essentiel pour le positionnement des pièces du puzzle.
 
-<img src="../images/Capture3.JPG" width="300">
+<img src="../images/Capture3.JPG" width="300">   <img src="../images/glisierreguidage.PNG" width="300">
 
 ## 3. Support moteur Axe de deplacement
 Cette pièce a été conçue pour assurer la fixation des moteurs pas à pas responsables du déplacement du robot le long de son axe principal. Elle sert d’interface entre le moteur et la structure en profilés aluminium, tout en garantissant un positionnement précis et un alignement correct avec le système d’entraînement.
