@@ -70,11 +70,6 @@ Ces valeurs sont le fruit de mesures réelles sur le robot et devront être rép
 
 Le servo de rotation a une **plage physique de 180°**, mais en raison de la configuration mécanique, la plage resultante de rotation est limité à 90 degrés seeulement.
 
-<br>
-
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/chessboard.png)
-
-<br>
 
 Par suite, nous avons concu un algorithme permettant de realiser des rotations de -179 jusqu'à 180 degrées. 
 
