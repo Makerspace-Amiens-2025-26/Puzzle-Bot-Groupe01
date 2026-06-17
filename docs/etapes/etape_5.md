@@ -151,6 +151,9 @@ Ycorr = g(Xmesuré,Ymesuré)
 
 Cette méthode est souvent utilisée pour modéliser les distorsions géométriques introduites par les systèmes optiques.
 
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/cubic_wrap_correction.png)
+<br>
+
 # Comparaison des résultats
 
 Les différentes approches ont été évaluées à partir de l'erreur moyenne calculée sur les points de calibration.
