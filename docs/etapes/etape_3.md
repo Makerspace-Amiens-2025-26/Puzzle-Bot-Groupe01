@@ -32,6 +32,11 @@ Pour garantir la maintenabilité du robot, l'intégralité du câblage physique 
 | **Pompe à vide** | D4 | Z.STEP | Commande Tout-ou-Rien (via MOSFET) |
 | **Électrovanne** | D7 | Z.DIR | Commande Tout-ou-Rien (via MOSFET) |
 
+### Réglage des drivers
+
+Chaque moteur doit être limité par un driver car la carte branchée en 12V distribue trop de courant dans les moteurs, cela pouvant entrainer un endommagement des moteurs et du matériel.
+
+
 ### Gestion de la puissance et carte MOSFET
 Les sorties de l'Arduino UNO délivrent un courant maximal insuffisant et une tension limitée à 5V. Or, l'électrovanne et la pompe pneumatique requièrent une alimentation stable en **12 Volts**. 
 
