@@ -137,7 +137,7 @@ Elle permet de reproduire très fidèlement les points utilisés lors de la phas
 
 
 
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/TPS.png)
+![Alt text](../images/TPS.png)
 
 <br>
 
@@ -151,7 +151,7 @@ Ycorr = g(Xmesuré,Ymesuré)
 
 Cette méthode est souvent utilisée pour modéliser les distorsions géométriques introduites par les systèmes optiques.
 
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/cubic_wrap_correction.png)
+![Alt text](../images/cubic_wrap_correction.png)
 <br>
 
 # Comparaison des résultats
@@ -215,7 +215,7 @@ Ces droites divisent le quadrilatère en quatre régions :
 A1 A2 A3 A4
 
 <br><br><br>
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/my_correction_algo.png)
+![Alt text](../images/my_correction_algo.png)
 
 ## Calcul des poids
 
