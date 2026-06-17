@@ -285,6 +285,13 @@ Exemple de paquet :
 h;x4998s200;y3724s200;p1;r45;p0;END
 
 Le firmware répond ACK{n} après chaque paquet exécuté, et OK lorsqu'il reçoit END. Ce mécanisme de **handshake** garantit que Python n'envoie le paquet suivant qu'une fois le précédent entièrement exécuté.
+<br>
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/communication_v2_1.png)
+
+<br>
+
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/communication_v2_2.png)
 
 **Jeu de commandes**
 
