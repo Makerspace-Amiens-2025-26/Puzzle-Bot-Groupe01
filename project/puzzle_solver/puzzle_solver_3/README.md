@@ -248,6 +248,8 @@ Through Solving :
 ![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/through_solving_3_1.png)
 <br><br>
 
+
+(The image below is flipped upside-down)
 ![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/through_solving_3_2.png)
 <br><br>
 
