@@ -233,6 +233,32 @@ piece_dest   = [ [1,1], [1,2], [1,3], [1,4] ]
 ## Running
 
 ```bash
+python find_aruco_position.py
+```
+
+Before Solving : 
+<br><br>
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/puzzle_unsolved_3_py.png)
+
+Through Solving : 
+<br><br>
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/through_solving_3_1.png)
+<br><br>
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/through_solving_3_2.png)
+<br><br>
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/through_solving_3_3.png)
+<br><br>
+
+
+
+
+## Running
+
+```bash
 python puzzle_solver_3.py
 ```
 

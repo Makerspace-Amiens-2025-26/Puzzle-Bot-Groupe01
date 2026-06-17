@@ -44,7 +44,6 @@ La conception 3D a été réalisée principalement sur Onshape. Nous avons utili
 
 Nous avons également conçu des pièces de finition spécifiques pour améliorer la sécurité et l'organisation des câbles. Par exemple, nous avons créé des étriers qui viennent toucher les capteurs de fin de course pour arrêter précisément les mouvements. Nous avons aussi conçu des goulottes qui protègent les fils, avec des passages spécifiques permettant de guider les câbles de manière homogène le long de la structure. Cela garantit non seulement un fonctionnement fluide, mais aussi une protection durable des composants électroniques.
 
-Nous avons également conçu une petite boîte en 3D dédiée à la protection de la carte électronique. Cette boîte, placée sous le plateau, permet de sécuriser l’électronique contre les chocs et les poussières. Elle a été conçue sur mesure pour s’intégrer parfaitement sous le plateau, optimisant l’espace tout en garantissant un accès facile pour les câbles. Ainsi, l'ensemble de la machine reste bien organisé et protégé.
 
 ## 1. Amelioration du plateau
 La base constitue le châssis principal du robot. Contrairement à une structure posée directement sur la table, nous avons choisi de surélever l'ensemble du plateau de travail.
@@ -98,6 +97,13 @@ On y retrouve notamment les deux servomoteurs, l’un dédié au levage de la pi
 
 Pour compléter ce mécanisme, nous avons également conçu la pièce jaune qui assure les mouvements de levage et de rotation de la pièce saisie. Cette pièce joue un rôle essentiel dans la manipulation des éléments du puzzle en permettant leur prise, leur orientation et leur repositionnement avec précision.  
 
+<img src="../images/glisierrehauttourne.PNG" width="300">  <img src="../images/supporthautt.PNG" width="300">
+
+## Cage de la carte electronique
+
+Nous avons également conçu une petite boîte en 3D dédiée à la protection de la carte électronique. Cette boîte, placée sous le plateau, permet de sécuriser l’électronique contre les chocs et les poussières. Elle a été conçue sur mesure pour s’intégrer parfaitement sous le plateau, optimisant l’espace tout en garantissant un accès facile pour les câbles. Ainsi, l'ensemble de la machine reste bien organisé et protégé.
+
+<img src="../images/cagecarte.PNG" width="300">****
 
 
 # Assemblage du Puzzle Bot
