@@ -192,7 +192,7 @@ Les différents supports imprimés en 3D ont été assemblés et ajustés jusqu'
 # Resultat
 Voici la vue globale de notre PuzzleBotapres toutes les finitions
 
-<img src="../images/Image.jpeg" width="00">  
+<img src="../images/Image.jpeg" width="500">  
 
 ## **Problèmes communs et solutions**
 
