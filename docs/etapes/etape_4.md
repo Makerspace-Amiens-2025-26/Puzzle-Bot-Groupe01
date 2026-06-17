@@ -5,9 +5,13 @@ parent: Etapes de fabrication
 nav_order: 4
 ---
 
-**Numérique**
 
-<br><br>
+### Numérique
+
+*reference : https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/tree/main/project*
+
+
+<br>
 
 **1\. Configuration du matériel**
 
@@ -25,7 +29,9 @@ Les composants pilotés sont les suivants :
 Toutes les affectations de broches, les vitesses, les accélérations et les constantes de timing sont centralisées dans un seul fichier : config.h. Ce choix architectural est volontaire - modifier le câblage ou recalibrer le robot ne nécessite de toucher qu'un seul endroit dans le code.
 
 
-<br><br><br>
+<br>
+
+<br>
 
 
 **2\.Tests unitaires des composants**
@@ -54,10 +60,66 @@ Ces valeurs sont le fruit de mesures réelles sur le robot et devront être rép
 
 
 
-<br><br><br>
+<br>
+
+<br>
+
+**3\. Intégration de la rotation**
+
+**Contrainte matérielle**
+
+Le servo de rotation a une **plage physique de 180°**, mais en raison de la configuration mécanique, la plage resultante de rotation est limité à 90 degrés seeulement.
+
+<br>
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/chessboard.png)
+
+<br>
+
+Par suite, nous avons concu un algorithme permettant de realiser des rotations de -179 jusqu'à 180 degrées. 
 
 
-**3\. Réflexion sur l'architecture logicielle**
+**Gestion des angles dépassant 90°**
+
+La fonction rotation_management(angle) côté Python gère automatiquement les angles supérieurs à 90° en décomposant le mouvement en plusieurs sous-étapes de saisie/pose/rotation :
+
+| **Plage d'angle**    | **Stratégie**                                                               |
+| -------------------- | --------------------------------------------------------------------------- |
+| 0°                   | Saisir uniquement                                                           |
+| 0° < angle ≤ 90°     | Saisir → Tourner(angle)                                                     |
+| 90° < angle ≤ 180°   | Saisir → Tourner(90°) → Poser → Tourner(0°) → Saisir → Tourner(angle − 90°) |
+| −90° ≤ angle < 0°    | Tourner(−angle) → Saisir → Tourner(0°)                                      |
+| −180° ≤ angle < −90° | Séquence inverse symétrique                                                 |
+
+<br>
+
+
+
+**4\. Pompe et électrovanne**
+
+**Principe de fonctionnement**
+
+Le système de préhension fonctionne par **aspiration pneumatique** :
+
+- La **pompe** crée une dépression dans le circuit
+- L'**électrovanne** (normalement ouverte) est fermée pendant la saisie pour maintenir la dépression, et ouverte pendant la pose pour relâcher la pièce
+
+**Implémentation**
+
+Le servo du bras Z est piloté en **PWM généré par bit-banging** (pas de timer matériel requis). Une impulsion de 500 µs correspond à la position haute, 2500 µs à la position basse. 50 impulsions sont envoyées en boucle pour maintenir la position pendant environ 1 seconde.
+
+La séquence complète d'un cycle de saisie (pick_place(1)) :
+
+- Descendre le bras (servo → position basse)
+- Attendre 2 secondes (Z_DOWN_DWELL_MS)
+- Activer la pompe + fermer la valve
+- Attendre 3 secondes pour que l'aspiration se stabilise (PICK_SUCTION_MS)
+- Remonter le bras
+
+La séquence de pose (pick_place(0)) est similaire, avec la valve ouverte à l'étape 3 et un temps d'attente de 1 seconde pour que la pièce se détache.
+
+
+**5\. Réflexion sur l'architecture logicielle**
 
 **Pourquoi ne pas utiliser GRBL ?**
 
@@ -86,7 +148,10 @@ Chaque module a une responsabilité unique, ce qui facilite la maintenance et le
 
 
 
-**4\. Développement de la vision**
+
+
+
+**6\. Développement de la vision**
 
 **Introduction**
 
@@ -124,6 +189,8 @@ Pour maximiser la précision de détection, les frames passent par un **pipeline
 - **Zoom** - agrandissement de la zone recadrée à 1280×720 pixels
 - **Netteté** (unsharp mask) - accentuation des contrastes pour améliorer la détection des marqueurs
 
+Pour réduire le bruit de détection lié aux variations de luminosité et aux petits mouvements de la caméra, chaque position est calculée en **moyennant 70 frames consécutives**. Seules les frames où les 4 marqueurs nécessaires sont tous visibles sont prises en compte.
+
 Un paramètre DEBUG_STAGE permet d'arrêter le pipeline à n'importe quelle étape pour visualiser le résultat intermédiaire, ce qui s'est révélé très utile pendant le développement.
 
 
@@ -132,7 +199,7 @@ Un paramètre DEBUG_STAGE permet d'arrêter le pipeline à n'importe quelle éta
 
 
 
-**5\. Choix du mode de coordonnées**
+**7\. Choix du mode de coordonnées**
 
 **Système de référence ArUco**
 
@@ -172,85 +239,39 @@ y_steps = 196 + y_réel × STEPS_PER_MM_Y × 60
 
 Les constantes 100 et 196 correspondent à la position du marqueur origine dans l'espace des pas moteur.
 
+**Détection de l'angle par la caméra (v4)**
+
+Dans la version finale du solveur, l'angle de chaque pièce est mesuré directement par la caméra. Chaque marqueur ArUco possède quatre coins dans un ordre fixe (TL, TR, BR, BL). Le vecteur TL→TR définit l'axe horizontal du marqueur.
+
+L'angle est mesuré **par rapport au marqueur de référence ID 0**, ce qui annule automatiquement l'inclinaison physique de la caméra. Les deux axes (horizontal et vertical) du marqueur sont calculés, ramenés dans \[−90°, 90°\], et celui ayant la valeur absolue la plus faible est retenu. Le signe est ensuite inversé lors du passage au solveur (piece_angles = \[-angle for ...\]) pour respecter la convention de rotation du servo.
+
+
+
+
+<br>
+<br>
+
+
+**8. Homographie du plateau**
+
+Une étude a été menée pour quantifier la précision des coordonnées détectées par la caméra, avant et après traitement d'image, sur une grille de calibration 4×4 (16 positions de référence).
+
+L'erreur moyenne (distance euclidienne entre position mesurée et position réelle) passe de **0.3194** avant traitement d'image à **0.1564** après — soit une réduction de plus de 50 %. Le traitement d'image (undistort, crop, zoom, sharpen) reste à ce jour la méthode la plus efficace testée.
+
+Deux méthodes de recalibration géométrique globale ont ensuite été évaluées sur les mêmes points : le **Thin Plate Spline (TPS)** et une **déformation polynomiale cubique**. Dans notre contexte, ni l'une ni l'autre n'a permis d'améliorer les résultats (erreurs de 0.3706 et 0.3456 respectivement, donc supérieures au traitement d'image seul).
+
+Une nouvelle méthode de **correction locale par interpolation géométrique** a été proposée pour la suite : plutôt qu'une fonction globale sur tout le plateau, on identifie le quadrilatère de calibration (4 points voisins) contenant la mesure, et on pondère chaque sommet par l'aire de la région opposée — généralisation en 2D d'une simple interpolation linéaire.
+
+Détails complets de la méthodologie, des mesures, et des formules : voir [étape 5 du journal de bord](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/etapes/etape_5.md).
+
+**Conclusion et prochaine étape — notre méthode**
+
+Le traitement d'image reste pour l'instant notre meilleure approche de correction. Les méthodes de recalibration globale (TPS, Cubic Warp) n'ont pas apporté d'amélioration mesurable. La piste retenue pour la suite est la correction locale par aires, combinée à une calibration plus fine (grille à résolution triplée) et à l'intégration de l'angle de rotation de la pièce détectée, pour obtenir une description complète de sa position **(X, Y, θ)**.
 
 
 
 <br><br><br>
 
-
-
-**6\. Homographie du plateau**
-
-**Le problème : erreur systématique résiduelle**
-
-Même après la correction de distorsion optique, les coordonnées mesurées par la caméra présentent de petites erreurs systématiques sur l'ensemble du plateau. Ces erreurs varient spatialement - elles ne sont pas uniformes - et sont causées par la perspective résiduelle, l'angle de montage de la caméra et les imperfections de l'optique.
-
-À l'échelle de précision requise pour le robot, ces erreurs sont suffisamment grandes pour mal positionner la tête.
-
-**Solution : Thin Plate Spline (TPS)**
-
-La correction est assurée par une **transformation Thin Plate Spline (TPS)**, implémentée dans position_correction.py. Il s'agit d'un interpolant lisse qui s'ajuste exactement sur un ensemble de points de calibration et se comporte de manière régulière entre eux.
-
-**Calibration (faite une fois) :**
-
-- Des marqueurs ArUco sont placés à 16 positions exactement connues (grille 4×4, de (1,1) à (4,4))
-- Leurs positions détectées par la caméra sont enregistrées (MEASURED_POINTS)
-- Le modèle TPS est ajusté pour faire correspondre ces positions mesurées aux positions réelles (TRUE_POINTS)
-
-**À l'exécution :** Chaque position brute issue de la caméra est corrigée par correct_position(x, y) avant d'être transmise au solveur.
-
-La correction combine une **partie affine** (translation + rotation + mise à l'échelle globale) et une **partie radiale** (corrections locales non-linéaires), ce qui permet de gérer des distorsions non-uniformes qu'une simple transformation affine ne pourrait pas corriger.
-
-
-
-
-<br><br><br>
-
-
-
-**7\. Précision**
-
-**Moyennage temporel**
-
-Pour réduire le bruit de détection lié aux variations de luminosité et aux petits mouvements de la caméra, chaque position est calculée en **moyennant 70 frames consécutives**. Seules les frames où les 4 marqueurs nécessaires sont tous visibles sont prises en compte.
-
-**Résultats obtenus**
-
-Après calibration TPS, les positions détectées convergent vers des valeurs proches du centième d'unité de grille, soit une précision de l'ordre du millimètre sur le plateau physique.
-
-
-<br><br><br>
-
-
-
-
-**8\. Pompe et électrovanne**
-
-**Principe de fonctionnement**
-
-Le système de préhension fonctionne par **aspiration pneumatique** :
-
-- La **pompe** crée une dépression dans le circuit
-- L'**électrovanne** (normalement ouverte) est fermée pendant la saisie pour maintenir la dépression, et ouverte pendant la pose pour relâcher la pièce
-
-**Implémentation**
-
-Le servo du bras Z est piloté en **PWM généré par bit-banging** (pas de timer matériel requis). Une impulsion de 500 µs correspond à la position haute, 2500 µs à la position basse. 50 impulsions sont envoyées en boucle pour maintenir la position pendant environ 1 seconde.
-
-La séquence complète d'un cycle de saisie (pick_place(1)) :
-
-- Descendre le bras (servo → position basse)
-- Attendre 2 secondes (Z_DOWN_DWELL_MS)
-- Activer la pompe + fermer la valve
-- Attendre 3 secondes pour que l'aspiration se stabilise (PICK_SUCTION_MS)
-- Remonter le bras
-
-La séquence de pose (pick_place(0)) est similaire, avec la valve ouverte à l'étape 3 et un temps d'attente de 1 seconde pour que la pièce se détache.
-
-
-
-
-<br><br><br>
 
 
 
@@ -288,43 +309,11 @@ Le homing suit une procédure en 3 temps pour chaque axe :
 Cette triple séquence garantit une position zéro reproductible même si le robot est arrêté en cours de course.
 
 
-
-
 <br><br><br>
 
 
 
-**10\. Intégration de la rotation**
-
-**Contrainte matérielle**
-
-Le servo de rotation a une **plage physique de 180°**, mais l'interface de commande est limitée à **0-90°** (l'angle est doublé en interne avant d'être écrit sur le servo, pour utiliser toute la plage mécanique). Cette limitation est liée à l'ambiguïté des marqueurs ArUco, qui ne permettent pas de distinguer une rotation à +91° d'une rotation à −89°.
-
-**Gestion des angles dépassant 90°**
-
-La fonction rotation_management(angle) côté Python gère automatiquement les angles supérieurs à 90° en décomposant le mouvement en plusieurs sous-étapes de saisie/pose/rotation :
-
-| **Plage d'angle**    | **Stratégie**                                                               |
-| -------------------- | --------------------------------------------------------------------------- |
-| 0°                   | Saisir uniquement                                                           |
-| 0° < angle ≤ 90°     | Saisir → Tourner(angle)                                                     |
-| 90° < angle ≤ 180°   | Saisir → Tourner(90°) → Poser → Tourner(0°) → Saisir → Tourner(angle − 90°) |
-| −90° ≤ angle < 0°    | Tourner(−angle) → Saisir → Tourner(0°)                                      |
-| −180° ≤ angle < −90° | Séquence inverse symétrique                                                 |
-
-**Détection de l'angle par la caméra (v4)**
-
-Dans la version finale du solveur, l'angle de chaque pièce est mesuré directement par la caméra. Chaque marqueur ArUco possède quatre coins dans un ordre fixe (TL, TR, BR, BL). Le vecteur TL→TR définit l'axe horizontal du marqueur.
-
-L'angle est mesuré **par rapport au marqueur de référence ID 0**, ce qui annule automatiquement l'inclinaison physique de la caméra. Les deux axes (horizontal et vertical) du marqueur sont calculés, ramenés dans \[−90°, 90°\], et celui ayant la valeur absolue la plus faible est retenu. Le signe est ensuite inversé lors du passage au solveur (piece_angles = \[-angle for ...\]) pour respecter la convention de rotation du servo.
-
-
-
-
-
-<br><br><br>
-
-**11\. Logique générale de résolution**
+**10\. Logique générale de résolution**
 
 **Vue d'ensemble**
 
@@ -334,16 +323,4 @@ Le solveur Python orchestre l'ensemble du processus. Il existe en trois versions
 - **v3** - positions détectées par caméra, angles encore manuels.
 - **v4** - positions et angles tous deux détectés par caméra. Version finale.
 
-**Déroulement d'une résolution (v4)**
 
-- **Homing** et déplacement de la tête hors du champ de la caméra (x13000)
-- **Détection** des 4 pièces par caméra via main_find_aruco() - retourne (x, y, angle) pour chaque pièce
-- **Génération du G-code** : pour chaque pièce, la séquence est goto(source) → rotation_management(angle) → goto(destination) → place() → rotate(0)
-- **Découpe en paquets** : la chaîne G-code est découpée en morceaux de 30 caractères maximum, sans jamais couper une commande au milieu
-- **Envoi avec handshake** : chaque paquet est envoyé et on attend ACK ou OK avant d'envoyer le suivant
-
-**Exemple de G-code généré**
-
-h;r0;x4998s200;y3724s200;p1;d;r45;d;x2549s200;y1372s200;p0;r0;...;h;END;
-
-Ce G-code est transmis au firmware Arduino qui l'exécute fidèlement, commande par commande, en renvoyant une confirmation après chaque paquet.
