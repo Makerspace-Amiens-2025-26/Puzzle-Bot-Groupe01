@@ -125,7 +125,7 @@ Nous avons en permanence prêté attention aux consignes de sécurité afin de n
 
 #### Méthodologie de prototypage
 
-Le développement du Puzzle Bot a suivi une démarche de prototypage rapide et itérative. Nous avons expérimenté et appris de nos assais. L'objectif était de valider chaque sous-système (mécanique, électronique et logiciel) de manière indépendante avant l'assemblage final sur le plateau.
+Le développement du Puzzle Bot a suivi une démarche de prototypage rapide et itérative. Nous avons expérimenté et appris de nos essais. L'objectif était de valider chaque sous-système (mécanique, électronique et logiciel) de manière indépendante avant l'assemblage final sur le plateau.
 
 **Prototypage mécanique et Impression 3D**
 
