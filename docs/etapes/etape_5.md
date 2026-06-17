@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Calibration et amélioration liées à la caméra
+title: Calibration et améliorations liées à la caméra
 parent: Etapes de fabrication
 nav_order: 5
 ---
