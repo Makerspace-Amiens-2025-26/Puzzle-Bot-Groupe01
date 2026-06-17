@@ -73,6 +73,8 @@ h;x4998s2000;y3724s2000;p1;r45;p0;END
 | `d` | Pause for `CMD_DELAY_MS` milliseconds |
 | `END` | Mark end of packet |
 
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/firmware1.png)
+
 ### Firmware Replies
 
 | Reply | Meaning |
