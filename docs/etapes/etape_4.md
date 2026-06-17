@@ -330,5 +330,6 @@ Le solveur Python orchestre l'ensemble du processus. Il existe en trois versions
 - **v2** - positions et angles saisis manuellement. Utile pour les tests sans caméra.
 - **v3** - positions détectées par caméra, angles encore manuels.
 - **v4** - positions et angles tous deux détectés par caméra. Version finale.
+- **v5** - La machine resout tout le puzzle (sans aruco sur les pieces de puzzle). {Prochaines etapes}   
 
 
