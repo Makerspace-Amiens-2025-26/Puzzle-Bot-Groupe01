@@ -1,25 +1,94 @@
-# Template-project
+# 🤖 Puzzle Bot
 
-Template pour la création d'un repo type projet pour le MakerSpace. Doc gérée via le thème [Just-The-Docs](https://just-the-docs.com) en vanilla.
+> Un robot capable de résoudre automatiquement des puzzles physiques en manipulant les pièces à l'aide d'un système d'aspiration.
 
-## Bienvenue sur Notre Projet
 
-Ce repository est le cœur de notre projet. Ici, vous trouverez toutes les ressources nécessaires pour comprendre, utiliser et contribuer à notre projet.
+---
 
-### Contenu du Repository
+## 📖 Présentation
 
-- **Documentation :** Toutes les documentations techniques et guides d'utilisation sont disponibles dans le dossier `docs`. Voir le site de doc associé. 
-- **project :** Toutes les sources de notre projet.
+**Puzzle Bot** est un projet de robotique développé dans le cadre du **Makerspace Amiens 2025-2026**.
 
-### Comment Utiliser ce Repository ?
+L'objectif est de concevoir un robot capable de résoudre automatiquement des puzzles physiques en identifiant, saisissant et déplaçant les pièces jusqu'à leur position correcte.
 
-- Pour commencer, consultez la documentation dans le dossier `docs`.
-- Si vous souhaitez contribuer au projet, veuillez lire nos directives de contribution.
+Pour réaliser cette tâche, le robot utilise un système de **ventouse** permettant d'aspirer les pièces puis de les déplacer avec précision sur la surface de travail.
 
-## Contribution
+Le projet combine plusieurs disciplines :
 
-Nous accueillons et apprécions toute contribution. Si vous souhaitez contribuer, veuillez consulter notre guide de contribution pour connaître nos attentes et notre processus.
+- Robotique
+- Mécanique
+- Électronique
+- Informatique
+---
 
-## Contact
+## 📂 Structure du projet
 
-Si vous avez des questions ou des suggestions, n'hésitez pas à nous contacter.
+```text
+Puzzle-Bot/
+│
+├── docs/           # Documentation du projet
+├── project/        # Code source
+├── .github/        # Configuration GitHub
+└── README.md
+```
+
+---
+
+## 🛠️ Technologies utilisées
+
+- Python
+- Arduino / C++
+- Systèmes embarqués
+- Robotique
+- Contrôle moteur
+- Camera tracking / vision
+- Kicad
+
+---
+
+## 🚀 État actuel du projet
+
+Le robot est actuellement capable de :
+
+- Manipuler des pièces de puzzle de tailles moyennes.
+- Saisir les pièces grâce à un système de ventouse.
+- Déplacer les pièces vers une position définie.
+- Résoudre des puzzles simples.
+
+Des améliorations sont encore en cours de développement afin d'augmenter la taille des puzzles pris en charge ainsi que la vitesse et la précision de résolution.
+
+---
+
+## 🔮 Perspectives d'évolution
+
+- Support de puzzles de plus grande taille.
+- Amélioration de la précision de placement.
+- Optimisation des trajectoires de déplacement.
+- Réduction du temps de résolution.
+- Interface utilisateur pour le contrôle et le suivi des résolutions.
+
+---
+
+## 📚 Documentation
+
+La documentation complète du projet est disponible sur le site GitHub Pages du projet :
+
+https://makerspace-amiens-2025-26.github.io/Puzzle-Bot-Groupe01/
+
+---
+
+## 👥 Équipe
+
+Projet réalisé par :
+
+- Byron
+- Nicolas
+- Dorian
+- Yvan
+- Esteban
+- Damien
+- Aubin
+
+
+---
+N'hésitez pas à nous contacter pour toutes questions concernant le projet !

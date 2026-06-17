@@ -1,49 +1,9 @@
 ---
 layout: default
-title: Programmation et électronique
+title: Electronique
 parent: Etapes de fabrication
 nav_order: 3
 ---
-
-# Programmation
-
-## Architecture Logicielle & Programmation
-
-Le contrôle du Puzzle Bot repose sur un écosystème logiciel divisé en deux parties principales : un **firmware embarqué sur mesure** (C++/Arduino) pour la gestion matérielle basse couche, et un **programme superviseur** (Python) pour l'intelligence artificielle et le traitement d'image.
-
-### Firmware Arduino
-Plutôt que d'utiliser un micrologiciel générique comme GRBL, incapable de gérer nativement nos deux servomoteurs et les cycles spécifiques de la pompe pneumatique, nous avons développé un firmware C++ entièrement personnalisé.
-
-Le code est structuré de manière modulaire afin d'isoler les responsabilités :
-* `config.h` : Centralisation de l'ensemble des constantes, broches et calibrations mécaniques (ex: rapports de pas/mm).
-* `steppers.cpp` : Gestion des rampes d'accélération et déplacements synchronisés des axes X et Y.
-* `pick_place.cpp` : Séquencement temporel de la préhension (Descente du bras, temporisation, activation du vide, remontée)
-* `parser.cpp` : Analyseur syntaxique chargé de décoder les commandes envoyées sur le port série USB selon un protocole textuel strict terminé par le mot-clé.
-
-### Superviseur Python et Vision par Ordinateur
-L'intelligence du robot s'exécute sur un ordinateur via un script Python orchestrant la résolution. 
-
-#### Pipeline de traitement d'image
-Une caméra grand angle capture le plateau. L'image brute subit une série de traitement numérique avant analyse pour maximiser sa netteté:
-
-**Correction de distorsion :** Redressement de l'image via des coefficients optiques calculés au préalable avec une mire d'échiquier.
-
-**Homographie et correction géométrique (TPS) :** Même après correction optique, la perspective et l'angle de la caméra introduisent des erreurs spatiales. Nous appliquons un algorithme mathématique 
-
-**Thin Plate Spline (TPS)** basé sur une grille de calibration de 16 points réels. Cette correction réduit l'erreur moyenne de détection de plus de 50 %, garantissant une précision millimétrique sur le plateau
-
-#### Détection des pièces et angles
-Le script utilise la bibliothèque `OpenCV ArUco` pour localiser instantanément les 4 pièces disposées sur la zone de détection. Les coordonnées en pixels sont converties en pas moteurs réels grâce à des repères d'origine fixes installés sur le châssis.
-L'angle de chaque pièce est calculé en comparant le vecteur d'orientation de son marqueur à l'axe de référence du robot.
-
-### Cycle d'exécution et protocole d'échange
-La communication entre Python et l'Arduino est sécurisée par un mécanisme de *handshake* pour éviter toute surcharge de la mémoire tampon de l'Arduino. Python analyse le plateau par la caméra et génère une suite d'instructions (G-code personnalisé).
-
-Cette chaîne est découpée en micro-paquets (ex: `h;x4998s200;y3724s200;p1;END`).
-Python transmet un paquet et se met en attente.
-L'Arduino reçoit les ordres, les exécute fidèlement (déplacement, activation de l'électrovanne, etc.) puis retourne le signal `ACK` ou `OK` une fois la tâche physiquement accomplie.
-À la réception du signal de confirmation, Python envoie le paquet suivant.
-
 
 # Electronique
 

@@ -13,7 +13,7 @@ permalink: /
 Bienvenue dans la documentation du projet PUZZLE BOT. Ce site a pour but de fournir toutes les informations nécessaires pour comprendre, utiliser et reproduire efficacement notre projet.
 
 [Notre projet sur Onshape](https://cad.onshape.com/documents/dc4e4dc410142a1f5ec17e75/w/6949f91d3f7293487ebace9c/e/d7efde2f999041b5a5ef0852?renderMode=0&uiState=6a2bbd04fd1eba1487f7a358){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Notre repo GitHub](https://github.com/Makerspace-Amiens/template-project/tree/main/docs){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Notre repo GitHub](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 <model-viewer src="3D/PBF.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">

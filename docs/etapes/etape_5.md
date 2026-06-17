@@ -1,53 +1,34 @@
 ---
 layout: default
-title: Contrôle Qualité
+title: Finition
 parent: Etapes de fabrication
-nav_order: 5
+nav_order: 4
 ---
-# Contrôle qualité
 
-## Vérifications à effectuer
 
-Une fois l’assemblage de la machine terminé, plusieurs contrôles ont été réalisés afin de garantir son bon fonctionnement global, son respect du cahier des charges établi au préalable et de valider les améliorations apportées lors de la phase de finition.
-Ces vérifications ont porté sur les principaux éléments mécaniques, électroniques et fonctionnels de la machine.
+# **Finition**
 
-**Alignement des composants**
+Les dernières heures du projet ont été consacrées au peaufinage général de la machine. Ces ajustements ont permis d’optimiser son fonctionnement, de réduire les petites erreurs restantes et d’améliorer la fiabilité globale du système avant le rendu finale. C'est aussi ici que nous avons amélioré l’aspect esthétique afin d’obtenir un rendu plus propre et plus soigné.
 
-Les vérifications suivantes ont été effectuées :
+Voici donc les différentes parties de notre machines que nous avons minutieusement peaufinées :
 
-- Contrôle de l’équerrage du châssis
-- Vérification du parallélisme des guidages
-- Alignement des moteurs avec les poulies
-- Vérification du positionnement du portique
-- Contrôle de la fixation de la caméra sur le bras
+## Calibration du système et ajustements mécaniques
 
-Ces contrôles permettent de limiter les contraintes mécaniques et d’améliorer la précision des déplacements. Ils sont essentiels, notamment après les ajustements réalisés sur la calibration du système et la position de la caméra.
+Afin d’obtenir un rendu propre et efficace, plusieurs imprécisions et erreurs ont été constatées lors des premiers essais. La calibration de la caméra a dû être ajustée afin d’améliorer la détection et le positionnement des pièces, en effet le bras n'était pas installé de manière assez précise et nous avons revu la fixation de la caméra au bras, lors des premiers essais notre systéme ne détectait pas les pièces car la luminosité et la position de la caméra n'étaient pas adaptées ce qui empêchait son fonctionnement. Le support de la pompe présentait également des déplacements parfois imprécis, et les courroies ont dû être retendues et améliorées pour garantir des mouvements plus stables et réguliers.
 
-**Stabilité de la structure**
+## Corrections du support de pompe et de la carte électronique
 
-Nous avons également vérifié :
+Lors des essais de la machine, plusieurs problèmes techniques ont été identifiés et ont nécessité des ajustements. Le support de la pompe présentait des déplacements parfois imprécis, et les courroies ont dû être retendues et améliorées pour garantir des mouvements plus stables et réguliers. Concernant la pompe, nous avons également dû lui apporter des modifications, car elle relâchait la pièce trop rapidement avant d’avoir atteint la position prévue.
 
-- La rigidité du châssis
-- Le serrage des fixations
-- L’absence de mouvements parasites entre les différentes pièces assemblées
-- La stabilité du plateau et du portique
-- La bonne tension des courroies après retouches
+Par ailleurs, la carte électronique a rencontré plusieurs dysfonctionnements lors des tests. Elle a dû être révisée à plusieurs reprises afin de corriger différentes erreurs de fonctionnement. Ces interventions ont permis d’améliorer la stabilité du système et d’assurer une meilleure communication entre les composants.
 
-Ces tests permettent de s’assurer que les modifications effectuées lors de la phase de finition (retension des courroies, ajustements mécaniques) ont bien amélioré la stabilité générale de la machine.
+## Esthétique : gestion des câbles et propreté des pièces
 
-**Test des déplacements et du système**
+Certaines pièces imprimées en 3D étaient fonctionnelles mais ne rendaient pas très bien après la première impression. Elles présentaient quelques défauts de finition et manquaient de soin au niveau de l’aspect général. On les a donc réimprimées ou modifiées afin d’améliorer leur rendu, leur ajustement et de rendre l’assemblage plus fiable et plus propre.
+Enfin, un système de cache-câbles a été conçu et installé afin de dissimuler les différents câbles, ce qui a permis d’améliorer l’organisation interne de la machine.
+De manière générale, un travail sur l’esthétique a également été réalisé afin d’obtenir un rendu plus propre et plus soigné.
 
-Enfin, des essais de fonctionnement ont été réalisés pour vérifier :
+## Conclusion sur les finitions
 
-- La fluidité des mouvements sur les axes X et Y
-- La précision du bras lors de la prise et du positionnement des pièces
-- Le comportement du support de pompe, notamment sa régularité de déplacement
-- Le bon fonctionnement de la pompe après modifications
-- L’absence de points de blocage mécaniques
-- Le comportement des pièces imprimées en 3D sous contrainte
+Les différentes finitions réalisées ont permis de corriger les principaux problèmes rencontrés lors des premiers essais et d’améliorer l’ensemble du système. Grâce aux ajustements mécaniques, aux corrections électroniques et aux améliorations esthétiques, la machine est désormais plus stable, plus fiable et plus propre visuellement. Ces dernières étapes ont été essentielles pour finaliser le projet et obtenir un résultat conforme aux attentes.
 
-Ces tests ont également permis de confirmer les améliorations apportées à la carte électronique, qui a été révisée à plusieurs reprises pour corriger différents dysfonctionnements et améliorer la stabilité globale du système.
-
-## Validation générale
-
-Les essais réalisés montrent que la machine fonctionne de manière globalement stable et cohérente. Après les différentes corrections apportées en finition (mécanique, électronique et esthétique), le système est devenu plus fiable, plus précis et mieux optimisé pour réaliser sa tâche de manière autonome.

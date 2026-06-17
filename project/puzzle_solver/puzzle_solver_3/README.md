@@ -25,7 +25,8 @@ Same pick-place-rotate logic as v2, but piece positions are now **detected autom
 puzzle_folder/
 ├── puzzle_solver_3.py       ← main script: orchestrates everything
 ├── find_aruco_position.py   ← camera pipeline; the objective is main_find_aruco()
-└── position_correction.py  ← TPS correction called inside find_aruco_position.py
+├── position_correction.py  ← TPS correction called inside find_aruco_position.py
+└── position_correction_2.py  ← Cubic Wrap, optional to use instead of TPS
 
 firmware/
 ├── puzzle_firmware.ino
