@@ -131,7 +131,7 @@ Everything is specified by hand. Useful for testing without a camera.
 
 ```python
 piece_location = [ [0,1], [0,4], [2,4], [2,1] ]   # where pieces are (grid col, row)
-aruco_angles   = [ -100,  100,   100,   100  ]     # how much each piece is rotated
+aruco_angles   = [ 0,  90,   -90,   45  ]     # how much each piece is rotated
 aruco_dest     = [ [0,2], [0,3], [1,3], [1,2] ]   # where each piece should go
 ```
 
