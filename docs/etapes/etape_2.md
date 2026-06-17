@@ -4,11 +4,6 @@ title: Conception et assemblage
 parent: Etapes de fabrication
 nav_order: 2
 ---
-Conception
-boitier
- on a concu de sorte a ce quelle dissipe la chaleur
-
-Nous devions avec tout ces composants 
 
 deux moteurs axe x donc 2 couroies syncro grace au drivers 
 un moteur axe y donc 1 couroie 
