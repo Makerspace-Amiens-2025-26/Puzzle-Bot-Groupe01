@@ -115,6 +115,9 @@ The Arduino firmware receives semicolon-delimited command packets over serial an
 
 ---
 
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/firmware1.png)
+
+
 ## Part 2 — Puzzle Solver (Python)
 
 > **Folder:** `puzzle_solver/`  

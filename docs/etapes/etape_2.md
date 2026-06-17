@@ -21,6 +21,20 @@ L'espace créé sous le plateau permet :
 - l'intégration future de capteurs ;
 - l'accès aux éléments électroniques sans démonter la structure.
 
+<img src="../images/Capture2.PNG" width="300">
+
+
+## 2. Glissiere de guidage Axe X:
+Cette pièce a été conçue comme une glissière de guidage pour l’axe X du robot. Son rôle principal est de maintenir et guider les roues qui se déplacent le long du profilé aluminium, assurant ainsi un mouvement linéaire fluide et précis du chariot.
+
+La géométrie de la pièce permet un positionnement précis des roues afin de garantir un bon alignement avec le rail de guidage et de limiter les jeux mécaniques. Les différents perçages intégrés facilitent la fixation de la pièce sur la structure ainsi que le montage des éléments de guidage.
+
+Le choix d’une pièce imprimée en 3D a permis d’intégrer plusieurs fonctions dans un seul composant : support des roues, interface de fixation et maintien de l’alignement. Cette conception réduit le nombre de pièces nécessaires, simplifie l’assemblage et facilite les opérations de maintenance ou de remplacement. Grâce à cette glissière, le déplacement sur l’axe X reste stable, précis et reproductible, ce qui est essentiel pour le positionnement des pièces du puzzle.
+
+<img src="../images/Capture3.JPEG" width="300">
+
+
+
 # Assemblage du Puzzle Bot
 
 ## **Étapes d'Assemblage**
