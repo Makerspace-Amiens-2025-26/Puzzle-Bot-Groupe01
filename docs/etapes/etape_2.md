@@ -189,6 +189,11 @@ Cette structure supporte le système de déplacement de l'axe X et le système d
 Le chariot central a été fixé sur les guidages afin de permettre le déplacement de l'outil sur les différents axes.
 Les différents supports imprimés en 3D ont été assemblés et ajustés jusqu'à obtenir un mouvement régulier sans jeu excessif.
 
+# Resultat
+Voici la vue globale de notre PuzzleBotapres toutes les finitions
+
+<img src="../images/Image.jpeg" width="00">  
+
 ## **Problèmes communs et solutions**
 
 Au cours de l'assemblage, plusieurs difficultés sont apparues, notamment lors de l'impression 3D des pièces. Certains défauts, comme des sous-extrusions, des déformations ou des couches mal superposées, ont rendu certaines pièces inutilisables.
