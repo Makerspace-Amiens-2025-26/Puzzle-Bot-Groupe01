@@ -144,6 +144,9 @@ Trois marqueurs ArUco sont fixés de manière permanente sur le bâti du robot e
 | ID 1         | Axe X    | (4, 0)              |
 | ID 2         | Axe Y    | (0, 4)              |
 
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/Coordinate%20system.png?raw=true)
+
 La distance entre les marqueurs de référence correspond à **une unité réelle = 4 unités de grille**, avec un **pas de grille de 60 mm**.
 
 **Conversion pixels → coordonnées réelles**
