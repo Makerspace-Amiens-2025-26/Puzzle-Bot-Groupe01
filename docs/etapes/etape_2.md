@@ -65,8 +65,18 @@ La géométrie de la pièce permet un positionnement précis des roues afin de g
 
 Le choix d’une pièce imprimée en 3D a permis d’intégrer plusieurs fonctions dans un seul composant : support des roues, interface de fixation et maintien de l’alignement. Cette conception réduit le nombre de pièces nécessaires, simplifie l’assemblage et facilite les opérations de maintenance ou de remplacement. Grâce à cette glissière, le déplacement sur l’axe X reste stable, précis et reproductible, ce qui est essentiel pour le positionnement des pièces du puzzle.
 
-<img src="../images/Capture3.JPEG" width="300">
+<img src="../images/Capture3.JPG" width="300">
 
+## Support de base de la camera
+Cette pièce a été conçue pour assurer la fixation de la structure supportant la caméra au châssis principal du PuzzleBot. Elle réalise la liaison entre les profilés verticaux et horizontaux tout en garantissant un positionnement précis de l'ensemble de la structure de vision.
+
+Lors de la première phase de conception, un seul support de ce type avait été installé sur un côté du robot. Cette solution permettait de maintenir la structure de la caméra tout en limitant le nombre de pièces imprimées.
+
+Cependant, les premiers essais ont mis en évidence un léger manque de rigidité de l'ensemble, pouvant entraîner des vibrations ou de faibles mouvements de la caméra lors des déplacements du robot. Afin d'améliorer la stabilité mécanique et de garantir une meilleure précision des acquisitions d'images, nous avons décidé d'ajouter un second support symétrique sur l'autre côté du robot.
+
+L'utilisation de deux supports permet de mieux répartir les efforts sur la structure, de réduire les déformations des profilés et d'assurer un maintien plus rigide de la caméra. Cette évolution a contribué à améliorer la fiabilité du système de vision et la qualité des données utilisées pour la résolution du puzzle.
+
+<img src="../images/supportbarre.PNG" width="300">
 
 
 # Assemblage du Puzzle Bot
