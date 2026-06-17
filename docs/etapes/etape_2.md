@@ -21,6 +21,8 @@ L'espace créé sous le plateau permet :
 - l'intégration future de capteurs ;
 - l'accès aux éléments électroniques sans démonter la structure.
 
+![capture2](images/capture2.jpg)
+
 # Assemblage du Puzzle Bot
 
 ## **Étapes d'Assemblage**
