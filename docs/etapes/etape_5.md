@@ -139,7 +139,7 @@ Elle permet de reproduire très fidèlement les points utilisés lors de la phas
 
 ![Alt text](../images/TPS.png)
 
-<br>
+
 
 ## Déformation polynomiale cubique
 
@@ -152,7 +152,7 @@ Ycorr = g(Xmesuré,Ymesuré)
 Cette méthode est souvent utilisée pour modéliser les distorsions géométriques introduites par les systèmes optiques.
 
 ![Alt text](../images/cubic_wrap_correction.png)
-<br>
+
 
 # Comparaison des résultats
 
@@ -214,7 +214,7 @@ Ces droites divisent le quadrilatère en quatre régions :
 
 A1 A2 A3 A4
 
-<br><br><br>
+
 ![Alt text](../images/my_correction_algo.png)
 
 ## Calcul des poids

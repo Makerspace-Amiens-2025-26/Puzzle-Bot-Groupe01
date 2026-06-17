@@ -82,19 +82,19 @@ Maintenant que nous avons trouvé notre **Vref**, nous devons mesurer la tension
 
 *Pour pratiquer le réglage des drivers, il faut s'assurer qu'ils soient sur la carte CNC shield, elle-même branchée sur la carte arduino le tout relié en 12V grâce à l'alimentation. Pour la démonstration ci-dessus nous n'avons pas branché les drivers pour que cela soit compréhensible.*
 
-Comme nous pouvons le voir sur la deuxième image la tension mesurée est de 0,34 Volts, et on doit l'augmenter jusqu'à notre **Vref (0,5 Volts)** trouvé précédemment en tournant légèremment la vis du potentiomètre.
+Comme nous pouvons le voir sur la deuxième image la tension mesurée est de 0,34 Volts, et on doit l'augmenter jusqu'à notre Vref (0,5 Volts) trouvé précédemment en tournant légèremment la vis du potentiomètre.
 On répète ainsi cela pour nos 3 drivers.
 
-Nous nous sommes inspiré de cette vidéo pour le réglage des drivers : https://youtu.be/89BHS9hfSUk?si=hmqyH-yPLVSg_-tl
+Nous nous sommes inspiré de cette [vidéo](https://youtu.be/89BHS9hfSUk?si=hmqyH-yPLVSg_-tl) pour le réglage des drivers.
 
 
 
 
 
 ### Gestion de la puissance et carte MOSFET
-Les sorties de l'Arduino UNO délivrent un courant maximal insuffisant et une tension limitée à 5V. Or, l'électrovanne et la pompe pneumatique requièrent une alimentation stable en **12 Volts**. 
+Les sorties de l'Arduino UNO délivrent un courant maximal insuffisant et une tension limitée à 5V. Or, l'électrovanne et la pompe pneumatique requièrent une alimentation stable en 12 Volts. 
 
-Pour résoudre ce problème, nous avons développé une carte électronique d'interface de puissance sous le logiciel **KiCad**. Cette carte intègre des transistors **MOSFET** faisant office de relais électroniques rapides. Lorsqu'un signal 5V est émis par les broches D4 ou D7 de l'Arduino, le MOSFET commute et libère la puissance de la ligne 12V pour actionner la pompe ou ouvrir la valve pneumatique.
+Pour résoudre ce problème, nous avons développé une carte électronique d'interface de puissance sous le logiciel KiCad. Cette carte intègre des transistors MOSFET faisant office de relais électroniques rapides. Lorsqu'un signal 5V est émis par les broches D4 ou D7 de l'Arduino, le MOSFET commute et libère la puissance de la ligne 12V pour actionner la pompe ou ouvrir la valve pneumatique.
 
 ### Optimisation et routage
-Afin de fiabiliser le fonctionnement du robot et de libérer l'espace supérieur pour les déplacements du portique, l'ensemble des cartes électroniques (Arduino, CNC Shield, circuit MOSFET) a été implanté directement **sous le plateau** de la machine. Les câbles moteurs et capteurs ont été rallongés et guidés au travers du châssis pour éviter tout risque d'arrachement ou d'interférence avec la tête mobile.
+Afin de fiabiliser le fonctionnement du robot et de libérer l'espace supérieur pour les déplacements du portique, l'ensemble des cartes électroniques (Arduino, CNC Shield, circuit MOSFET) a été implanté directement sous le plateau de la machine. Les câbles moteurs et capteurs ont été rallongés et guidés au travers du châssis pour éviter tout risque d'arrachement ou d'interférence avec la tête mobile.

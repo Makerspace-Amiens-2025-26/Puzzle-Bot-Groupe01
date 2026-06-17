@@ -21,7 +21,7 @@ Voici une liste de tout le matériel que nous avons eu ainsi que comment nous av
 
 Nous n'avons pas reçu la pompe dès les premiers jours. Afin de combler ce temps, nous nous sommes renseignés directement sur les différentes façons de la faire fonctionner. Ainsi, dès l'obtention de cette dernière, nous avons pu la connecter à notre carte arduino et commencer différents tests. 
 
-Nous avons eu un pépin car lorsque la pompe aspirait, tout allait bien. En revanche, elle ne lachait pas la pièce correctement. La pièce se décrochait juste avec le temps (et la gravité) et le manque d'aspiration, non pas car nous avions décider de lacher la pièce. Suite à de nombreuses minutes de recherches, nous avons réalisé que la puissance envoyée par la carte n'était pas suffisante et qu'il fallait un nouveau driver. Pour cela, nous avons utiliser Kicad.
+Nous avons eu un pépin car lorsque la pompe aspirait, tout allait bien. En revanche, elle ne lachait pas la pièce correctement. La pièce se décrochait juste avec le temps (et la gravité) et le manque d'aspiration, non pas car nous avions décider de lacher la pièce. Suite à de nombreuses minutes de recherches, nous avons réalisé que la puissance envoyée par la carte n'était pas suffisante et qu'il fallait un nouveau driver. Pour cela, nous avons utilisé Kicad.
 
 <model-viewer src="../3D/Pompe.gltf" style="width: 100%; height: 550px;" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
     <div class="progress-bar hide" slot="progress-bar">
@@ -135,16 +135,16 @@ Bien que nous ayons eu la possibilité de les découper à note guise, nous avon
 
 ![Profilé](../images/profile.jpg)
 
-
 **-L'Imprimante 3D :**
-L'ensemble des pièces mécaniques spécifiques du PuzzleBot a été fabriqué par impression 3D. Cette technologie nous a permis de concevoir et de produire rapidement des pièces sur mesure adaptées aux besoins du projet, tout en facilitant les phases de prototypage et d'amélioration. Grâce à cette méthode de fabrication, nous avons pu tester plusieurs versions de certaines pièces avant de valider leur conception finale et leur intégration sur le robot.
+
+L'ensemble des pièces mécaniques spécifiques du PuzzleBot a été fabriqué par impression 3D. Cette technologie nous a permis de concevoir et de produire rapidement des pièces sur mesure adaptées aux besoins du projet, tout en facilitant les phases de prototypage et d'amélioration. Grâce à cela, nous avons pu tester plusieurs versions de certaines pièces avant de valider leur conception finale et leur intégration sur le robot.
 
 <img src="../images/Image (1).jpeg" width="400">
 
 
-**Prototypage mécanique et Impression 3D**
+## Méthodologie de prototypage
 
-### Méthodologie de prototypage
+**Prototypage mécanique et Impression 3D**
 
 Le développement du Puzzle Bot a suivi une démarche de prototypage rapide et itérative. Nous avons expérimenté et appris de nos essais. L'objectif était de valider chaque sous-système (mécanique, électronique et logiciel) de manière indépendante avant l'assemblage final sur le plateau.
 
@@ -162,7 +162,7 @@ Puis les ajustements au fur et à mesure des essais. Par exemple, le support de 
 
 L'intégration de la pompe et de l'électrovanne 12V a nécessité une transition prudente pour ne pas risquer d'endommager la carte Arduino. Nous avons créé la carte sur KiCad (vue ci-dessous) puis nous l'avons faite vérifier par les enseignants. Nous l'avons ensuite imprimée puis soudée dans un sens avant de nous rendre compte que le schéma était dans le mauvais sens. Le prototypage nous a permis d'éviter de causer de gros dommages et de corriger notre erreur.
 
-![KiCad PCB](../images/kicad bleu.PNG)      ![KiCad PCB](../images/KiCad PCB1.PNG)      ![KiCad PCB2](../images/KiCad PCB2.PNG)
+![KiCad PCB](../images/KiCad PCB2.PNG)      ![KiCad PCB](../images/KiCad PCB1.PNG)      ![KiCad PCB2](../images/kicad bleu.PNG)
 
 Une fois le schéma validé, nous sommes passés à la gravure puis à la soudure de notre carte MOSFET. Les échecs successifs sur les premières versions (problèmes de soudure et surchauffe) nous ont appris à dimensionner correctement les pistes pour supporter la tension de 12V requise par l'électrovanne.
 
