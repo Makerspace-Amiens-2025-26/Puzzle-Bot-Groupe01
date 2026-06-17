@@ -135,6 +135,12 @@ Cette méthode est particulièrement efficace lorsque les déformations sont loc
 
 Elle permet de reproduire très fidèlement les points utilisés lors de la phase de calibration.
 
+
+
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/TPS.png)
+
+<br>
+
 ## Déformation polynomiale cubique
 
 Une seconde approche consiste à ajuster deux surfaces polynomiales :
