@@ -4,6 +4,40 @@ title: Conception et assemblage
 parent: Etapes de fabrication
 nav_order: 2
 ---
+Conception
+boitier
+ on a concu de sorte a ce quelle dissipe la chaleur
+
+Nous devions avec tout ces composants 
+
+deux moteurs axe x donc 2 couroies syncro grace au drivers 
+un moteur axe y donc 1 couroie 
+
+
+model cartesien  Calcul des distances : utile pour les algorithmes de recherche de chemin ou pour estimer à quelle distance une pièce est de sa position cible.
+					Visualisation intuitive : le modèle correspond directement à ce qu'on voit à l'écran sur une grille.
+					Simple à comprendre : chaque case a une position unique (ex. (3, 5)).
+					facilite pour le code
+					precision axe x car 2 moteurs 
+tension des couroie symetrique 
+pour que le projet sois refaisable part tout le monde. on a decide de faire des pieces symetrique comme les support moteur axe x au quatre coins dde la machine (photo one shape 4 coin)
+pareil pour les le support moteur axe y (photo one shape)
+support camera (photo one shape)
+glissiere tension  couroie (photo one shape)
+)
+
+
+
+
+option 
+integration 
+glissiere pour cable management(photo one shape)
+chain cable (photo one shape)
+plaque sous la plaque de base pour cacher les cables (photo one shape)
+camera piéce symetrique pour avoir le moins de pieces a imprimer (photo one shape) on a decide de fixer la camera a deux apieds pour ameliorer la stabilité et donc ameliorer la precision de la camera pour eviter quelle bouge
+			
+
+
 # Conception du Puzzle bot
 
 La conception 3D a été réalisée principalement sur Onshape. Nous avons utilisé des modèles existants pour certains composants clés, notamment le plateau, les servomoteurs, ainsi que le profilé en aluminium. Le plateau a été modélisé avec les dimensions précises pour accueillir les courroies et les moteurs. Les servomoteurs ont été placés en respectant les contraintes de couple et d'espace, et la barre métallique a été dimensionnée pour assurer la rigidité et la stabilité de l'ensemble. Ensuite, nous avons intégré tous ces éléments dans un assemblage complet pour vérifier les ajustements, les tolérances et la compatibilité entre les pièces. Cette base nous a permis de garantir un bon alignement mécanique avant de passer aux impressions et à l’assemblage final.

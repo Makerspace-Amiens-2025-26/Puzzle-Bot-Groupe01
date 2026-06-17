@@ -115,7 +115,7 @@ The Arduino firmware receives semicolon-delimited command packets over serial an
 
 ---
 
-![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/firmware1.png)
+
 
 
 ## Part 2 — Puzzle Solver (Python)
@@ -131,7 +131,7 @@ Everything is specified by hand. Useful for testing without a camera.
 
 ```python
 piece_location = [ [0,1], [0,4], [2,4], [2,1] ]   # where pieces are (grid col, row)
-aruco_angles   = [ -100,  100,   100,   100  ]     # how much each piece is rotated
+aruco_angles   = [ 0,  90,   -90,   45  ]     # how much each piece is rotated
 aruco_dest     = [ [0,2], [0,3], [1,3], [1,2] ]   # where each piece should go
 ```
 
