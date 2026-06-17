@@ -137,7 +137,7 @@ Bien que nous ayons eu la possibilité de les découper à note guise, nous avon
 
 **Prototypage mécanique et Impression 3D**
 
-#### Méthodologie de prototypage
+### Méthodologie de prototypage
 
 Le développement du Puzzle Bot a suivi une démarche de prototypage rapide et itérative. Nous avons expérimenté et appris de nos essais. L'objectif était de valider chaque sous-système (mécanique, électronique et logiciel) de manière indépendante avant l'assemblage final sur le plateau.
 

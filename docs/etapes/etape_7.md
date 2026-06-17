@@ -51,3 +51,25 @@ Ces tests ont également permis de confirmer les améliorations apportées à la
 ## Validation générale
 
 Les essais réalisés montrent que la machine fonctionne de manière globalement stable et cohérente. Après les différentes corrections apportées en finition (mécanique, électronique et esthétique), le système est devenu plus fiable, plus précis et mieux optimisé pour réaliser sa tâche de manière autonome.
+
+## Conclusion
+
+Le développement du Puzzle Bot a constitué un projet d'ingénierie complet et particulièrement formateur, associant la conception mécanique, la réalisation électronique et l'intégration de la vision par ordinateur. L'objectif initial a été pleinement atteint.
+
+### Synthèse des résultats et réussites
+
+Au cours des différentes phases d'itérations, notre groupe a su surmonter des défis techniques majeurs :
+
+Fiabilisation de l'aspiration : l'intégration conjointe d'une pompe à air et d'une électrovanne pilotées par notre propre carte d'interface MOSFET conçue sur KiCad et qui a permis d'obtenir un cycle d'aspiration et de relâchement instantané et propre.
+
+Précision millimétrique : l'apport du traitement d'image combiné à l'algorithme de recalibration géométrique s'est avéré déterminant. Les mesures expérimentales ont mis en évidence une réduction drastique de l'erreur moyenne de positionnement assurant une déposition chirurgicale des pièces sur le plateau.
+
+### Perspectives d'évolution
+
+Bien que le robot soit aujourd'hui totalement fonctionnel, plusieurs pistes restent envisagées pour optimiser le système :
+
+Échantillonnage de calibration plus fin : Augmenter la résolution de la grille de référence (passer d'une matrice 4×4 à un maillage trois fois plus dense) pour cartographier et corriger encore plus finement les déformations optiques.
+
+Optimisation des trajectoires : Améliorer le solveur pour intégrer un algorithme de tri des pièces permettant de minimiser la distance totale parcourue par le portique lors de la résolution du puzzle.
+
+En conclusion, ce projet nous aura permis de mettre en pratique une véritable méthodologie "try, test and learn" au sein du Makerspace. Face aux imprévus matériels (délais de livraison de la caméra, mise au point de la puissance du circuit de la pompe), l'entraide, la répartition rigoureuse des tâches et la documentation continue sur GitHub ont été les clés de la réussite de notre groupe.
