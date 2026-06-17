@@ -27,24 +27,26 @@ Le plateau de référence est constitué d'une grille de 4 × 4 positions.
 
 Les coordonnées théoriques sont :
 
-| X   | Y   |
-| --- | --- |
-| 1   | 1   |
-| 1   | 2   |
-| 1   | 3   |
-| 1   | 4   |
-| 2   | 1   |
-| 2   | 2   |
-| 2   | 3   |
-| 2   | 4   |
-| 3   | 1   |
-| 3   | 2   |
-| 3   | 3   |
-| 3   | 4   |
-| 4   | 1   |
-| 4   | 2   |
-| 4   | 3   |
-| 4   | 4   |
+<table>
+<tr><th>X</th><th>Y</th></tr>
+<tr><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>1</td><td>3</td></tr>
+<tr><td>1</td><td>4</td></tr>
+<tr><td>2</td><td>1</td></tr>
+<tr><td>2</td><td>2</td></tr>
+<tr><td>2</td><td>3</td></tr>
+<tr><td>2</td><td>4</td></tr>
+<tr><td>3</td><td>1</td></tr>
+<tr><td>3</td><td>2</td></tr>
+<tr><td>3</td><td>3</td></tr>
+<tr><td>3</td><td>4</td></tr>
+<tr><td>4</td><td>1</td></tr>
+<tr><td>4</td><td>2</td></tr>
+<tr><td>4</td><td>3</td></tr>
+<tr><td>4</td><td>4</td></tr>
+</table>
+
 
 Pour chacune de ces positions, une mesure a été réalisée avant puis après l'application du traitement d'image.
 
