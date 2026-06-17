@@ -66,18 +66,7 @@ Le choix d’une pièce imprimée en 3D a permis d’intégrer plusieurs fonctio
 
 <img src="../images/Capture3.JPG" width="300">
 
-## 3. Support de base de la camera
-Cette pièce a été conçue pour assurer la fixation de la structure supportant la caméra au châssis principal du PuzzleBot. Elle réalise la liaison entre les profilés verticaux et horizontaux tout en garantissant un positionnement précis de l'ensemble de la structure de vision.
-
-Lors de la première phase de conception, un seul support de ce type avait été installé sur un côté du robot. Cette solution permettait de maintenir la structure de la caméra tout en limitant le nombre de pièces imprimées.
-
-Cependant, les premiers essais ont mis en évidence un léger manque de rigidité de l'ensemble, pouvant entraîner des vibrations ou de faibles mouvements de la caméra lors des déplacements du robot. Afin d'améliorer la stabilité mécanique et de garantir une meilleure précision des acquisitions d'images, nous avons décidé d'ajouter un second support symétrique sur l'autre côté du robot.
-
-L'utilisation de deux supports permet de mieux répartir les efforts sur la structure, de réduire les déformations des profilés et d'assurer un maintien plus rigide de la caméra. Cette évolution a contribué à améliorer la fiabilité du système de vision et la qualité des données utilisées pour la résolution du puzzle.
-
-<img src="../images/supportcamera.PNG" width="300">   <img src="../images/surpportbarre.PNG" width="340">
-
-## 4. Support moteur Axe de deplacement
+## 3. Support moteur Axe de deplacement
 Cette pièce a été conçue pour assurer la fixation des moteurs pas à pas responsables du déplacement du robot le long de son axe principal. Elle sert d’interface entre le moteur et la structure en profilés aluminium, tout en garantissant un positionnement précis et un alignement correct avec le système d’entraînement.
 
 Le support intègre directement les perçages nécessaires à la fixation du moteur ainsi que les renforts mécaniques permettant de supporter les efforts générés lors des accélérations et des changements de direction. Sa géométrie a été optimisée afin de limiter les déformations tout en conservant une pièce compacte et facilement imprimable en 3D.
@@ -89,7 +78,7 @@ L’utilisation de deux supports moteurs améliore également la stabilité méc
   <img src="../images/support moteur.PNG" width="300">  <img src="../images/supportmoteurhaut.PNG" width="340">
 
 
-## 5. Glissière de translation sur l’axe Y
+## 4. Glissière de translation sur l’axe Y
 
 Cette pièce constitue le chariot mobile se déplaçant sur l’axe Y du PuzzleBot. Elle a été conçue pour regrouper et supporter l’ensemble des éléments nécessaires à la manipulation des pièces du puzzle de manière compacte et ergonomique.
 
@@ -99,7 +88,7 @@ Pour compléter ce mécanisme, nous avons également conçu la pièce jaune qui 
 
 <img src="../images/glisierrehauttourne.PNG" width="300">  <img src="../images/supporthautt.PNG" width="300">
 
-## 6.Cage de la carte electronique
+## 5.Cage de la carte electronique
 
 Nous avons également conçu une petite boîte en 3D dédiée à la protection de la carte électronique. Cette boîte, placée sous le plateau, permet de sécuriser l’électronique contre les chocs et les poussières. Elle a été conçue sur mesure pour s’intégrer parfaitement sous le plateau, optimisant l’espace tout en garantissant un accès facile pour les câbles. Ainsi, l'ensemble de la machine reste bien organisé et protégé.
 
@@ -123,15 +112,15 @@ Les supports supérieurs permettent de fixer la traverse horizontale reliant les
 
 ### c- Cage de la caméra
 
-La cage de la caméra a été spécialement conçue pour accueillir et maintenir la caméra dans une position fixe au-dessus du plateau de jeu. Elle assure un positionnement précis de la caméra tout en permettant un montage et un démontage rapides pour les opérations de maintenance ou d'ajustement.
+La cage de la caméra a été spécialement conçue pour accueillir et maintenir la caméra dans une position fixe au-dessus du plateau de jeu. Elle assure un positionnement précis de la caméra tout en permettant un montage et un démontage rapides pour les opérations de maintenance ou d'ajustement
 
-<img src="../images/milieu camera.PNG" width="300">   
+<img src="../images/camera.PNG" width="300"> <img src="../images/cagecamera.PNG" width="300"> 
 
 ### d- Structure complète
 
 L'association des supports de base, des supports supérieurs et de la cage de la caméra forme une structure robuste et stable. Cette conception garantit une vue globale du plateau tout en assurant la qualité des images nécessaires à la détection et à l'identification des pièces du puzzle.
 
-<img src="../images/camerapieces.PNG" width="300">   
+<img src="../images/cameapieces.PNG" width="600">   
 
 
 
