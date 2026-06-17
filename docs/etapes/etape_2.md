@@ -39,7 +39,7 @@ camera piéce symetrique pour avoir le moins de pieces a imprimer (photo one sha
 
 
 # Conception du Puzzle bot
-
+Comme dit
 La conception 3D a été réalisée principalement sur Onshape. Nous avons utilisé des modèles existants pour certains composants clés, notamment le plateau, les servomoteurs, ainsi que le profilé en aluminium. Le plateau a été modélisé avec les dimensions précises pour accueillir les courroies et les moteurs. Les servomoteurs ont été placés en respectant les contraintes de couple et d'espace, et la barre métallique a été dimensionnée pour assurer la rigidité et la stabilité de l'ensemble. Ensuite, nous avons intégré tous ces éléments dans un assemblage complet pour vérifier les ajustements, les tolérances et la compatibilité entre les pièces. Cette base nous a permis de garantir un bon alignement mécanique avant de passer aux impressions et à l’assemblage final.
 
 Nous avons également conçu des pièces de finition spécifiques pour améliorer la sécurité et l'organisation des câbles. Par exemple, nous avons créé des étriers qui viennent toucher les capteurs de fin de course pour arrêter précisément les mouvements. Nous avons aussi conçu des goulottes qui protègent les fils, avec des passages spécifiques permettant de guider les câbles de manière homogène le long de la structure. Cela garantit non seulement un fonctionnement fluide, mais aussi une protection durable des composants électroniques.
