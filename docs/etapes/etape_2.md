@@ -87,7 +87,18 @@ Contrairement à une configuration avec un seul moteur, nous avons choisi d’in
 
 L’utilisation de deux supports moteurs améliore également la stabilité mécanique de l’ensemble, réduit les contraintes appliquées aux profilés et limite les risques de désalignement. Cette conception contribue ainsi à obtenir des mouvements plus fluides, une meilleure précision de positionnement et une plus grande fiabilité du robot lors de son fonctionnement.
 
-<img src="../images/supportmoteurhaut.PNG" width="300">
+  <img src="../images/support moteur.PNG" width="300">  <img src="../images/supportmoteurhaut.PNG" width="340">
+
+
+## Glissière de translation sur l’axe Y
+
+Cette pièce constitue le chariot mobile se déplaçant sur l’axe Y du PuzzleBot. Elle a été conçue pour regrouper et supporter l’ensemble des éléments nécessaires à la manipulation des pièces du puzzle de manière compacte et ergonomique.
+
+On y retrouve notamment les deux servomoteurs, l’un dédié au levage de la pièce et l’autre à sa rotation, ainsi que la pompe à vide et l’électrovanne utilisées pour le système de préhension. L’implantation de ces composants a été étudiée afin d’optimiser l’encombrement, de faciliter le passage des câbles et des tuyaux, et de maintenir un bon équilibre de l’ensemble mobile.
+
+Pour compléter ce mécanisme, nous avons également conçu la pièce jaune qui assure les mouvements de levage et de rotation de la pièce saisie. Cette pièce joue un rôle essentiel dans la manipulation des éléments du puzzle en permettant leur prise, leur orientation et leur repositionnement avec précision.  
+
+
 
 # Assemblage du Puzzle Bot
 
