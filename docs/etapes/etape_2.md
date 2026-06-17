@@ -91,9 +91,14 @@ L'association des supports de base, des supports supérieurs et de la cage de la
 
 <img src="../images/cameapieces.PNG" width="600">   
 
+## 7. Bouton d'arret d'urgence
+Nous avons aussi concu un bouton d'arrêt d'urgence permettant de couper immédiatement le fonctionnement du système en cas de problème ou de situation dangereuse. 
 
+Le bouton a été placé à un endroit facilement accessible afin de permettre une intervention rapide de l'utilisateur. Lorsqu'il est actionné, il arrête instantanément les actionneurs du robot, empêchant tout mouvement susceptible d'endommager le matériel ou de compromettre la sécurité des personnes à proximité.
 
+L'intégration de cet arrêt d'urgence permet ainsi de garantir une utilisation plus sûre et conforme aux bonnes pratiques de conception des systèmes automatisés.
 
+<img src="../images/boutonarret.PNG" width="300">   <img src="../images/bouton.PNG" width="350">   
 
 
 # Assemblage du Puzzle Bot
