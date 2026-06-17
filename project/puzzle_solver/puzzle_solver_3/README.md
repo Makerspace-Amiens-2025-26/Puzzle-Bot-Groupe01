@@ -225,8 +225,9 @@ Still configured manually in `puzzle_solver_3.py`:
 piece_angles = [ 0,  0,  0,  0 ]
 
 # Destination grid cell for each piece (col, row), 0-indexed
-piece_dest   = [ [1,1], [1,2], [1,3], [1,4] ]
+piece_dest     = [ [2,1], [3,1], [2,2], [3,2] ]
 ```
+
 
 ---
 
