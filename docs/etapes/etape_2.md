@@ -4,35 +4,6 @@ title: Conception et assemblage
 parent: Etapes de fabrication
 nav_order: 2
 ---
-
-deux moteurs axe x donc 2 couroies syncro grace au drivers 
-un moteur axe y donc 1 couroie 
-
-
-model cartesien  Calcul des distances : utile pour les algorithmes de recherche de chemin ou pour estimer à quelle distance une pièce est de sa position cible.
-					Visualisation intuitive : le modèle correspond directement à ce qu'on voit à l'écran sur une grille.
-					Simple à comprendre : chaque case a une position unique (ex. (3, 5)).
-					facilite pour le code
-					precision axe x car 2 moteurs 
-tension des couroie symetrique 
-pour que le projet sois refaisable part tout le monde. on a decide de faire des pieces symetrique comme les support moteur axe x au quatre coins dde la machine (photo one shape 4 coin)
-pareil pour les le support moteur axe y (photo one shape)
-support camera (photo one shape)
-glissiere tension  couroie (photo one shape)
-)
-
-
-
-
-option 
-integration 
-glissiere pour cable management(photo one shape)
-chain cable (photo one shape)
-plaque sous la plaque de base pour cacher les cables (photo one shape)
-camera piéce symetrique pour avoir le moins de pieces a imprimer (photo one shape) on a decide de fixer la camera a deux apieds pour ameliorer la stabilité et donc ameliorer la precision de la camera pour eviter quelle bouge
-			
-
-
 # Conception du Puzzle bot
 Comme dit précedemment, la conception de pièces 3D sur mesure a été crucial,
 En complément des composants standards de la machine, plusieurs pièces spécifiques ont dû être conçues afin d'assurer son bon fonctionnement et son assemblage. Nous avons ainsi modélisé en 3D différents éléments, tels que les supports moteurs, le support de la pompe, la fixation de la caméra, le boîtier de la carte électronique, le boîtier de l'arrêt d'urgence ainsi que d'autres pièces de fixation. Une fois la conception terminée, ces pièces ont été imprimées en 3D puis intégrées à la machine.
