@@ -108,7 +108,7 @@ Afin d'améliorer l'intégration des différents composants électroniques du Pu
 
 Ce système permet de regrouper et d'acheminer proprement les câbles alimentant les moteurs, les capteurs, la caméra et les différents actionneurs. Il protège également les câbles contre les risques d'usure, d'accrochage ou de détérioration lors des déplacements des axes du robot.
 
-<img src="../images/chainecable.WEBP" width="400">
+<img src="../images/chainecable.webp" width="400">
 
 
 # Assemblage du Puzzle Bot
