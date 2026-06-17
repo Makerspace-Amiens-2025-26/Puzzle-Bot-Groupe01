@@ -100,6 +100,13 @@ L'intégration de cet arrêt d'urgence permet ainsi de garantir une utilisation 
 
 <img src="../images/boutonarret.PNG" width="300">   <img src="../images/bouton.PNG" width="350">   
 
+## 8. Protection des cables
+Afin d'améliorer l'intégration des différents composants électroniques du PuzzleBot, nous avons mis en place un système de protection et de guidage des câbles. Pour cela, nous nous sommes appuyés sur un modèle existant trouvé en ligne, adapté à nos besoins et aux dimensions de notre robot.
+
+Ce système permet de regrouper et d'acheminer proprement les câbles alimentant les moteurs, les capteurs, la caméra et les différents actionneurs. Il protège également les câbles contre les risques d'usure, d'accrochage ou de détérioration lors des déplacements des axes du robot.
+
+<img src="../images/chainecable.WEBP" width="400">
+
 
 # Assemblage du Puzzle Bot
 
