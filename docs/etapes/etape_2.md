@@ -119,16 +119,19 @@ Les supports de base assurent la liaison entre les montants verticaux de la stru
 
 Les supports supérieurs permettent de fixer la traverse horizontale reliant les deux montants verticaux. Ils assurent le maintien de l'équerrage de la structure et garantissent une bonne répartition des efforts mécaniques. Leur conception facilite également l'assemblage des profilés aluminium.
 
+<img src="../images/supporthautcamera.PNG" width="300">   <img src="../images/supporthautc.PNG" width="300">   
 
 ### c- Cage de la caméra
 
 La cage de la caméra a été spécialement conçue pour accueillir et maintenir la caméra dans une position fixe au-dessus du plateau de jeu. Elle assure un positionnement précis de la caméra tout en permettant un montage et un démontage rapides pour les opérations de maintenance ou d'ajustement.
 
+<img src="../images/milieu camera.PNG" width="300">   
+
 ### d- Structure complète
 
 L'association des supports de base, des supports supérieurs et de la cage de la caméra forme une structure robuste et stable. Cette conception garantit une vue globale du plateau tout en assurant la qualité des images nécessaires à la détection et à l'identification des pièces du puzzle.
 
-
+<img src="../images/camerapieces.PNG" width="300">   
 
 
 
