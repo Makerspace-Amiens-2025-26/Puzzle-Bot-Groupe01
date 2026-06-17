@@ -2,6 +2,8 @@
 
 > Un robot capable de résoudre automatiquement des puzzles physiques en manipulant les pièces à l'aide d'un système d'aspiration.
 
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/machine.jpeg?raw=true)
+
 
 ---
 
