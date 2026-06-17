@@ -16,6 +16,40 @@ Voici le schéma synoptique de notre installation électronique (mettant en évi
 
 ![Schéma de câblage](../images/SchémaDorian.png)
 
+### Liste des composants électroniques
+
+- Arduino Uno
+<img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/e5240adf-7a5c-4f9c-8ea9-b89c3c2350da" />
+
+- CNC Shield V3
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/baba27ae-5a3e-4898-9b95-1e85c7c69404" />
+
+- X3 Drivers ref : A4988
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/d4ceaa94-50b1-4d80-85bd-cffff022d9d1" />
+
+- X2 Servo Moteurs 
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/4bcb3ef0-af73-4546-a3a1-359f0b731d7f" /> 
+
+    *Moteurs permettant de lever et de faire tourner les pièces.
+
+- X3 Moteurs pas à pas
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/b1e1e1e4-38f7-4af2-8464-91f0ec4aadf6" />
+
+    *Moteurs permettant de faire bouger les pièces sur l'axe x et y.
+
+- Pompe et électrovanne
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/eb8a074c-beb6-4418-a80c-c039cfa1b364" />
+
+    *Permettant d'aspirer les pièces pour les lever.
+
+- X2 Switch de fin de course
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/b0937a54-d3de-4f4f-9e17-1c2d92b1d5aa" />
+
+    *Permet de stopper les moteurs lorsque les switchs sont déclenchés (on s'en servira pour le homing de notre machine).
+
+
+
+
 
 ### Tableau des connexions
 
