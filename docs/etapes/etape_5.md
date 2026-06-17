@@ -205,6 +205,9 @@ Ces droites divisent le quadrilatère en quatre régions :
 
 A1 A2 A3 A4
 
+<br><br><br>
+![Alt text](https://github.com/Makerspace-Amiens-2025-26/Puzzle-Bot-Groupe01/blob/main/docs/images/my_correction_algo.png)
+
 ## Calcul des poids
 
 Chaque sommet reçoit un poids basé sur la surface de la région opposée.
