@@ -87,7 +87,7 @@ Contrairement à une configuration avec un seul moteur, nous avons choisi d’in
 
 L’utilisation de deux supports moteurs améliore également la stabilité mécanique de l’ensemble, réduit les contraintes appliquées aux profilés et limite les risques de désalignement. Cette conception contribue ainsi à obtenir des mouvements plus fluides, une meilleure précision de positionnement et une plus grande fiabilité du robot lors de son fonctionnement.
 
-
+<img src="../images/supportmoteurhaut.PNG" width="300">
 
 # Assemblage du Puzzle Bot
 
